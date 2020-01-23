@@ -8,6 +8,6 @@
 		<br />
 		Java runtime version: <%= System.getProperty("java.version") %>
 		
-		<p>HI!!! I love you sooo much! </p>
+		<p>HI!!! This is my first web application, used as a test bed to try new stuff!</p>
 	</body>
 </html>
