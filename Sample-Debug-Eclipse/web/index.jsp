@@ -16,8 +16,15 @@
 		<p>HI!!! This is my first web application, used as a test bed to try new stuff!</p>
 		<%  int num1 = 4;
 			int num2 = 6;
-			int num3 = num1 * num2;
-			System.out.print("this is java code using scriplets in jsp" + "4*6 = " + num3);
-			%>
+			int num3 = num1 * num2;%>
+		
+		<p>This is an example of java code in JSP file using scriplets, this is bad practice</p><br>
+		<p>6*4 = <%= num3 %> </p>	
+		
+		<p>Next, is an example of the same problem without using scriplets and instead using the servlet to do the work</p><br>
+		<p>6*4 = ${num3}</p><br>
+		<p>This is better practice and much more secure</p>
+		
+		
 	</body>
 </html>
