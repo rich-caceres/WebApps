@@ -2,8 +2,13 @@
 <html>
 	<head>
 		<title>Sample Debug</title>
+		
+		<style>
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+		</style>
+		
 	</head>
-	<body style="font-family: Verdana, sans-serif">
+	<body style="font-family: 'Bangers', cursive;">
 		Your application has successfully deployed!<br />
 		<br />
 		Java runtime version: <%= System.getProperty("java.version") %>
