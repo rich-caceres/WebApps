@@ -14,5 +14,6 @@
 		Java runtime version: <%= System.getProperty("java.version") %>
 		
 		<p>HI!!! This is my first web application, used as a test bed to try new stuff!</p>
+		<p>Testing git for certain changes</p>
 	</body>
 </html>
