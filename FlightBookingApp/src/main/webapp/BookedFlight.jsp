@@ -5,11 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Flight is Booked!</title>
+<link href="../../../Style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-<h2>Your Booked flight</h2>
 <div id="first-div">
+<h2>Your Booked flight</h2>
+
 
 <p>You're departing location will be ${startLoc} on ${startDate} with ${traveler} travelers.</p>
 <p>Your return date is ${endDate} and you will arrive at ${endLoc}</p>
@@ -33,7 +34,7 @@
 <input type="submit" name= "subSup"><br>
 <br>
 </form>
-<i>${response}</i>
+<footer><i>${response}</i></footer>
 
 </div>
 
