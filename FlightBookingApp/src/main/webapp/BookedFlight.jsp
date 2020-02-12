@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Flight is Booked!</title>
-<link href="../../../Style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="Style.css" >
 </head>
+<div id= "main-div">
 <body>
 <div id="first-div">
 <h2>Your Booked flight</h2>
@@ -37,7 +39,8 @@
 <footer><i>${response}</i></footer>
 
 </div>
-
+	</div>
+	
 
 </body>
 </html>
