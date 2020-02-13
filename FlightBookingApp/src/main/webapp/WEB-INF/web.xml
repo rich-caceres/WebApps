@@ -7,16 +7,21 @@
     	<display-name>BookingServlet</display-name>
     	<servlet-name>BookingServlet</servlet-name>
     	<servlet-class>com.snhu.FlightBookingApp.BookingServlet</servlet-class>
+    	
+    	
     </servlet>
     <servlet-mapping>
     	<servlet-name>BookingServlet</servlet-name>
     	<url-pattern>/BookingServlet</url-pattern>
     </servlet-mapping>
-   
-    <session-config>
+    
+    
+   <session-config>
         <session-timeout>
             30
         </session-timeout>
+        
+      
     </session-config>
     <welcome-file-list>
         <welcome-file>BookingServlet</welcome-file>

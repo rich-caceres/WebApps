@@ -6,12 +6,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Flight Booking</title>
+        <link rel="stylesheet" type="text/css" href="Style.css" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+    <div id= "first-div">
         <h1>Book Your Flight!</h1>
         
         <form method= "POST" action="BookingServlet">
-        
         
         <input type="hidden" name="action" value="create">
         <h4>Starting Location</h4>
@@ -33,7 +35,12 @@
         <input type="submit" value="Submit">
         
         </form>
-        
+      </div>
+      <div id="second-div">
+      	<h1>Search Results</h1>
+      <i>Search results placeholder</i>
+      
+      </div>
         
     </body>
 </html>
