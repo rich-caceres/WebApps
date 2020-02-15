@@ -8,11 +8,14 @@
 <title>Flight is Booked!</title>
 <link rel="stylesheet" type="text/css" href="Style.css" >
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+<script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/aguafina-script:n4:default;brush-script-std:n4:default.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body id="body-back">
     <div id= "main-div">
       <div id="first-div">
+      <header><h1>The Flight Booker</h1></header>
             <h2>Your Booked flight</h2>
 
           <p>You're departing location will be ${startLoc} on ${startDate} with ${traveler} travelers.</p>

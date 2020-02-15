@@ -5,8 +5,7 @@
     max-width: 100%;
     max-height: 100%;
     padding-bottom: 8%;
-    padding-left: 12.5%;
-    padding-right: 12.5%;
+    text-align:center;
     background-color: #D3D8DC;
     display: inline-block;
     clear: none;
@@ -20,7 +19,7 @@
     margin-left: 0%;
     width: 100%;
     height: 100%;
-    font-size: 1vw;
+    font-size: 2vw;
   
 }
 #first-div h2 {
@@ -47,8 +46,6 @@
     display: inline-block;
     -moz-box-sizing: inherit;
     box-sizing: inherit;
-    padding-left: 12.5%;
-    padding-right: 12.5%;
     position: relative;
     -webkit-box-shadow: 0 0;
     box-shadow: 0 0;
@@ -60,7 +57,7 @@
     font-size: 78%;
     margin-left: 0%;
     width: 100%;
-    font-size: 1vw;
+    font-size: 2vw;
 }
 input {
     
@@ -70,8 +67,6 @@ input {
 
 textarea{
     width: 50%;
-    padding: 7%;
-    
 }
 
 
@@ -92,11 +87,18 @@ h2 {
     height: 100%;
     position: relative;
     text-align: center;
-    margin-top: 17%;
+    margin-top: 10%;
     color: #CBC5C0;
     font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-    font-size: 4vw;
+    font-size: 3vw;
 }
-#support-back {
+#body-back {
     background-color: #A39898;
+}
+header {
+    text-align: center;
+    font-family: brush-script-std;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5vw;
 }
