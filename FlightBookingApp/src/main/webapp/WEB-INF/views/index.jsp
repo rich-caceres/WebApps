@@ -6,7 +6,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Flight Booking</title>
-        <link rel="stylesheet" type="text/css" href="Style.css" >
+        <link rel="stylesheet" type="text/css" href="resources/Style.css" >
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
 	<script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/aguafina-script:n4:default;brush-script-std:n4:default.js" type="text/javascript"></script>
@@ -16,7 +16,7 @@
     <div id= "first-div">
         <h1>Book Your Flight!</h1>
         
-        <form method= "POST" action="BookingServlet">
+        <form method= "POST" action="/FlightBookingApp/create">
         
         <input type="hidden" name="action" value="create">
         <h4>Starting Location</h4>

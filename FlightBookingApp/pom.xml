@@ -23,6 +23,13 @@
       <version>2.0</version>
       <scope>provided</scope>
     </dependency>
+    
+    <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.2.2.RELEASE</version>
+</dependency>
+    
   </dependencies>
 
   <build>

@@ -1,5 +1,7 @@
 package com.snhu.FlightBookingApp;
 
+
+//POJO for itinerary pardon the awful spelling
 public class Itenerary {
 	
 	private String travelers;
