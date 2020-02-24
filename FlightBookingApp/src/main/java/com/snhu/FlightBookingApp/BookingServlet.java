@@ -1,36 +1,21 @@
 package com.snhu.FlightBookingApp;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 
-@MultipartConfig(
-        fileSizeThreshold = 5_242_880, //5MB
-        maxFileSize = 20_971_520L, //20MB
-        maxRequestSize = 41_943_040L //40MB
-)
+
+
 /**
  * Servlet implementation class BookingServlet
  */
@@ -99,7 +84,7 @@ public class BookingServlet  {
 								ModelMap model){
 		
 		Itenerary itenerary = new Itenerary();
-		itenerary.Itenerary();
+	
 		
 		itenerary.setTravelers(travelers);//requesting parameters for travelers
 		itenerary.setStartLoc(startLoc);//assigning starting location
@@ -120,26 +105,6 @@ public class BookingServlet  {
 		
 	}
 	
-	private Attchment processAttachment(Part filePart)
-            throws IOException
-    {
-        InputStream inputStream = filePart.getInputStream();
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-        int read;
-        final byte[] bytes = new byte[1024];
-
-        while((read = inputStream.read(bytes)) != -1)
-        {
-            outputStream.write(bytes, 0, read);
-        }
-
-        Attchment attachment = new Attchment();
-        attachment.setName(filePart.getSubmittedFileName());
-        attachment.setContents(outputStream.toByteArray());
-
-        return attachment;
-    }
-	
 
 }

@@ -64,7 +64,7 @@ public class Itenerary {
 	
 	}
 	
-	public void Itenerary() {
+	public Itenerary() {
 		
 		travelers = "";
 		startLoc = "";

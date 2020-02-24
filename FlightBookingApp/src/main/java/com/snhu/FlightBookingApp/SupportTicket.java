@@ -71,7 +71,7 @@ public class SupportTicket {
         
     }
     
-    public void supportInit() {
+    public SupportTicket() {
     	
     	name = "";
     	subject = "";

@@ -1,5 +1,9 @@
 package com.snhu.FlightBookingApp;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
 
@@ -9,17 +13,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@MultipartConfig(
+        fileSizeThreshold = 5_242_880, //5MB
+        maxFileSize = 20_971_520L, //20MB
+        maxRequestSize = 41_943_040L //40MB
+)
 
 @Controller
 public class SupportController {
 
 	@RequestMapping(value = "/support")
 	private String createSupport(@RequestParam (required = false) String name, @RequestParam (required = false) String subject, @RequestParam (required = false) String body,  
-								 @RequestParam (required = false) Part file1, ModelMap model){
+								 @RequestParam (required = false) Part file1, ModelMap model) throws IOException{
 		
 		System.out.println(name +""+ subject);
 		SupportTicket support = new SupportTicket();
-		support.supportInit();
+		
 		 
 		 support.setName(name);//storing name in this variable for later use
 	     support.setSubject(subject);//storing subject in this variable for later use
@@ -30,7 +39,7 @@ public class SupportController {
 	     model.put("response", "Your Ticket Has Been Processed!!!");
 	     
 	     
-	    /*
+	    
 	     if(filePart != null && filePart.getSize() > 0) {
 	    	 
 	    	 Attchment attachment = this.processAttachment(filePart);
@@ -41,11 +50,33 @@ public class SupportController {
 	    		 
 	    	 }
 	    	 }
-	    	*/ //FIXME Need a new way to pass attachments in spring
+	    	 //FIXME Need a new way to pass attachments in spring
 	    	
 	     return "Support";
 	     
 	}
+	
+	private Attchment processAttachment(Part filePart)
+            throws IOException
+    {
+        InputStream inputStream = filePart.getInputStream();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        int read;
+        final byte[] bytes = new byte[1024];
+
+        while((read = inputStream.read(bytes)) != -1)
+        {
+            outputStream.write(bytes, 0, read);
+        }
+
+        Attchment attachment = new Attchment();
+        attachment.setName(filePart.getSubmittedFileName());
+        attachment.setContents(outputStream.toByteArray());
+
+        return attachment;
+    }
+	
 	
 }
 
