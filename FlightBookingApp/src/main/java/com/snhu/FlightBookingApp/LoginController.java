@@ -16,6 +16,15 @@ public class LoginController {
 	@Autowired
 	LoginService loginService;
 	
+	@Autowired
+	ReadXml userInfo;
+	
+	@Autowired
+	User user;
+	
+	@Autowired
+	WriteXml xml;
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET )
 	private String login() {
 		
@@ -26,7 +35,9 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	private String loginHandeler(@RequestParam String username, @RequestParam String password, ModelMap model) {
 		
-		if(!loginService.validateUser(username, password)) {
+		user = userInfo.user();
+		
+		if(!loginService.validateUser(username, password, user)) {
 			model.put("error", "Incorrect Username or Password.");
 			return "Login";
 		}
@@ -36,5 +47,20 @@ public class LoginController {
 		model.put("date", formatter.format(date));//setting data that needs to be sent to jsp
 		return "index";	
 		
+	}
+	
+	@RequestMapping(value= "/createUser", method = RequestMethod.GET)
+	private String userCreation(){
+		
+		
+		return "createUser";
+	}
+	
+	@RequestMapping(value= "/createUser", method = RequestMethod.POST)
+	private String createUser(@RequestParam String userName, @RequestParam String name, @RequestParam String password) {
+		
+		xml.createXml(userName, password, name);
+		
+		return "Login";
 	}
 }

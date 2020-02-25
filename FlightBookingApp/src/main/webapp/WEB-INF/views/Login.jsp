@@ -21,6 +21,9 @@
 <input type="password" name="password">
 <input type="submit" value="Submit" name= "submit">
 </form>
+<form method="GET" action="/FlightBookingApp/createUser">
+<input type="submit" value="New User" name= "submit"> 
+</form>
 </div>
 </body>
 </html>
