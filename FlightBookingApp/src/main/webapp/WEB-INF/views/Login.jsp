@@ -13,6 +13,7 @@
 <body id="body-back">
 <header><h1>The Flight Booker</h1></header>
 <div id= "first-div">
+<i>${error}</i>
 <form method= "POST" action= "/FlightBookingApp/login" >
 <i>Username</i><br>
 <input type="text" name="username"><br>

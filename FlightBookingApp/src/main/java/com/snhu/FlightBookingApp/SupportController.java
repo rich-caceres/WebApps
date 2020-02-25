@@ -50,8 +50,7 @@ public class SupportController {
 	    		 
 	    	 }
 	    	 }
-	    	 //FIXME Need a new way to pass attachments in spring
-	    	
+	   
 	     return "Support";
 	     
 	}
