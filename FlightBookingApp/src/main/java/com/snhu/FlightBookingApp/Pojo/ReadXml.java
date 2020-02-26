@@ -1,4 +1,4 @@
-package com.snhu.FlightBookingApp;
+package com.snhu.FlightBookingApp.Pojo;
 
 import java.io.File;
 
@@ -15,10 +15,12 @@ public class ReadXml {
 	@Autowired
 	User user;
 	
-	public User user() {
+	public User user(String username) {
+		
+		
 		
 		 try {
-	            File file = new File("users.xml");
+	            File file = new File(username+".xml");
 	            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
 	            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 	            user = (User) jaxbUnmarshaller.unmarshal(file);

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.snhu.FlightBookingApp.Pojo.Attchment;
+
 @MultipartConfig(
         fileSizeThreshold = 5_242_880, //5MB
         maxFileSize = 20_971_520L, //20MB
@@ -39,7 +41,7 @@ public class SupportController {
 	     model.put("response", "Your Ticket Has Been Processed!!!");
 	     
 	     
-	    
+	    //Processes attachments and adds to support ticket
 	     if(filePart != null && filePart.getSize() > 0) {
 	    	 
 	    	 Attchment attachment = this.processAttachment(filePart);

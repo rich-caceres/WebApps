@@ -3,6 +3,8 @@ package com.snhu.FlightBookingApp;
 
 import org.springframework.stereotype.Service;
 
+import com.snhu.FlightBookingApp.Pojo.User;
+
 //This is a dummy login service to validate information passed
 @Service
 public class LoginService {

@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.snhu.FlightBookingApp.Pojo.ReadXml;
+import com.snhu.FlightBookingApp.Pojo.User;
+import com.snhu.FlightBookingApp.Pojo.WriteXml;
+
 @Controller
 public class LoginController {
 	
@@ -25,7 +29,7 @@ public class LoginController {
 	@Autowired
 	WriteXml xml;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET )
+	@RequestMapping(value = "/login1", method = RequestMethod.GET )
 	private String login() {
 		
 		return "Login";
@@ -35,8 +39,8 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	private String loginHandeler(@RequestParam String username, @RequestParam String password, ModelMap model) {
 		
-		user = userInfo.user();
-		
+		user = userInfo.user(username);
+		//forces login information to be validated from XML
 		if(!loginService.validateUser(username, password, user)) {
 			model.put("error", "Incorrect Username or Password.");
 			return "Login";
@@ -56,11 +60,17 @@ public class LoginController {
 		return "createUser";
 	}
 	
-	@RequestMapping(value= "/createUser", method = RequestMethod.POST)
-	private String createUser(@RequestParam String userName, @RequestParam String name, @RequestParam String password) {
+	@RequestMapping(value= "/loginNew", method = RequestMethod.POST)
+	private String createUser(@RequestParam String userName, @RequestParam String name, @RequestParam String password, ModelMap model) {
 		
+		System.out.println(userName);
+		//creates XML if the fields are not empty (assuming no spaces this is still not exactly secure)
+		if(!password.equals("") || !userName.equals("")) {
 		xml.createXml(userName, password, name);
-		
 		return "Login";
+		}
+		model.put("formError", "Please fill out all form information!");
+		return "createUser";
+		
 	}
 }

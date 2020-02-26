@@ -1,4 +1,4 @@
-package com.snhu.FlightBookingApp;
+package com.snhu.FlightBookingApp.Pojo;
 
 public class Attchment {
 	

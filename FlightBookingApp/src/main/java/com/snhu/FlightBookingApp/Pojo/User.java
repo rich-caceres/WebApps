@@ -1,5 +1,8 @@
-package com.snhu.FlightBookingApp;
+package com.snhu.FlightBookingApp.Pojo;
 
+
+
+import java.util.UUID;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -16,11 +19,19 @@ public class User {
 	private String userName;
 	private String password;
 	private String name;
-
+	private UUID id;
+	
 	@XmlElement
 	public void setName(String name) {
 		
 		this.name = name;
+		
+	}
+	
+	@XmlElement
+	public void setId () {
+		
+		this.id = UUID.randomUUID();
 		
 	}
 	
@@ -34,6 +45,12 @@ public class User {
 	public void setPassword(String password) {
 		
 		this.password = password;
+		
+	}
+	
+	public UUID getid() {
+		
+		return id;
 		
 	}
 	

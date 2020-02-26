@@ -1,4 +1,4 @@
-package com.snhu.FlightBookingApp;
+package com.snhu.FlightBookingApp.Pojo;
 
 
 //POJO for itinerary pardon the awful spelling

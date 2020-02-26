@@ -1,4 +1,4 @@
-package com.snhu.FlightBookingApp;
+package com.snhu.FlightBookingApp.Pojo;
 
 import java.io.File;
 
@@ -20,10 +20,11 @@ public class WriteXml {
 		user.setName(name);
 		user.setUserName(userName);
 		user.setPassword(password);
+		user.setId();
 		
 		try {
 			
-			File file = new File("users.xml");
+			File file = new File(user.getUserName()+".xml");
 			JAXBContext jaxbcontext = JAXBContext.newInstance(User.class);
 			Marshaller marshaller = jaxbcontext.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
