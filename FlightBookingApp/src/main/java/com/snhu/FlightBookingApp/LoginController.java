@@ -29,7 +29,7 @@ public class LoginController {
 	@Autowired
 	WriteXml xml;
 	
-	@RequestMapping(value = "/login1", method = RequestMethod.GET )
+	@RequestMapping(value = "/login", method = RequestMethod.GET )
 	private String login() {
 		
 		return "Login";
@@ -70,7 +70,7 @@ public class LoginController {
 		return "Login";
 		}
 		model.put("formError", "Please fill out all form information!");
-		return "createUser";
+		return "Login";
 		
 	}
 }

@@ -17,68 +17,8 @@ import com.snhu.FlightBookingApp.Pojo.Itenerary;
 
 
 
-
-/**
- * Servlet implementation class BookingServlet
- */
-
 @Controller
 public class BookingServlet  {
-
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	/*Keeping this for future reference
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//switch case works really well with this type of application
-		String action = request.getParameter("action");
-		if (action == null) 
-			action = "wait";
-			switch(action)
-			{
-			
-			case "create":
-			this.createFlight(request, response);//creates the flight
-				break;
-			case "support":
-			this.createSupport(request, response);//creates the support ticket
-				break;
-			case "wait":
-			default:
-				this.date(request, response);//default starting page with date
-				break;
-			
-			}	
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 *//*
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		String action = request.getParameter("action");
-		if (action == null) 
-			action = "wait";
-			switch(action)
-			{
-			case "create":
-				this.createFlight(request, response);
-				break;
-			case "support":
-				this.createSupport(request, response);//creates the support ticket
-				break;
-			case "wait":
-			default:
-				this.date(request, response);//default starting page with date
-				break;
-			
-			}	
-	}
-	*/
 
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST )

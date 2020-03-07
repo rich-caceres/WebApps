@@ -43,11 +43,11 @@ public class ErrorHandleFilter implements Filter {
 			
 			chain.doFilter(request, response);
 		
-	 } else {
+		} else {
 		
-		 response.sendRedirect("login1");
+			response.sendRedirect("login");
 
-	}
+		}
 
 	}
 }
