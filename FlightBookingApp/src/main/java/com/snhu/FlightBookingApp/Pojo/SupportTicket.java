@@ -1,10 +1,8 @@
-package com.snhu.FlightBookingApp;
+package com.snhu.FlightBookingApp.Pojo;
 
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import com.snhu.FlightBookingApp.Pojo.Attchment;
 
 
 
