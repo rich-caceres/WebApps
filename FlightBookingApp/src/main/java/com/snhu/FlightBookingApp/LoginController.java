@@ -41,6 +41,12 @@ public class LoginController {
 		
 		user = userInfo.user(username);
 		//forces login information to be validated from XML
+		if(user.getUserName().equalsIgnoreCase("NothingHere")) {
+			
+			model.put("error", "Username was not found or is incorrect.");
+			return "Login";
+		}
+		
 		if(!loginService.validateUser(username, password, user)) {
 			model.put("error", "Incorrect Username or Password.");
 			return "Login";

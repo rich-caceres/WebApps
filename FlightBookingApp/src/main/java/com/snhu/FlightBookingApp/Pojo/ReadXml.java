@@ -16,11 +16,18 @@ public class ReadXml {
 	User user;
 	
 	public User user(String username) {
+	
+		File file = new File(username+".xml");
 		
-		
+		if(!file.exists()) {
+			
+			user.setUserName("NothingHere");
+			return user;
+			
+		}else {
 		
 		 try {
-	            File file = new File(username+".xml");
+	            
 	            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
 	            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 	            user = (User) jaxbUnmarshaller.unmarshal(file);
@@ -29,7 +36,7 @@ public class ReadXml {
 	        }
 		
 		return user;
-		
+		}
 	}
 	
 }

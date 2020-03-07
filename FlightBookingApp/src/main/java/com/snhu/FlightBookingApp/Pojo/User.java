@@ -28,7 +28,7 @@ public class User {
 		
 	}
 	
-	@XmlElement
+	
 	public void setId () {
 		
 		this.id = UUID.randomUUID();
