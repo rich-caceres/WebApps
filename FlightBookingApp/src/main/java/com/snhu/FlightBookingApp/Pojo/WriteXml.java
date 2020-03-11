@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class WriteXml {
 	
 	@Autowired
-	User user;
+	UserProfile user;
 	
 	public void createXml(String userName, String password, String name) {
 		
@@ -25,7 +25,7 @@ public class WriteXml {
 		try {
 			
 			File file = new File(user.getUserName()+".xml");
-			JAXBContext jaxbcontext = JAXBContext.newInstance(User.class);
+			JAXBContext jaxbcontext = JAXBContext.newInstance(UserProfile.class);
 			Marshaller marshaller = jaxbcontext.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			marshaller.marshal(user, file);

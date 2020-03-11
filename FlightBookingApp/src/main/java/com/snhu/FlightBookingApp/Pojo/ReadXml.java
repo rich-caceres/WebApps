@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 public class ReadXml {
 
 	@Autowired
-	User user;
+	UserProfile user;
 	
-	public User user(String username) {
+	public UserProfile user(String username) {
 	
 		File file = new File(username+".xml");
 		
@@ -28,9 +28,9 @@ public class ReadXml {
 		
 		 try {
 	            
-	            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+	            JAXBContext jaxbContext = JAXBContext.newInstance(UserProfile.class);
 	            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-	            user = (User) jaxbUnmarshaller.unmarshal(file);
+	            user = (UserProfile) jaxbUnmarshaller.unmarshal(file);
 	        } catch (JAXBException e) {
 	            e.printStackTrace();
 	        }

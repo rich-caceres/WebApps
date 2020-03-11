@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.snhu.FlightBookingApp.Pojo.ReadXml;
-import com.snhu.FlightBookingApp.Pojo.User;
+import com.snhu.FlightBookingApp.Pojo.UserProfile;
 import com.snhu.FlightBookingApp.Pojo.WriteXml;
 
 @Controller
@@ -24,7 +24,7 @@ public class LoginController {
 	ReadXml userInfo;
 	
 	@Autowired
-	User user;
+	UserProfile user;
 	
 	@Autowired
 	WriteXml xml;

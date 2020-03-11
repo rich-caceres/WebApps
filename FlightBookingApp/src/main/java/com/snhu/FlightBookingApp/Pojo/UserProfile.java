@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @XmlRootElement
-public class User {
+public class UserProfile {
 
 	private String userName;
 	private String password;
@@ -70,11 +70,12 @@ public class User {
 		return userName;
 	}
 	
-	public User() {
+	public UserProfile() {
 		
 		userName= "Admin";
 		password= "Pass";
 		name = "";
 	}
-	
+
+
 }
