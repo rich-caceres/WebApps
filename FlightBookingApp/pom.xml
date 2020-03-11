@@ -37,6 +37,37 @@
     		<artifactId>spring-webmvc</artifactId>
     		<version>5.2.2.RELEASE</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-orm</artifactId>
+    		<version>5.2.2.RELEASE</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>5.4.10.Final</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
+		<dependency>
+    		<groupId>org.apache.lucene</groupId>
+    		<artifactId>lucene-core</artifactId>
+    		<version>8.2.0</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-core</artifactId>
+    		<version>5.2.2.RELEASE</version>
+		</dependency>
+		
+		
+		
 		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
 		<dependency>
     		<groupId>javax.xml.bind</groupId>
