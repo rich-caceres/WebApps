@@ -10,7 +10,9 @@ import javax.servlet.http.Part;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.snhu.FlightBookingApp.Pojo.Attchment;
 import com.snhu.FlightBookingApp.Pojo.SupportTicket;
@@ -24,9 +26,11 @@ import com.snhu.FlightBookingApp.Pojo.SupportTicket;
 @Controller
 public class SupportController {
 
-	@RequestMapping(value = "/support")
-	private String createSupport(@RequestParam (required = false) String name, @RequestParam (required = false) String subject, @RequestParam (required = false) String body,  
-								 @RequestParam (required = false) Part file1, ModelMap model) throws IOException{
+	@RequestMapping(value = "/support", method = RequestMethod.POST)
+	private ModelAndView createSupport(@RequestParam (required = false) String name, @RequestParam (required = false) String subject, @RequestParam (required = false) String body,  
+								 @RequestParam (required = false) Part file1) throws IOException{
+		
+		ModelAndView model = new ModelAndView(); 
 		
 		System.out.println(name +""+ subject);
 		SupportTicket support = new SupportTicket();
@@ -38,7 +42,8 @@ public class SupportController {
 	     Part filePart = file1;//grabbing the file
 	     
 	     
-	     model.put("response", "Your Ticket Has Been Processed!!!");
+	     model.addObject("response", "Your Ticket Has Been Processed!!!");
+	     model.setViewName("Support");
 	     
 	     
 	    //Processes attachments and adds to support ticket
@@ -53,7 +58,7 @@ public class SupportController {
 	    	 }
 	    	 }
 	   
-	     return "Support";
+	     return model;
 	     
 	}
 	

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+    <%@page session="true"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,8 +25,9 @@
         </div>
       <div id="second-div">
             <h2>Support Requests</h2>
-          <form method="POST" action="/FlightBookingApp/support" enctype="multipart/form-data">
-          
+        
+          <form method="POST" action="<c:url value='support'/>">
+          	
               <span style="font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, serif">
               
               <i>Name</i><br>
@@ -38,11 +40,13 @@
               <textarea name="body" rows="5" cols="30"> </textarea><br>
 
               <i>Attachments</i><br>
-              <input type="file" name="file1">
+              <input type="file" name="file1" enctype="multipart/form-data">
               <input type="submit" value="Submit" name= "subSup"><br>
+              
               <br>
               </span>
-        </form>
+              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+       </form>
         <span style="font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, serif">
           <footer><i>${response}</i></footer>
 

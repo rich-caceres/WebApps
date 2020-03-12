@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.snhu.FlightBookingApp.Pojo.ReadXml;
 import com.snhu.FlightBookingApp.Pojo.UserProfile;
@@ -29,13 +30,24 @@ public class LoginController {
 	@Autowired
 	WriteXml xml;
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET )
-	private String login() {
+	@RequestMapping(value = {"/" , "/login"} , method = RequestMethod.GET )
+	private ModelAndView login(
+				@RequestParam(value = "error", required = false) String error) {
 		
-		return "Login";
+		ModelAndView model = new ModelAndView();
+		
+		if(error != null ) {
+			
+			model.addObject("error", "Username was nout found or is incorrect.");
+			
+		}
+		
+		model.setViewName("Login");
+		
+		return model;
 		
 	}
-	
+	/*
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	private String loginHandeler(@RequestParam String username, @RequestParam String password, ModelMap model) {
 		
@@ -51,15 +63,12 @@ public class LoginController {
 			model.put("error", "Incorrect Username or Password.");
 			return "Login";
 		}
-			
-		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
-		Date date = new Date(); //creates a date object
-		model.put("date", formatter.format(date));//setting data that needs to be sent to jsp
+		
 		return "index";	
 		
-	}
+	}*/
 	
-	@RequestMapping(value= "/createUser", method = RequestMethod.GET)
+	@RequestMapping(value= "/create*", method = RequestMethod.GET)
 	private String userCreation(){
 		
 		
@@ -76,7 +85,7 @@ public class LoginController {
 		return "Login";
 		}
 		model.put("formError", "Please fill out all form information!");
-		return "Login";
+		return "createUser";
 		
 	}
 }
