@@ -28,7 +28,7 @@
 			<input type="submit" value="Submit" name="submit"> <input
 				type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		</form>
-		<form method="GET" action="<c:url value='createUser'/>" >
+		<form method="GET" action="<c:url value='create*'/>" >
 			<input type="submit" value="New User" name="submit">
 		</form>
 	</div>

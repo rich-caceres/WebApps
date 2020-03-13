@@ -69,10 +69,13 @@ public class LoginController {
 	}*/
 	
 	@RequestMapping(value= "/create*", method = RequestMethod.GET)
-	private String userCreation(){
+	private ModelAndView userCreation(){
 		
+		ModelAndView model = new ModelAndView();
 		
-		return "createUser";
+		model.setViewName("createUser");
+		
+		return model;
 	}
 	
 	@RequestMapping(value= "/loginNew", method = RequestMethod.POST)
