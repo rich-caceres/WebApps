@@ -56,10 +56,17 @@ public class SupportController {
 	    		 support.addAttachment(attachment);
 	    		 
 	    	 }
-	    	 }
+	    }
 	   
 	     return model;
 	     
+	}
+	
+	@RequestMapping(value = "/logout")
+	private String doLogout() {
+		
+		
+		return "redirect:/login";
 	}
 	
 	private Attchment processAttachment(Part filePart)

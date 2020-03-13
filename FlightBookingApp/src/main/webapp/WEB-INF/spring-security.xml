@@ -23,7 +23,8 @@
 			username-parameter="username"
 			password-parameter="password"
 			login-processing-url="/j_spring_security_check" />
-		<logout logout-success-url="/login?logout" />
+		<logout logout-success-url="/login" 
+				logout-url="/logout"/>
 		<!-- enable csrf protection -->
 		<csrf/>
 		

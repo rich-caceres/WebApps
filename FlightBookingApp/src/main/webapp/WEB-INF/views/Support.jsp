@@ -16,6 +16,7 @@
     <header><h1>The Flight Booker</h1></header>
 <div id="support-div">
   <h1>${response}</h1>
+  <a href="<c:url value="/logout" />">Logout</a>
 </div>
 
 </body>
