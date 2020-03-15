@@ -1,7 +1,5 @@
 package com.snhu.FlightBookingApp;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,26 +45,6 @@ public class LoginController {
 		return model;
 		
 	}
-	/*
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	private String loginHandeler(@RequestParam String username, @RequestParam String password, ModelMap model) {
-		
-		user = userInfo.user(username);
-		//forces login information to be validated from XML
-		if(user.getUserName().equalsIgnoreCase("NothingHere")) {
-			
-			model.put("error", "Username was not found or is incorrect.");
-			return "Login";
-		}
-		
-		if(!loginService.validateUser(username, password, user)) {
-			model.put("error", "Incorrect Username or Password.");
-			return "Login";
-		}
-		
-		return "index";	
-		
-	}*/
 	
 	@RequestMapping(value= "/create*", method = RequestMethod.GET)
 	private ModelAndView userCreation(){

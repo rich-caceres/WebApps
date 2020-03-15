@@ -2,26 +2,37 @@ package com.snhu.FlightBookingApp.Pojo;
 
 
 
-import java.util.UUID;
+//import java.util.UUID;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+//import javax.xml.bind.annotation.XmlElement;
+//import javax.xml.bind.annotation.XmlRootElement;
+
 
 import org.springframework.stereotype.Service;
 
 /*
- * This POJO is used to write a new user to XML for the login service.
+ * This POJO is used to write a new user using DBO spring security 
  */
 @Service
-@XmlRootElement
+@Entity
+//@XmlRootElement
 public class UserProfile {
 
-	private String userName;
+	@Column(nullable = false, unique = true)
+	private String username;
 	private String password;
 	private String name;
-	private UUID id;
 	
-	@XmlElement
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	//@XmlElement
 	public void setName(String name) {
 		
 		this.name = name;
@@ -29,26 +40,27 @@ public class UserProfile {
 	}
 	
 	
-	public void setId () {
+	public void setId (Long id) {
 		
-		this.id = UUID.randomUUID();
+		this.id = id;
 		
 	}
 	
-	@XmlElement
+	//@XmlElement
 	public void setUserName (String userName) {
 		
-		this.userName = userName;
+		this.username = userName;
 		
 	}
-	@XmlElement
+	
+	//@XmlElement
 	public void setPassword(String password) {
 		
 		this.password = password;
 		
 	}
 	
-	public UUID getid() {
+	public Long getid() {
 		
 		return id;
 		
@@ -67,12 +79,12 @@ public class UserProfile {
 	
 	public String getUserName() {
 		
-		return userName;
+		return username;
 	}
 	
 	public UserProfile() {
 		
-		userName= "Admin";
+		username= "Admin";
 		password= "Pass";
 		name = "";
 	}

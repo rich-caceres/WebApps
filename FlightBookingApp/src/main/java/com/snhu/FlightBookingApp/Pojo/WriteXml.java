@@ -20,7 +20,6 @@ public class WriteXml {
 		user.setName(name);
 		user.setUserName(userName);
 		user.setPassword(password);
-		user.setId();
 		
 		try {
 			
