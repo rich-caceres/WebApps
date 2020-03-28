@@ -10,6 +10,7 @@
   <name>FlightBookingApp</name>
   <url>http://maven.apache.org</url>
 
+
   <dependencies>
   
   <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
@@ -45,15 +46,14 @@
     		<version>1.2</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
 		<dependency>
-    		<groupId>com.h2database</groupId>
-    		<artifactId>h2</artifactId>
-    		<version>1.4.197</version>
-    		<scope>runtime</scope>
+    		<groupId>com.microsoft.sqlserver</groupId>
+    		<artifactId>mssql-jdbc</artifactId>
+    		<version>8.2.0.jre8</version>
 		</dependency>
-		
-				
+
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
 		<dependency>
     		<groupId>org.springframework</groupId>

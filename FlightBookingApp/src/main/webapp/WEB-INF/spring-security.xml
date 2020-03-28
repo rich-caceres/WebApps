@@ -10,7 +10,14 @@
 
 	<http auto-config="true" use-expressions="true">
 		
+		<headers>
+		
+			<frame-options policy="SAMEORIGIN"/>
+		
+		</headers>
+		
 		<intercept-url pattern="/create*" access= "permitAll"/>
+		<intercept-url pattern="/h2/*" access= "permitAll"/>
 		<intercept-url pattern="/create*?submit=New+User" access= "permitAll"/>
 		<intercept-url pattern="/create**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/create" access="hasRole('ROLE_ADMIN')" />
@@ -26,16 +33,32 @@
 		<logout logout-success-url="/login" 
 				logout-url="/logout"/>
 		<!-- enable csrf protection -->
-		<csrf/>
-		
+		<csrf/>		
 	</http>
 
+
+
+
 	<authentication-manager>
+	
 	  <authentication-provider>
-	    <user-service>
-		<user name="user" password="{noop}password" authorities="ROLE_ADMIN" />
-	    </user-service>
+	  
+	  <jdbc-user-service data-source-ref="dataSource"
+		  users-by-username-query=
+		    "SELECT username,password,enabled FROM UserFlights.dbo.users WHERE username = ?"
+		  authorities-by-username-query=
+		    "SELECT user_role_id,username,roles FROM UserFlights.dbo.authorities WHERE username = ?" />
+	   
 	  </authentication-provider>
 	</authentication-manager>
+	
+	<beans:bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		
+		<beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<beans:property name="url" value="jdbc:sqlserver://localhost:1433;databseName=UserFlights" />
+		<beans:property name="username" value="eclipse" />
+		<beans:property name="password" value="DA_2014" />
+	</beans:bean>
 
 </beans:beans>

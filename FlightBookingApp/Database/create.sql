@@ -1,13 +1,22 @@
-DROP TABLE IF EXISTS users;
- 
-CREATE TABLE users (
-  id INT AUTO_INCREMENT  PRIMARY KEY,
-  username VARCHAR(250) NOT NULL,
-  password VARCHAR(250) NOT NULL,
-  name VARCHAR(250) DEFAULT NULL
-);
- 
-INSERT INTO users (username, password, name) VALUES
-  ('Rich', 'richierich', 'Richard Caceres'),
-  ('Bill', 'Gates', 'Bill Gates'),
-  ('Flight', 'passw', 'Eric Terry');
+CREATE DATABASE UserFlights
+
+GO
+
+CREATE  TABLE users (
+  username VARCHAR(45) NOT NULL ,
+  password VARCHAR(45) NOT NULL ,
+  enabled TINYINT NOT NULL DEFAULT 1 ,
+  PRIMARY KEY (username));
+
+
+CREATE TABLE authorities (
+  user_role_id int IDENTITY(1,1) PRIMARY KEY NOT NULL,
+  username varchar(45) NOT NULL FOREIGN KEY REFERENCES users (username),
+  roles varchar(45) NOT NULL,
+  );
+  
+  
+USE UserFlights
+
+INSERT INTO users (username,password,enabled)
+VALUES ('Rich', '{noop}123456', 1)
