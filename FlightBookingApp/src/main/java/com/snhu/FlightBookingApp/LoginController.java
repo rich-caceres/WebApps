@@ -48,7 +48,7 @@ public class LoginController {
 		
 		if(error != null ) {
 			
-			model.addObject("error", "Username was nout found or is incorrect.");
+			model.addObject("error", "Username was not found or is incorrect.");
 			
 		}
 		
