@@ -15,9 +15,9 @@ public class WriteXml {
 	@Autowired
 	UserProfile user;
 	
-	public void createXml(String userName, String password, String name) {
+	public void createXml(String userName, String password, byte enabled) {
 		
-		user.setName(name);
+		user.setEnabled(enabled);
 		user.setUserName(userName);
 		user.setPassword(password);
 		

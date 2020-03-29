@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.snhu.FlightBookingApp.Pojo.ReadXml;
+import com.snhu.FlightBookingApp.Pojo.UserAuthorities;
 import com.snhu.FlightBookingApp.Pojo.UserProfile;
 import com.snhu.FlightBookingApp.Pojo.WriteXml;
+import com.snhu.FlightBookingApp.Repo.AuthRepo;
+import com.snhu.FlightBookingApp.Repo.UserRepo;
 
 @Controller
 public class LoginController {
@@ -21,6 +24,15 @@ public class LoginController {
 	
 	@Autowired
 	ReadXml userInfo;
+	
+	@Autowired
+	UserAuthorities userAuth;
+	
+	@Autowired
+	AuthRepo authRepo;
+	
+	@Autowired
+	UserRepo userRepo;
 	
 	@Autowired
 	UserProfile user;
@@ -57,14 +69,21 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value= "/loginNew", method = RequestMethod.POST)
-	private String createUser(@RequestParam String userName, @RequestParam String name, @RequestParam String password, ModelMap model) {
+	private String createUser(@RequestParam String username, @RequestParam String name, @RequestParam String password, ModelMap model) {
 		
-		System.out.println(userName);
+		
 		//creates XML if the fields are not empty (assuming no spaces this is still not exactly secure)
-		if(!password.equals("") || !userName.equals("")) {
-		xml.createXml(userName, password, name);
+		if(!password.equals("") || !username.equals("")) {
+		
+			user.setUserName(username);
+			user.setPassword(password);
+			userAuth.setUsername(username);
+			this.userRepo.save(user);
+			this.authRepo.save(userAuth);
+			
 		return "Login";
 		}
+		
 		model.put("formError", "Please fill out all form information!");
 		return "createUser";
 		

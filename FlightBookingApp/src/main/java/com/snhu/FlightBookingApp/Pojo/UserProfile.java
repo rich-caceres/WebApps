@@ -4,14 +4,13 @@ package com.snhu.FlightBookingApp.Pojo;
 
 //import java.util.UUID;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //import javax.xml.bind.annotation.XmlElement;
 //import javax.xml.bind.annotation.XmlRootElement;
-
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Service;
 
@@ -20,55 +19,46 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Entity
+@Table(name = "UserFlights.dbo.users")
 //@XmlRootElement
 public class UserProfile {
 
-	@Column(nullable = false, unique = true)
+	@Id
 	private String username;
 	private String password;
-	private String name;
+	private byte enabled;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+
+
 	
 	//@XmlElement
-	public void setName(String name) {
+	public void setEnabled(byte enabled) {
 		
-		this.name = name;
+		this.enabled = enabled;
 		
 	}
 	
 	
-	public void setId (Long id) {
-		
-		this.id = id;
-		
-	}
-	
+
 	//@XmlElement
-	public void setUserName (String userName) {
+	public void setUserName (String username) {
 		
-		this.username = userName;
+		this.username = username;
 		
 	}
 	
 	//@XmlElement
 	public void setPassword(String password) {
 		
-		this.password = password;
+		this.password = "{noop}" + password;
 		
 	}
 	
-	public Long getid() {
-		
-		return id;
-		
-	}
+
 	
-	public String getName() {
+	public byte getEnabled() {
 		
-		return name;
+		return enabled;
 		
 	}
 	
@@ -84,9 +74,9 @@ public class UserProfile {
 	
 	public UserProfile() {
 		
-		username= "Admin";
-		password= "Pass";
-		name = "";
+		username= "";
+		password= "";
+		enabled = 1;
 	}
 
 

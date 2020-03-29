@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans:beans xmlns="http://www.springframework.org/schema/security"
-	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+  	xmlns:tx="http://www.springframework.org/schema/tx" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/data/jpa 
+    http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-5.2.xsd">
 
@@ -36,19 +42,13 @@
 		<csrf/>		
 	</http>
 
-
-
-
 	<authentication-manager>
-	
-	  <authentication-provider>
-	  
+	  <authentication-provider> 
 	  <jdbc-user-service data-source-ref="dataSource"
 		  users-by-username-query=
 		    "SELECT username,password,enabled FROM UserFlights.dbo.users WHERE username = ?"
 		  authorities-by-username-query=
 		    "SELECT user_role_id,username,roles FROM UserFlights.dbo.authorities WHERE username = ?" />
-	   
 	  </authentication-provider>
 	</authentication-manager>
 	
@@ -60,5 +60,31 @@
 		<beans:property name="username" value="eclipse" />
 		<beans:property name="password" value="DA_2014" />
 	</beans:bean>
+
+	<beans:bean id="entityManagerFactory" name="entityManagerFactory"
+  		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    		<beans:property name="dataSource" ref="dataSource" />
+    		<beans:property name="packagesToScan" value="com.snhu.FlightBookingApp.Pojo" />
+    		<beans:property name="jpaVendorAdapter">
+        	<beans:bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+    			</beans:property>
+    	<beans:property name="jpaProperties">
+        <beans:props>
+        	<beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
+            <beans:prop key="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</beans:prop>
+        </beans:props>
+    </beans:property>
+	</beans:bean>
+	<beans:bean id="transactionManager" 
+    class="org.springframework.orm.jpa.JpaTransactionManager">
+    <beans:property name="entityManagerFactory" ref="entityManagerFactory"/>
+  </beans:bean>
+	
+	<tx:annotation-driven/>
+	
+
+ 	
+		<beans:bean id="persistenceExceptionTranslationPostProcessor" class=
+  		"org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
 </beans:beans>

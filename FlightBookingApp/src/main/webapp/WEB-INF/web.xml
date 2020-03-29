@@ -16,6 +16,7 @@
 	            <param-name>contextConfigLocation</param-name>
 	            <param-value>/WEB-INF/booking-servlet.xml</param-value>
 	        </init-param>	
+	        
     </servlet>
     
     <servlet-mapping>
@@ -36,6 +37,7 @@
 			/WEB-INF/spring-security.xml
 		</param-value>
 	</context-param>
+
 
 	<!-- Spring Security -->
 	<filter>

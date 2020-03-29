@@ -24,7 +24,7 @@
 		<form method="POST" action="/FlightBookingApp/loginNew">
 			<i>Create a New User</i><br> <i>Name</i><br> <input
 				type="text" value="" name="name"><br> <i>Username</i><br>
-			<input type="text" value="" name="userName"><br> <i>Password</i><br>
+			<input type="text" value="" name="username"><br> <i>Password</i><br>
 			<input type="text" value="" name="password"> <input
 				type="submit" value="Submit" name="submit"> <input
 				type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
