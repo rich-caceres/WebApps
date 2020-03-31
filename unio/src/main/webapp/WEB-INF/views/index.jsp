@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Test Page</title>
 </head>
 <body>
 
-	
-	
-	
 		<h2>${greeting}</h2>
 
 </body>
