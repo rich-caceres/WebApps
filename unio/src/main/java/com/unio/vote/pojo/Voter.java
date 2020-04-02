@@ -13,6 +13,7 @@ public class Voter {
 	//Database will be needed to store this data
 	@Id
 	String name;
+	String password;
 	boolean voted;
 	public String getName() {
 		return name;
@@ -20,6 +21,15 @@ public class Voter {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public void setPassword(String password) {
+		this.password = password;	
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
 	public boolean isVoted() {
 		return voted;
 	}
@@ -38,7 +48,7 @@ public class Voter {
 		
 		name= "";
 		voted= false;
-		
+		password="";
 	}
 	
 }
