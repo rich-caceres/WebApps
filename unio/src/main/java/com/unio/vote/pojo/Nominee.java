@@ -1,7 +1,14 @@
 package com.unio.vote.pojo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Nominee")
 public class Nominee {
 	//This will need to be entered into a database
+	@Id
 	String name;
 	String position;
 	int votes;
