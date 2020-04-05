@@ -36,14 +36,7 @@ public class Voter {
 	public void setVoted(boolean voted) {
 		this.voted = voted;
 	}
-	
-	public class Nominee extends Voter{
-		
-		protected String position;
-		
-		protected int votes;
-	}
-	
+
 	public Voter() {
 		
 		name= "";

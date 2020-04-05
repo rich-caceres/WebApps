@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.unio.vote.pojo.Voter;
+import com.unio.vote.pojo.Nominee;
 import com.unio.vote.repo.NomineeRepo;
 import com.unio.vote.repo.VoterRepo;
 
@@ -20,6 +21,9 @@ public class VoteController {
 	
 	@Autowired
 	NomineeRepo nomineeRepo;
+	
+	@Autowired
+	Nominee nominee;
 	
 	@Autowired
 	Voter votee;
@@ -54,9 +58,21 @@ public class VoteController {
 		
 		int vote = 0;
 		
+		//gets nominee by name from JSP that was checked by the user to vote
+		nominee = nomineeRepo.getNomineeByName(name);
+		
+		//adds the vote to the nominee
+		vote = nominee.getVotes();
+		vote = vote + 1;
+		//sets the vots to the nominee
+		nominee.setVotes(vote);
+		
+		//updates the nominee information
+		//nomineeRepo.save(nominee);
+		
 		model.addObject("name", name);
 		model.setViewName("index");
-		//TODO add a voting pojo/method to keep track of voting
+		
 		return model;
 	}
 
