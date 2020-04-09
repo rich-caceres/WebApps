@@ -1,5 +1,7 @@
 package com.unio.vote;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -74,12 +76,28 @@ public class VoteController {
 		return model;
 	}
 	
+	
+	@RequestMapping(value= "/vote*", method= RequestMethod.GET)
+	public ModelAndView getNominee() {
+		ModelAndView model = new ModelAndView();
+		
+		//This might not work during testing. Please Verify.
+		Iterable<Nominee> nominees = new ArrayList<Nominee>(); 
+		nominees =  nomineeRepo.findAll();
+			
+		model.addObject("nominee", nominees);
+			
+		
+		return model;
+	}
+	
 	@RequestMapping(value= "/vote", method= RequestMethod.POST)
 	public ModelAndView getVote(@RequestParam String name) {
 		
 		ModelAndView model = new ModelAndView();
 		
 		int vote = 0;
+		
 		
 		//gets nominee by name from JSP that was checked by the user to vote
 		nominee = nomineeRepo.getNomineeByName(name);

@@ -12,6 +12,7 @@ public interface NomineeRepo extends CrudRepository<Nominee, String>{
 	@Query("SELECT votes FROM Nominee WHERE name = nominee.name ")
 	public int getNomineeVotes();
 	
-	@Query("SELECT position from Nominee Where name = noinee.name")
+	@Query("SELECT position FROM Nominee Where name = noinee.name")
 	public String getNomineePosition();
+	
 }
