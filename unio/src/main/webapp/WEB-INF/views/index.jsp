@@ -8,6 +8,7 @@
 <title>Voter List</title>
 </head>
 <body>
+<a href= "<c:url  value="/votes"/> "> votes test</a>
 <c:forEach items= "${data}" var="greetings" }>
 <h2>${greeting.name}</h2>
 </c:forEach>

@@ -81,12 +81,20 @@ public class VoteController {
 	public ModelAndView getNominee() {
 		ModelAndView model = new ModelAndView();
 		
+		Nominee noms = new Nominee();
+		
+		noms.setName("Rich");
+		noms.setPosition("president");
+		noms.setVotes(99);
+		
 		//This might not work during testing. Please Verify.
-		Iterable<Nominee> nominees = new ArrayList<Nominee>(); 
-		nominees =  nomineeRepo.findAll();
-			
-		model.addObject("nominee", nominees);
-			
+		//Iterable<Nominee> nominees = new ArrayList<Nominee>(); 
+		//nominees =  nomineeRepo.findAll();
+		ArrayList<Nominee> nominees = new ArrayList(); 	
+		nominees.add(noms);
+		
+		model.addObject("data", nominees);
+		model.setViewName("index");	
 		
 		return model;
 	}

@@ -5,9 +5,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j
 
 
   <display-name>Testing V-Servlet</display-name>
-	<welcome-file-list>
-    	<welcome-file>index.jsp</welcome-file>
-  	</welcome-file-list>
 
 	<servlet>
 		
