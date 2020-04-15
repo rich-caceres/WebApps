@@ -68,6 +68,7 @@ public class VoteController {
 			
 			votee.setName(name);
 			votee.setPassword(password);
+			votee.setUserRole("ROLE_USER");
 			//saves votee information
 			//voteeRepo.save(votee);
 			

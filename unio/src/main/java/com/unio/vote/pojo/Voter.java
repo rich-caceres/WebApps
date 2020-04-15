@@ -14,7 +14,15 @@ public class Voter {
 	@Id
 	String name;
 	String password;
+	String userRole;
 	boolean voted;
+	
+	public String getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
 	public String getName() {
 		return name;
 	}
@@ -42,6 +50,7 @@ public class Voter {
 		name= "";
 		voted= false;
 		password="";
+		userRole= "";
 	}
 	
 }
