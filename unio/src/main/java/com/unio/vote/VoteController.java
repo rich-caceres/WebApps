@@ -45,6 +45,7 @@ public class VoteController {
 	public ModelAndView createNominee(){
 		
 		ModelAndView model = new ModelAndView();
+		//TODO test this implementation
 		//TODO add method to create a nominee from existing users and set up JSP's for all views
 		ArrayList<Voter> noms= new ArrayList();
 		noms =  (ArrayList<Voter>) voteeRepo.findAll();
