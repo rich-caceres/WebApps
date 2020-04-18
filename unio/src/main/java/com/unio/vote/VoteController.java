@@ -41,19 +41,24 @@ public class VoteController {
 		return model; 
 	}
 	
-	@RequestMapping(value="/CreateNominee", method = RequestMethod.POST)
-	
-	public ModelAndView createNominee(@RequestParam String name, @RequestParam String position){
+	@RequestMapping(value="/CreateNominee", method = RequestMethod.GET)
+	public ModelAndView createNominee(){
 		
 		ModelAndView model = new ModelAndView();
 		//TODO add method to create a nominee from existing users and set up JSP's for all views
+		ArrayList<Voter> noms= new ArrayList();
+		noms =  (ArrayList<Voter>) voteeRepo.findAll();
+		
+		
+		model.addObject("users", noms);
+		model.setViewName("NomineeCreation");
 		
 		return model;
 		
 	}
 	
 	@RequestMapping(value="/CreateVoter", method = RequestMethod.POST)
-	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password, @RequestParam boolean isNominee, @RequestParam String position) {
+	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password, @RequestParam boolean isNominee) {
 		ModelAndView model = new ModelAndView();
 		
 		
