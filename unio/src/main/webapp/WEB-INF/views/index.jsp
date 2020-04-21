@@ -8,9 +8,12 @@
 <title>Voter List</title>
 </head>
 <body>
-<a href= "<c:url  value="/votes"/> "> votes test</a>
-<c:forEach items= "${data}" var="greetings" }>
-<h2>${greeting.name}</h2>
-</c:forEach>
+<h2>Sign In</h2><br>
+<h3>Username</h3><br>
+<input type= "text" name="username">
+<h3>Password</h3><br>
+<input type= "text" name="password">
+<a href="<c:url value=/login/>"> sign in</a>
+<a href= "<c:url  value="/votes"/> ">Create User</a>
 </body>
 </html>

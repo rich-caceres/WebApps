@@ -17,14 +17,11 @@
 	    http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	    http://www.springframework.org/schema/context 
 	    http://www.springframework.org/schema/context/spring-context.xsd">
-		
-		
-		<mvc:annotation-driven />
-		
+				
 	    <context:component-scan base-package="com.unio.vote" />
 	
 		<jpa:repositories base-package="com.unio.vote.repo"/>
-	    
+	    <mvc:annotation-driven />
 	    <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
@@ -34,12 +31,20 @@
             <value>.jsp</value>
         </property>
     	</bean>
+    	  	
+    	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+			<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="url" value="jdbc:sqlserver://localhost:1433;databseName=UserFlights" />
+			<property name="username" value="eclipse" />
+			<property name="password" value="DA_2014" />
+		</bean>
     	
-    	<!-- TODO add data source bean to create data -->
     	<bean id="entityManagerFactory" name="entityManagerFactory"
   		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
     		<property name="dataSource" ref="dataSource" />
-    		<property name="packagesToScan" value="com.snhu.FlightBookingApp.Pojo" />
+    		<property name="packagesToScan" value="com.unio.vote.pojo" />
     		<property name="jpaVendorAdapter">
         	<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
     			</property>
@@ -55,7 +60,6 @@
     	<property name="entityManagerFactory" ref="entityManagerFactory"/>
   	</bean>
 	
- 	
 		<bean id="persistenceExceptionTranslationPostProcessor" class=
   		"org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
     

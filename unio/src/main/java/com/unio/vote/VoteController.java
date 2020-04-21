@@ -32,10 +32,8 @@ public class VoteController {
 	
 	@RequestMapping(value= {"/", "/greeting"}, method = RequestMethod.GET)
 	public ModelAndView helloWorld() {
-		String hello = "Hello World";
-		ModelAndView model = new ModelAndView();
 		
-		model.addObject("greeting", hello);
+		ModelAndView model = new ModelAndView();
 		model.setViewName("index");
 		
 		return model; 
