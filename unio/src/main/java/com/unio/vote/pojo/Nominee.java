@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Service;
+
+@Service
 @Entity
 @Table(name = "Nominee")
 public class Nominee {

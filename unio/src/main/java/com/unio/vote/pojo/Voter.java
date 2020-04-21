@@ -8,6 +8,7 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Service;
 
+@Service
 @Entity
 @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
 @Table(name = "Member")
