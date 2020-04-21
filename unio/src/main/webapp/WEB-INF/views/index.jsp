@@ -13,7 +13,7 @@
 <input type= "text" name="username">
 <h3>Password</h3><br>
 <input type= "text" name="password">
-<a href="<c:url value=/login/>"> sign in</a>
+<a href="<c:url value="/login"/>">sign in</a>
 <a href= "<c:url  value="/votes"/> ">Create User</a>
 </body>
 </html>
