@@ -59,18 +59,10 @@ public class VoteController {
 	}
 	
 	@RequestMapping(value="/CreateVoter", method = RequestMethod.POST)
-	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password, @RequestParam boolean isNominee) {
+	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password) {
 		ModelAndView model = new ModelAndView();
 		
 		
-		if(isNominee = true) {
-		
-			nominee.setName(name);
-			nominee.setPosition(position);
-			//This will save nominee if the nominee option is checked
-			//nomineeRepo.save(nominee);
-			
-		}else {
 			
 			votee.setName(name);
 			votee.setPassword(password);
@@ -78,7 +70,6 @@ public class VoteController {
 			//saves votee information
 			//voteeRepo.save(votee);
 			
-		}
 		
 		return model;
 	}
