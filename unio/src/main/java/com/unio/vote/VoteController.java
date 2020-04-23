@@ -18,6 +18,8 @@ import com.unio.vote.repo.VoterRepo;
 @Controller
 public class VoteController {
 	
+	String previousPage= "";
+	
 	@Autowired
 	VoterRepo voteeRepo;
 	
@@ -56,7 +58,20 @@ public class VoteController {
 		
 	}
 	
-	@RequestMapping(value="/CreateVoter", method = RequestMethod.POST)
+	@RequestMapping(value="/back", method = RequestMethod.GET)
+	public String backToPreviousPage() {
+		
+		return previousPage;
+	}
+	
+	@RequestMapping(value="/CreateUser", method = RequestMethod.GET)
+	public String voterCreationPage() {
+		
+		previousPage= "index";
+		return "userCreation";
+	}
+	
+	@RequestMapping(value="/CreateVoter*", method = RequestMethod.POST)
 	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password) {
 		ModelAndView model = new ModelAndView();
 		
@@ -67,7 +82,7 @@ public class VoteController {
 			votee.setUserRole("ROLE_USER");
 			//saves votee information
 			//voteeRepo.save(votee);
-			
+			model.setViewName("index");
 		
 		return model;
 	}

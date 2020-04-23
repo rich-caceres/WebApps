@@ -14,6 +14,6 @@
 <h3>Password</h3><br>
 <input type= "text" name="password">
 <a href="<c:url value="/login"/>">sign in</a>
-<a href= "<c:url  value="/votes"/> ">Create User</a>
+<a href= "<c:url  value="/CreateUser"/> ">Create User</a>
 </body>
 </html>

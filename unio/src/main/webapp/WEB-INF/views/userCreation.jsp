@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
 	<input type="text" placeholder= "Enter name" name= "name"><br>
 	<p>Password</p>
 	<input type= "text" placeholder= "Enter password" name = "password"><br>
-	<p>Nominee Check Box</p>
-	<input type= "checkbox" name= "Nominee">
+	<a href= "<c:url value="/CreateVoter*"/>">Create User</a>
+	<a href= "<c:url value="/back"/>">Back</a>
 </body>
-</html>
+</html> 
