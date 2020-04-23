@@ -75,11 +75,10 @@ public class VoteController {
 	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password) {
 		ModelAndView model = new ModelAndView();
 		
-		
-			
 			votee.setName(name);
 			votee.setPassword(password);
 			votee.setUserRole("ROLE_USER");
+			//TODO this will save the user information to database
 			//saves votee information
 			//voteeRepo.save(votee);
 			model.setViewName("index");
@@ -116,7 +115,6 @@ public class VoteController {
 		ModelAndView model = new ModelAndView();
 		
 		int vote = 0;
-		
 		
 		//gets nominee by name from JSP that was checked by the user to vote
 		nominee = nomineeRepo.getNomineeByName(name);

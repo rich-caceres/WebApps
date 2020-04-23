@@ -9,10 +9,10 @@
 </head>
 <body>
 <h2>Sign In</h2><br>
-<h3>Username</h3><br>
-<input type= "text" name="username">
-<h3>Password</h3><br>
-<input type= "text" name="password">
+<h3>Username</h3>
+<input type= "text" name="username"><br>
+<h3>Password</h3>
+<input type= "text" name="password"><br>
 <a href="<c:url value="/login"/>">sign in</a>
 <a href= "<c:url  value="/CreateUser"/> ">Create User</a>
 </body>
