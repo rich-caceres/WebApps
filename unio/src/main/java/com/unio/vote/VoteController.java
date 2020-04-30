@@ -17,8 +17,8 @@ import com.unio.vote.repo.VoterRepo;
 
 @Controller
 public class VoteController {
-	
-	String previousPage= "";
+	//this is now a private string much more secure than public
+	private String previousPage= "";
 	
 	@Autowired
 	VoterRepo voteeRepo;
@@ -32,8 +32,13 @@ public class VoteController {
 	@Autowired
 	Voter votee;
 	
+	//This is our landing page for the application.
 	@RequestMapping(value= {"/", "/greeting"}, method = RequestMethod.GET)
 	public ModelAndView helloWorld() {
+		//previous page is added here
+		String previousPage= "";
+		previousPage= "index";
+		pageGetter(previousPage); //this is our method to return to the previous page
 		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("index");
@@ -41,6 +46,7 @@ public class VoteController {
 		return model; 
 	}
 	
+	//this will be used by the admin, this will only be accessible by the admin in spring security when spring security is implemented.
 	@RequestMapping(value="/CreateNominee", method = RequestMethod.GET)
 	public ModelAndView createNominee(){
 		
@@ -57,20 +63,35 @@ public class VoteController {
 		return model;
 		
 	}
+	//Assigns the previous page that was seen by the user.
+	protected void pageGetter(String previousPage) {
+		
+		 this.previousPage = previousPage;
+	}
 	
-	@RequestMapping(value="/back", method = RequestMethod.GET)
-	public String backToPreviousPage() {
+	protected String pageReturn() {
 		
 		return previousPage;
 	}
 	
+	//this is a back button implementation because its just easier. Maybe will change later im not sure yet.
+	@RequestMapping(value="/back", method = RequestMethod.GET)
+	public String backToPreviousPage() {
+		
+		String previousPage = pageReturn();
+		
+		return previousPage;
+	}
+	
+	//method to create the user, will be used by all users, only returns the jsp
 	@RequestMapping(value="/CreateUser", method = RequestMethod.GET)
 	public String voterCreationPage() {
 		
-		previousPage= "index";
+		
 		return "userCreation";
 	}
 	
+	//creates a user, disregard the name of the actual method. will be used by the user
 	@RequestMapping(value="/CreateVoter*", method = RequestMethod.POST)
 	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password) {
 		ModelAndView model = new ModelAndView();
@@ -86,7 +107,7 @@ public class VoteController {
 		return model;
 	}
 	
-	
+	//TODO This method is for voting, still in development.
 	@RequestMapping(value= "/vote*", method= RequestMethod.GET)
 	public ModelAndView getNominee() {
 		ModelAndView model = new ModelAndView();
@@ -108,7 +129,7 @@ public class VoteController {
 		
 		return model;
 	}
-	
+	//TODO Will be used to return the vote/let the user vote, UNDER DEVELOPMENT STILL
 	@RequestMapping(value= "/vote", method= RequestMethod.POST)
 	public ModelAndView getVote(@RequestParam String name) {
 		
