@@ -56,9 +56,9 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		
 		<beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-		<beans:property name="url" value="jdbc:sqlserver://localhost:1433;databseName=UserFlights" />
-		<beans:property name="username" value="eclipse" />
-		<beans:property name="password" value="DA_2014" />
+			<property name="url" value="jdbc:sqlserver://localhost:1433;databseName=SomeDatabaseYouLove" />
+			<property name="username" value="username" />
+			<property name="password" value="password" />
 	</beans:bean>
 
 	<beans:bean id="entityManagerFactory" name="entityManagerFactory"
@@ -81,9 +81,7 @@
   </beans:bean>
 	
 	<tx:annotation-driven/>
-	
 
- 	
 		<beans:bean id="persistenceExceptionTranslationPostProcessor" class=
   		"org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
