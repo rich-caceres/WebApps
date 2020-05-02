@@ -74,7 +74,7 @@ public class VoteController {
 		return previousPage;
 	}
 	
-	//this is a back button implementation because its just easier. Maybe will change later im not sure yet.
+	//this is a back button implementation because its just easier. This could change possibly.
 	@RequestMapping(value="/back", method = RequestMethod.GET)
 	public String backToPreviousPage() {
 		
@@ -91,7 +91,7 @@ public class VoteController {
 		return "userCreation";
 	}
 	
-	//creates a user, disregard the name of the actual method. will be used by the user
+	//creates a user, disregard the name of the actual method. will be used by the user who is considered the voter
 	@RequestMapping(value="/CreateVoter*", method = RequestMethod.POST)
 	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password) {
 		ModelAndView model = new ModelAndView();
@@ -107,7 +107,7 @@ public class VoteController {
 		return model;
 	}
 	
-	//TODO This method is for voting, still in development.
+	//TODO This method is for voting, still in development does not actualy work yet.
 	@RequestMapping(value= "/vote*", method= RequestMethod.GET)
 	public ModelAndView getNominee() {
 		ModelAndView model = new ModelAndView();

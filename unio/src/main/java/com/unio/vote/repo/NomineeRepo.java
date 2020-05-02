@@ -6,12 +6,13 @@ import org.springframework.stereotype.Repository;
 
 import com.unio.vote.pojo.Nominee;
 
+//Repo used to save the nominee information 
 @Repository
 public interface NomineeRepo extends CrudRepository<Nominee, String>{
 
 	public Nominee getNomineeByName(String name);
 	
-	//TODO queries cant be validated, throws exception.
+	//TODO queries cant be validated, throws exception. Will be tested once database is implemented
 	//@Query("SELECT votes FROM Nominee WHERE name = nominee.name ")
 	//public int getNomineeVotes();
 	
