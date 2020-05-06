@@ -8,11 +8,13 @@
 <title>Create User</title>
 </head>
 <body>
+<form method= "POST" action="<c:url value='/CreateVoter*'/>">
 	<p>Name</p>
 	<input type="text" placeholder= "Enter name" name= "name"><br>
 	<p>Password</p>
 	<input type= "text" placeholder= "Enter password" name = "password"><br>
-	<a href= "<c:url value="/CreateVoter*"/>">Create User</a>
+	<input type="submit" value="Create User">
+</form>
 	<a href= "<c:url value="/back"/>">Back</a>
 </body>
 </html> 
