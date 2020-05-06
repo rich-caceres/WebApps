@@ -8,6 +8,9 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Service;
 
+/* Creates the voter/user of the application. Will be saved in a database
+ * and the table will remain.*/
+
 @Service
 @Entity
 @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
@@ -18,6 +21,7 @@ public class Voter {
 	String name;
 	String password;
 	String userRole;
+	//Might change boolean to enum, need to test this boolean method first.
 	boolean voted;
 	
 	public String getUserRole() {

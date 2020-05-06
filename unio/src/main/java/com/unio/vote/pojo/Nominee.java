@@ -6,6 +6,9 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Service;
 
+/* Nominee object will be used to create the nominee. Added to the database once the nominee
+ * is created. Once the ballots are closed, the table holding this information will be droped. */
+
 @Service
 @Entity
 @Table(name = "Nominee")
