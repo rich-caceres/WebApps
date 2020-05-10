@@ -36,9 +36,19 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
 			<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+<<<<<<< HEAD
 			<property name="url" value="jdbc:sqlserver://localhost:1433;databseName=UserFlights" />
 			<property name="username" value="eclipse" />
 			<property name="password" value="DA_2014" />
+=======
+
+			<property name="url" value="jdbc:sqlserver://localhost:1433;databseName=thedatabase" />
+
+			<property name="url" value="jdbc:sqlserver://localhost:1433;databseName=SomeDatabaseYouLove" />
+
+			<property name="username" value="username" />
+			<property name="password" value="password" />
+>>>>>>> 79ce1ad38de12933519acea5c3a1e4d0d1a37f34
 		</bean>
     	
     	<bean id="entityManagerFactory" name="entityManagerFactory"

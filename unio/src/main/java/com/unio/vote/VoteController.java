@@ -17,7 +17,7 @@ import com.unio.vote.repo.VoterRepo;
 
 @Controller
 public class VoteController {
-	//this is now a private string much more secure than public
+	//this is now a private string much more secure
 	private String previousPage= "";
 	
 	@Autowired
@@ -102,7 +102,7 @@ public class VoteController {
 			//TODO this will save the user information to database
 			//saves votee information
 			//voteeRepo.save(votee);
-			model.setViewName("index");
+			model.setViewName("redirect:/greeting");
 		
 		return model;
 	}
