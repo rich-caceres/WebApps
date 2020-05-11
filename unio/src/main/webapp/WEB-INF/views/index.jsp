@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Voter List</title>
+<title>User Login</title>
 </head>
 <body>
 	<h2>Sign In</h2>
