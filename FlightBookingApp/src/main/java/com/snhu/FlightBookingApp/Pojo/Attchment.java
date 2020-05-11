@@ -1,5 +1,7 @@
 package com.snhu.FlightBookingApp.Pojo;
 
+//Used to create attachments in support page.
+
 public class Attchment {
 	
 	    private String name;

@@ -14,9 +14,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.snhu.FlightBookingApp.Pojo.*;
 
-
-
-//This is a dummy login service to validate information passed
+//This is a dummy login service to validate information passed, this is not utilized anymore because of spring security.
 @Service
 public class LoginService{
 

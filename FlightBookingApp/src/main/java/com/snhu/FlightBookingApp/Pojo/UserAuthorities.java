@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Service;
-
+//authorities is used in spring security, currently only uses the user role but we can expand the web app to have an admin that can view support tickets.
 @Service
 @Entity
 @Table(name = "UserFlights.dbo.authorities")

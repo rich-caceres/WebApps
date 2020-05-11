@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 
+//Filter that was initially used as security but is no longer used because of spring security.
 @Component
 public class ErrorHandleFilter implements Filter {
 	

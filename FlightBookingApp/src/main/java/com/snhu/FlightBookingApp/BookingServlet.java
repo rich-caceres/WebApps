@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.snhu.FlightBookingApp.Pojo.Itenerary;
 
 
-
 @Controller
 public class BookingServlet  {
 
@@ -26,14 +25,12 @@ public class BookingServlet  {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
 		Date date = new Date(); //creates a date object
 		
-		
 		ModelAndView model = new ModelAndView();
 		model.addObject("date", formatter.format(date));//setting data that needs to be sent to jsp
 		//model.addObject(attributeValue); placeholder for other data
 		model.setViewName("index");
 		return model;
-		
-		
+			
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST )

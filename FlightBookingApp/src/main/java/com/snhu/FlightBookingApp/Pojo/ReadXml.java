@@ -1,5 +1,6 @@
 package com.snhu.FlightBookingApp.Pojo;
 
+//pulls an XML file and breaks it down and adds it as a user to validate the user. This is no longer used because of spring security.
 import java.io.File;
 
 import javax.xml.bind.JAXBContext;

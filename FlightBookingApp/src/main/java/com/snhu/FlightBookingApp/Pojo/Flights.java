@@ -1,5 +1,6 @@
 package com.snhu.FlightBookingApp.Pojo;
 
+//creates flights, could be saved in a database
 public class Flights {
 	
 	private int flightNumber;

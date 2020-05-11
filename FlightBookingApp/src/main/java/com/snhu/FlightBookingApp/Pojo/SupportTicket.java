@@ -4,8 +4,7 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
-
+//Pojo for the support ticket in the support section of the web app
 public class SupportTicket {
 	
 	private String name;

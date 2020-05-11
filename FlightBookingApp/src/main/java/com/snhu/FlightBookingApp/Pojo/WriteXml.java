@@ -8,7 +8,7 @@ import javax.xml.bind.Marshaller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+//This creates an XML file that can later be read for user authentication. This is no longer utilized because of spring security and the database.
 @Service
 public class WriteXml {
 	
