@@ -56,7 +56,7 @@ public class VoteController {
 		ArrayList<Voter> noms= new ArrayList();
 		noms =  (ArrayList<Voter>) voteeRepo.findAll();
 		
-		
+		//Set objects to be shown in the nominee area
 		model.addObject("users", noms);
 		model.setViewName("NomineeCreation");
 		
@@ -68,7 +68,7 @@ public class VoteController {
 		
 		 this.previousPage = previousPage;
 	}
-	
+	//Returna previous page
 	protected String pageReturn() {
 		
 		return previousPage;
@@ -86,7 +86,6 @@ public class VoteController {
 	//method to create the user, will be used by all users, only returns the jsp
 	@RequestMapping(value="/CreateUser", method = RequestMethod.GET)
 	public String voterCreationPage() {
-		
 		
 		return "userCreation";
 	}

@@ -14,7 +14,7 @@
             <li class="selected"><a href="#" id="tab-0" >President</a></li>  
             <li><a href="#" id="tab-1" >Vice President</a></li>  
             <li><a href="#" id="tab-2" >Electoral board</a></li>
-            <li><a href="#" if="tab-3">Trustee</a></li>  
+            <li><a href="#" id="tab-3">Trustee</a></li>  
         </ul>  
         <div id="flip-container" >  
             <div>  
