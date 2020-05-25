@@ -5,6 +5,7 @@ public class SupportTicket {
 	private enum StatusEnum {Read, Complete, Sent};
 	private String name;
 	private String date;
+	private String vehicle;
 	private String subject;
 	private String content;
 	private StatusEnum status;
@@ -17,6 +18,12 @@ public class SupportTicket {
 	}
 	public String getName() {
 		return name;
+	}
+	public String getVehicle() {
+		return vehicle;
+	}
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -38,6 +45,15 @@ public class SupportTicket {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	
+	public SupportTicket() {
+		name="";
+		date="";
+		vehicle="";
+		subject="";
+		content="";
+		status= StatusEnum.Sent;
 	}
 	
 }
