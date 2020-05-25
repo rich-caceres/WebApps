@@ -2,12 +2,19 @@ package com.tracker.pojo;
 
 public class SupportTicket {
 	
-	private enum status {Read, Complete, Sent};
+	private enum StatusEnum {Read, Complete, Sent};
 	private String name;
 	private String date;
 	private String subject;
 	private String content;
+	private StatusEnum status;
 	
+	public StatusEnum getStatus() {
+		return status;
+	}
+	public void setStatus(StatusEnum status) {
+		this.status = status;
+	}
 	public String getName() {
 		return name;
 	}
@@ -33,6 +40,4 @@ public class SupportTicket {
 		this.content = content;
 	}
 	
-	
-
 }
