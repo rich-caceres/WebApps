@@ -24,13 +24,13 @@ public class TicketController {
 	}
 	
 	@RequestMapping(value= "/submitTicket")
-	public ModelAndView ticketSubmitted(@RequestParam String name, @RequestParam String date, 
-			@RequestParam String subject, @RequestParam String content) {
+	public ModelAndView ticketSubmitted(@RequestParam String name, 
+		@RequestParam String vehicle, @RequestParam String subject, @RequestParam String content) {
 		
 		SupportTicket ticket = new SupportTicket();
 		
 		ticket.setName(name);
-		ticket.setDate(date);
+		ticket.setVehicle(vehicle);
 		ticket.setSubject(subject);
 		ticket.setContent(content);
 		

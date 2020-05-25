@@ -1,5 +1,8 @@
 package com.tracker.pojo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SupportTicket {
 	
 	private enum StatusEnum {Read, Complete, Sent};
@@ -48,8 +51,12 @@ public class SupportTicket {
 	}
 	
 	public SupportTicket() {
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
+		Date theDate = new Date(); //creates a date object
+		
 		name="";
-		date="";
+		date=formatter.format(theDate);
 		vehicle="";
 		subject="";
 		content="";
