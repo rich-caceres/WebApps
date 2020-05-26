@@ -35,7 +35,7 @@ public class TicketController {
 		ticket.setContent(content);
 		
 		ModelAndView model = new ModelAndView();
-		
+		model.setViewName("index");
 		return model;
 		
 	}
