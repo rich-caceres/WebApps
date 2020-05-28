@@ -39,5 +39,16 @@ public class TicketController {
 		return model;
 		
 	}
+	
+	//Will return list of tickets when database is implemented
+	@RequestMapping(value= "/listOfTickets")
+	public ModelAndView ticketList() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("TicketList");
+		
+	 return model;
+	}
 
 }
