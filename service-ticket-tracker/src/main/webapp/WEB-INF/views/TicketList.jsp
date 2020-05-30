@@ -9,6 +9,10 @@
 </head>
 <body>
 <h1>Submitted Tickets</h1>
-
+<c:forEach items="${tickets}" var="ticket">
+		<td><a href=tickets?action=view&ticketId=${ticket.key}>${ticket.key}</a></td>
+		<td>${datas.value.customerName}</td>
+		<td>${datas.value.subject}</td>
+	</c:forEach>
 </body>
 </html>

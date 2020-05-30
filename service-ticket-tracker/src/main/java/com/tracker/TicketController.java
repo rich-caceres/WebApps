@@ -1,5 +1,9 @@
 package com.tracker;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import javax.websocket.server.ServerEndpoint;
 
 import org.springframework.stereotype.Controller;
@@ -9,8 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tracker.pojo.SupportTicket;
 
+
+
 @Controller
 public class TicketController {
+	
+	//This is only used to check functionality, will change when database is used.
+	ArrayList<SupportTicket> ticketList = new ArrayList<>();
+	protected volatile int TICKET_ID_SEQ= 1;
+	protected Map<Integer, SupportTicket> ticketData= new LinkedHashMap<>();
+	
 	
 	@RequestMapping(value= "/")
 	public ModelAndView tester() {
@@ -34,6 +46,13 @@ public class TicketController {
 		ticket.setSubject(subject);
 		ticket.setContent(content);
 		
+		int id;
+        synchronized(this)
+        {
+            id = this.TICKET_ID_SEQ++;
+            this.ticketData.put(id, ticket);
+        }
+		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("index");
 		return model;
@@ -44,7 +63,10 @@ public class TicketController {
 	@RequestMapping(value= "/listOfTickets")
 	public ModelAndView ticketList() {
 		
+		
 		ModelAndView model = new ModelAndView();
+		
+		model.addObject("tickets", this.ticketData);
 		
 		model.setViewName("TicketList");
 		
