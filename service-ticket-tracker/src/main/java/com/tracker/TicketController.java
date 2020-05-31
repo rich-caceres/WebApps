@@ -50,9 +50,7 @@ public class TicketController {
 		ticket.setName(name);
 		ticket.setVehicle(vehicle);
 		ticket.setSubject(subject);
-		ticket.setContent(content);
-		
-		
+		ticket.setContent(content);	
 		
 		int id;
         synchronized(this)
@@ -73,57 +71,14 @@ public class TicketController {
 	@RequestMapping(value= "/listOfTickets")
 	public ModelAndView ticketList() throws JsonProcessingException {
 		
-		Map<String, ArrayList<SupportTicket>> vehicleLists = new LinkedHashMap<>();
 		ModelAndView model = new ModelAndView();
 		
-		//this does not work will try something different to list all vehicles in categories
-		for(int key : ticketData.keySet()) {
-			ArrayList<SupportTicket> engine1List = new ArrayList<>();
-			ArrayList<SupportTicket> engine2List = new ArrayList<>();
-			ArrayList<SupportTicket> engine4List = new ArrayList<>();
-			ArrayList<SupportTicket> engine5List = new ArrayList<>();
-			ArrayList<SupportTicket> engine6List = new ArrayList<>();
-			ArrayList<SupportTicket> tower2List = new ArrayList<>();
-			ArrayList<SupportTicket> ladder1List = new ArrayList<>();
-			ArrayList<SupportTicket> car1List = new ArrayList<>();
-			ArrayList<SupportTicket> car2List = new ArrayList<>();
-			
-			SupportTicket ticket = ticketData.get(key);
-			if(ticket.getVehicle().equalsIgnoreCase("Engine 1")) {
-				engine1List.add(ticket);
-			}else if(ticket.getVehicle().equalsIgnoreCase("Engine 2")) {
-				engine2List.add(ticket);
-			}else if(ticket.getVehicle().equalsIgnoreCase("Engine 4")) {
-				engine4List.add(ticket);
-			}else if(ticket.getVehicle().equalsIgnoreCase("Engine 5")) {
-				engine5List.add(ticket);
-			}else if(ticket.getVehicle().equalsIgnoreCase("Engine 6")) {
-				engine6List.add(ticket);
-			}else if(ticket.getVehicle().equalsIgnoreCase("Tower Ladder 2")) {
-				tower2List.add(ticket);
-			}else if(ticket.getVehicle().equalsIgnoreCase("Ladder 1")) {
-				ladder1List.add(ticket);
-			}else if(ticket.getVehicle().equalsIgnoreCase("Car 1")) {
-				car1List.add(ticket);
-			}else if(ticket.getVehicle().equalsIgnoreCase("Car 2")) {
-				car2List.add(ticket);
-			}
-			vehicleLists.put("E1", engine1List);
-			vehicleLists.put("E2", engine2List);
-			vehicleLists.put("E4", engine4List);
-			vehicleLists.put("E5", engine5List);
-			vehicleLists.put("TL2", tower2List);
-			vehicleLists.put("L1", ladder1List);
-			vehicleLists.put("C1", car1List);
-			vehicleLists.put("C2", car2List);
-			model.addObject("E1", engine1List);
-		}
-		
-		
-		
+		ObjectMapper objectMapper = new ObjectMapper();
+		model.addObject("ticket", objectMapper.writeValueAsString(this.ticketData));
+		model.addObject("Tickets", this.ticketData);
 		model.setViewName("TicketList");
 		
 	 return model;
 	}
-
+	
 }

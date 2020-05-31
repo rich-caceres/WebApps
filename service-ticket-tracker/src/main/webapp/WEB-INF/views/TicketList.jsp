@@ -5,18 +5,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="<c:url value="/resources/js/main.js"/>" type="text/javascript"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <title>List of Tickets</title>
 </head>
 <body>
 <h1>Submitted Tickets</h1>
-<p id="tick"></p>
-<c:forEach items="${E1}" var="E1tickets">
- 
-		<td><a href=tickets?action=view&ticketId=${tickets.key}>${E1tickets.key} ${E1tickets.subject}</a></td>
-		<td>${E1tickets.value.name}</td>
-		<td>${E1tickets.value.vehicle}</td>	
+<input type="hidden" name="ticks" id="tick"/>
+<c:forEach items="${Tickets}" var="tickets">
+		<td><a href=>${tickets.key}</a></td>
+		<td>${tickets.value.name}</td>
+		<td>${tickets.value.vehicle}</td>	
 	</c:forEach>
 	
 </body>
