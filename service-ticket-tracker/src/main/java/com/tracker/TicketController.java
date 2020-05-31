@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tracker.pojo.SupportTicket;
 
 
@@ -46,6 +48,8 @@ public class TicketController {
 		ticket.setSubject(subject);
 		ticket.setContent(content);
 		
+		
+		
 		int id;
         synchronized(this)
         {
@@ -54,6 +58,7 @@ public class TicketController {
         }
 		
 		ModelAndView model = new ModelAndView();
+		
 		model.setViewName("index");
 		return model;
 		
@@ -61,11 +66,18 @@ public class TicketController {
 	
 	//Will return list of tickets when database is implemented
 	@RequestMapping(value= "/listOfTickets")
-	public ModelAndView ticketList() {
+	public ModelAndView ticketList() throws JsonProcessingException {
 		
 		
 		ModelAndView model = new ModelAndView();
 		
+		SupportTicket ticket = new SupportTicket();
+		ticket = ticketData.get(1);
+		ObjectMapper mapper = new ObjectMapper();
+		
+		String ticketAsString = mapper.writeValueAsString(ticket);
+		
+		model.addObject("ticket", ticketAsString);
 		model.addObject("tickets", this.ticketData);
 		
 		model.setViewName("TicketList");

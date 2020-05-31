@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="<c:url value="/resources/js/main.js"/>" type="text/javascript"></script>
 <meta charset="ISO-8859-1">
 <title>Test Page</title>
 </head>
