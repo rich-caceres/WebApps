@@ -1,3 +1,3 @@
 var ticketList = "yes";
 
-document.getElementById("tickets").innerHtml= ticketList;
+document.getElementById("tick").innerHTML= "yes";
