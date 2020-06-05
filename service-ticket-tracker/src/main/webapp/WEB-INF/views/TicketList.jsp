@@ -11,7 +11,9 @@
 </head>
 <body>
 <h1>Submitted Tickets</h1>
-<table><tr> <td id="JSONticks">${ticket}</td> </tr></table>
+<table id="table"></table>
+
+<p id="JSONticks" hidden= "true">${ticket}</p>
 
 <table>
 	<tr>
