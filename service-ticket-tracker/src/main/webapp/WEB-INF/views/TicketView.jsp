@@ -8,15 +8,19 @@
 <title>Selected Ticket</title>
 </head>
 <body>
-<i>Name: </i>
-<p>${name}</p>
-<br><i>Subject: </i>
-<p>${subject}</p>
-<br><i>Date: </i>
-<p>${date}</p>
-<br><i>Vehicle: </i>
-<p>${vehicle}</p>
-<br><i>Content: </i>
-<p>${content}</p>
+<h1>Selected Ticket</h1>
+<i>Name: </i>${name}
+<br>
+<br>
+<i>Subject: </i>${subject}
+<br>
+<br>
+<i>Date: </i>${date}
+<br>
+<br>
+<i>Vehicle: </i>${vehicle}
+<br>
+<br>
+<i>Content: </i><p>${content}</p>
 </body>
 </html>
