@@ -49,7 +49,7 @@ function createTable(table, content){
 			subject = document.createTextNode(objectInfo.subject);
 			a.appendChild(ticketNum);
 			a.title= ticketNum.toString();
-			a.href="/service-ticket-tracker/" + key;
+			a.href="/service-ticket-tracker/getTicket/" + key;
 			cell1.appendChild(a);
 			cell2.appendChild(name);
 			cell3.appendChild(vehicle);

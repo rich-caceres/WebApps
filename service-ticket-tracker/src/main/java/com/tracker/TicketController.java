@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 //Spring imports
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -81,4 +82,22 @@ public class TicketController {
 	 return model;
 	}
 	
+	
+	@RequestMapping(value= "/getTicket/{ticketId}")
+	public ModelAndView ticketRetrieval(@PathVariable int ticketId) {
+		
+		ModelAndView model = new ModelAndView();
+		SupportTicket ticket = new SupportTicket();
+		
+		ticket = ticketData.get(ticketId);
+		
+		model.addObject("name", ticket.getName());
+		model.addObject("date", ticket.getDate());
+		model.addObject("subject", ticket.getSubject());
+		model.addObject("vehicle", ticket.getVehicle());
+		model.addObject("content", ticket.getContent());
+		model.setViewName("TicketView");
+		
+		return model;
+	}
 }
