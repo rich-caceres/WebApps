@@ -2,9 +2,9 @@
 $(document).ready(function(){
 	var table = document.getElementById("table");
 	var doc= document.getElementById("JSONticks");
-	ticky= JSON.parse(doc.innerHTML);
+	ticky= JSON.parse(doc.innerHTML);//assigns the tickets taken from the JSP and turns it to JSON
 });
-
+//creates headers for the table
 function createTableHead(table, content){
 	var thead= table.createTHead();
 	row= table.insertRow();
@@ -16,7 +16,7 @@ function createTableHead(table, content){
 		row.appendChild(th);
 	}
 }
-
+//Tables is created here
 function createTable(table, content){
 	let ticketNum="";
 	let name = "";
@@ -37,33 +37,16 @@ function createTable(table, content){
 			cell1.appendChild(ticketNum);
 			cell2.appendChild(name);
 			cell3.appendChild(vehicle);
-			cell4.appendChild(subject);
-			
-		
+			cell4.appendChild(subject);	
 	}	
-}
-
-function iterateThisTest(content){
-	
-	for(const [key, entryInfo] of Object.entries(content)){
-		
-		console.log(key, entryInfo);
-		let entry = entryInfo;
-		//console.log(entry.name);
-		
-	}
-	
 }
 
 $( window ).on( "load", function() {
 	var doc= document.getElementById("JSONticks");
 	var json = JSON.parse(doc.innerHTML);
 	ticky= json;
-	//console.log(ticky);
 	var table = document.getElementById("table");
+	//calling our methods
 	 createTableHead(table, ticky);
 		createTable(table, ticky);
-		iterateThisTest(ticky);
    });
-
-
