@@ -62,7 +62,7 @@ public class TicketController {
 		ModelAndView model = new ModelAndView();
 		
 		model.addObject("date", ticket.getDate());
-		model.setViewName("index");
+		model.setViewName("redirect:/");
 		return model;
 		
 	}
