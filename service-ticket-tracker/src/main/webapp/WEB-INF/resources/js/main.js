@@ -4,6 +4,18 @@ $(document).ready(function(){
 	var doc= document.getElementById("JSONticks");
 	ticky= JSON.parse(doc.innerHTML);//assigns the tickets taken from the JSP and turns it to JSON
 });
+
+$( window ).on( "load", function() {
+	var doc= document.getElementById("JSONticks");
+	var json = JSON.parse(doc.innerHTML);
+	ticky= json;
+	var table = document.getElementById("table");
+	
+	//calling our methods
+	 createTableHead(table, ticky);
+	 createTable(table, ticky);
+});
+
 //creates headers for the table
 function createTableHead(table, content){
 	var thead= table.createTHead();
@@ -30,14 +42,14 @@ function createTable(table, content){
 			let cell2 = row.insertCell();
 			let cell3 = row.insertCell();
 			let cell4 = row.insertCell();
-			ticketNum = document.createTextNode(key);
+			let ticketNum = document.createTextNode(key);
 			let a= document.createElement('a');
 			name = document.createTextNode(objectInfo.name);
 			vehicle = document.createTextNode(objectInfo.vehicle);
 			subject = document.createTextNode(objectInfo.subject);
 			a.appendChild(ticketNum);
-			a.title= ticketNum;
-			a.href="/service-ticket-tracker/listOfTickets";
+			a.title= ticketNum.toString();
+			a.href="/service-ticket-tracker/" + key;
 			cell1.appendChild(a);
 			cell2.appendChild(name);
 			cell3.appendChild(vehicle);
@@ -45,12 +57,3 @@ function createTable(table, content){
 	}	
 }
 
-$( window ).on( "load", function() {
-	var doc= document.getElementById("JSONticks");
-	var json = JSON.parse(doc.innerHTML);
-	ticky= json;
-	var table = document.getElementById("table");
-	//calling our methods
-	 createTableHead(table, ticky);
-		createTable(table, ticky);
-   });
