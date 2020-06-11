@@ -14,20 +14,6 @@
 <table id="table"></table>
 
 <p id="JSONticks" hidden= "true">${ticket}</p>
-
-<table>
-	<tr>
-		<th>Ticket Number</th>
-		<th>Ticker Generator</th>
-		<th>Vehicle</th>
-	</tr>
-	<c:forEach items="${Tickets}" var="tickets">
-<tr>
-		<td><a href=>${tickets.key}</a></td>
-		<td>${tickets.value.name}</td>
-		<td>${tickets.value.vehicle}</td>
-</tr>	
-	</c:forEach>
-</table>	
+	
 </body>
 </html>

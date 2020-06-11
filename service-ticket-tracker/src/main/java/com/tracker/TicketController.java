@@ -96,6 +96,7 @@ public class TicketController {
 		model.addObject("subject", ticket.getSubject());
 		model.addObject("vehicle", ticket.getVehicle());
 		model.addObject("content", ticket.getContent());
+		model.addObject("status", ticket.getStatus());
 		model.setViewName("TicketView");
 		
 		return model;
