@@ -31,10 +31,14 @@ function createTable(table, content){
 			let cell3 = row.insertCell();
 			let cell4 = row.insertCell();
 			ticketNum = document.createTextNode(key);
+			let a= document.createElement('a');
 			name = document.createTextNode(objectInfo.name);
 			vehicle = document.createTextNode(objectInfo.vehicle);
 			subject = document.createTextNode(objectInfo.subject);
-			cell1.appendChild(ticketNum);
+			a.appendChild(ticketNum);
+			a.title= ticketNum;
+			a.href="/service-ticket-tracker/listOfTickets";
+			cell1.appendChild(a);
 			cell2.appendChild(name);
 			cell3.appendChild(vehicle);
 			cell4.appendChild(subject);	
