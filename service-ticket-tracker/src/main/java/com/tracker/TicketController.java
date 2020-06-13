@@ -16,8 +16,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 //POJO imports
 import com.tracker.pojo.SupportTicket;
-
-
+import com.tracker.pojo.SupportTicket.StatusEnum;
+import com.tracker.pojo.User;
 
 @Controller
 public class TicketController {
@@ -26,7 +26,7 @@ public class TicketController {
 	ArrayList<SupportTicket> ticketList = new ArrayList<>();
 	protected volatile int TICKET_ID_SEQ= 1;
 	protected Map<Integer, SupportTicket> ticketData= new LinkedHashMap<>();
-	
+	protected User currentUser = new User();
 	
 	@RequestMapping(value= "/")
 	public ModelAndView landingPage() {
@@ -82,7 +82,6 @@ public class TicketController {
 	 return model;
 	}
 	
-	
 	@RequestMapping(value= "/getTicket/{ticketId}")
 	public ModelAndView ticketRetrieval(@PathVariable int ticketId) {
 		
@@ -96,9 +95,27 @@ public class TicketController {
 		model.addObject("subject", ticket.getSubject());
 		model.addObject("vehicle", ticket.getVehicle());
 		model.addObject("content", ticket.getContent());
+		
+		
+		if (this.currentUser.getJobFunction().equals("Mechanic")) {
+			
+			ticket.setStatus(StatusEnum.Read);
+			
+		}
+		
 		model.addObject("status", ticket.getStatus());
 		model.setViewName("TicketView");
 		
 		return model;
+	}
+	
+	@RequestMapping(value= "/getTickAdm/{ticketId}")
+	public ModelAndView admTicketRetrieval(@PathVariable int ticketId) {
+		
+		ModelAndView model = new ModelAndView();
+		
+		
+		return model;
+		
 	}
 }

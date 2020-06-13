@@ -5,13 +5,14 @@ import java.util.Date;
 
 public class SupportTicket {
 	
-	private enum StatusEnum {Read, Complete, Sent};
+	
 	private String name;
 	private String date;
 	private String vehicle;
 	private String subject;
 	private String content;
 	private StatusEnum status;
+	public enum StatusEnum {Read, Complete, Sent};
 	
 	public StatusEnum getStatus() {
 		return status;
