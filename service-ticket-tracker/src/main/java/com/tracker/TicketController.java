@@ -31,6 +31,8 @@ public class TicketController {
 	@RequestMapping(value= "/")
 	public ModelAndView landingPage() {
 		
+		currentUser.setJobFunction("Mechanic");
+		
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
 		Date theDate = new Date(); //creates a date object
 		ModelAndView landingPage = new ModelAndView();
