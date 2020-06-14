@@ -99,7 +99,8 @@ public class TicketController {
 		model.addObject("content", ticket.getContent());
 		
 		
-		if (this.currentUser.getJobFunction().equals("Mechanic")) {
+		if (this.currentUser.getJobFunction().equals("Mechanic") && ticket.getStatus()!= StatusEnum.Complete) {
+			
 			
 			ticket.setStatus(StatusEnum.Read);
 			
