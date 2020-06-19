@@ -125,12 +125,4 @@ public class TicketController {
 		return model;
 	}
 	
-	@RequestMapping(value= "/getTickAdm/{ticketId}")
-	public ModelAndView admTicketRetrieval(@PathVariable int ticketId) {
-		
-		ModelAndView model = new ModelAndView();
-		
-		return model;
-		
-	}
 }
