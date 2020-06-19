@@ -28,9 +28,10 @@ public class TicketController {
 	protected Map<Integer, SupportTicket> ticketData= new LinkedHashMap<>();
 	//user created to test user functionality
 	protected User currentUser = new User();
-	//back button variable
+	//back button variable to redirect the page
 	protected String page = "";
 	
+	//Default method
 	@RequestMapping(value= "/")
 	public ModelAndView landingPage() {
 		
@@ -46,7 +47,7 @@ public class TicketController {
 		return landingPage;
 		
 	}
-	
+	//Method to submit tickets
 	@RequestMapping(value= "/submitTicket")
 	public ModelAndView ticketSubmitted(@RequestParam String name, 
 		@RequestParam String vehicle, @RequestParam String subject, @RequestParam String content) {
@@ -74,6 +75,7 @@ public class TicketController {
 	}
 	
 	//Will return list of tickets when database is implemented
+	//Return list of tickets created during runtime
 	@RequestMapping(value= "/listOfTickets")
 	public ModelAndView ticketList() throws JsonProcessingException {
 		
@@ -87,6 +89,7 @@ public class TicketController {
 	 return model;
 	}
 	
+	//retrieves tickets in the map table for viewing
 	@RequestMapping(value= "/getTicket/{ticketId}")
 	public ModelAndView ticketRetrieval(@PathVariable int ticketId) {
 		
@@ -101,7 +104,7 @@ public class TicketController {
 		model.addObject("vehicle", ticket.getVehicle());
 		model.addObject("content", ticket.getContent());
 		
-		
+		//changes the status from sent to read when the Mechanic user clicks on the ticket
 		if (this.currentUser.getJobFunction().equals("Mechanic") && ticket.getStatus()!= StatusEnum.Complete) {
 			
 			ticket.setStatus(StatusEnum.Read);
@@ -114,6 +117,7 @@ public class TicketController {
 		return model;
 	}
 	
+	//Back button implementation
 	@RequestMapping(value="/back")
 	public ModelAndView backButton(){
 		ModelAndView model = new ModelAndView();
