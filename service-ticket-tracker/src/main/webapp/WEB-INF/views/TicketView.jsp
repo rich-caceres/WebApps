@@ -5,9 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <title>Selected Ticket</title>
 </head>
 <body>
+<div class= "container-fluid">
 <h1>Selected Ticket</h1>
 <i>Status: </i><strong>${status}</strong>
 <br>
@@ -24,5 +26,6 @@
 <br>
 <br>
 <i>Content: </i><p>${content}</p>
+</div>
 </body>
 </html>
