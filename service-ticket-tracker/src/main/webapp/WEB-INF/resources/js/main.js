@@ -20,7 +20,7 @@ $( window ).on( "load", function() {
 function createTableHead(table, content){
 	var thead= table.createTHead();
 	row= table.insertRow();
-	var objectProps = ["Ticket Number", "Ticket Creator", "Vehicle", "Subject"];
+	var objectProps = ["Ticket Number", "Ticket Creator", "Vehicle", "Subject", "Status"];
 	for(let key of objectProps){
 		let th = document.createElement("th");
 		let text= document.createTextNode(key);
@@ -34,6 +34,7 @@ function createTable(table, content){
 	let name = "";
 	let vehicle ="";
 	let subject = "";
+	let status = "";
 	
 	for (let [key, objectInfo] of Object.entries(content)){
 		let row = table.insertRow();
@@ -42,18 +43,21 @@ function createTable(table, content){
 			let cell2 = row.insertCell();
 			let cell3 = row.insertCell();
 			let cell4 = row.insertCell();
+			let cell5 = row.insertCell();
 			let ticketNum = document.createTextNode(key);
 			let a= document.createElement('a');
 			name = document.createTextNode(objectInfo.name);
 			vehicle = document.createTextNode(objectInfo.vehicle);
 			subject = document.createTextNode(objectInfo.subject);
+			status = document.createTextNode(objectInfo.status);
 			a.appendChild(ticketNum);
 			a.title= ticketNum.toString();
 			a.href="/service-ticket-tracker/getTicket/" + key;
 			cell1.appendChild(a);
 			cell2.appendChild(name);
 			cell3.appendChild(vehicle);
-			cell4.appendChild(subject);	
+			cell4.appendChild(subject);
+			cell5.appendChild(status);
 	}	
 }
 
