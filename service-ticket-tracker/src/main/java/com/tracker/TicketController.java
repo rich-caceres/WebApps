@@ -26,12 +26,15 @@ public class TicketController {
 	ArrayList<SupportTicket> ticketList = new ArrayList<>();
 	protected volatile int TICKET_ID_SEQ= 1;
 	protected Map<Integer, SupportTicket> ticketData= new LinkedHashMap<>();
+	//user created to test user functionality
 	protected User currentUser = new User();
+	//back button variable
+	protected String page = "";
 	
 	@RequestMapping(value= "/")
 	public ModelAndView landingPage() {
 		
-		currentUser.setJobFunction("Mechanic");
+		currentUser.setJobFunction("User");
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
 		Date theDate = new Date(); //creates a date object
@@ -75,7 +78,7 @@ public class TicketController {
 	public ModelAndView ticketList() throws JsonProcessingException {
 		
 		ModelAndView model = new ModelAndView();
-		
+		page = "redirect:/";
 		ObjectMapper objectMapper = new ObjectMapper();
 		model.addObject("ticket", objectMapper.writeValueAsString(this.ticketData));
 		model.addObject("Tickets", this.ticketData);
@@ -91,7 +94,7 @@ public class TicketController {
 		SupportTicket ticket = new SupportTicket();
 		
 		ticket = ticketData.get(ticketId);
-		
+		page = "redirect:/listOfTickets";
 		model.addObject("name", ticket.getName());
 		model.addObject("date", ticket.getDate());
 		model.addObject("subject", ticket.getSubject());
@@ -100,7 +103,6 @@ public class TicketController {
 		
 		
 		if (this.currentUser.getJobFunction().equals("Mechanic") && ticket.getStatus()!= StatusEnum.Complete) {
-			
 			
 			ticket.setStatus(StatusEnum.Read);
 			
@@ -112,11 +114,17 @@ public class TicketController {
 		return model;
 	}
 	
+	@RequestMapping(value="/back")
+	public ModelAndView backButton(){
+		ModelAndView model = new ModelAndView();
+		model.setViewName(page);
+		return model;
+	}
+	
 	@RequestMapping(value= "/getTickAdm/{ticketId}")
 	public ModelAndView admTicketRetrieval(@PathVariable int ticketId) {
 		
 		ModelAndView model = new ModelAndView();
-		
 		
 		return model;
 		

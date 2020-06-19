@@ -26,6 +26,7 @@
 <br>
 <br>
 <i>Content: </i><p>${content}</p>
+<a href="<c:url value='/back'/>">Back</a>
 </div>
 </body>
 </html>

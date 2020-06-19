@@ -15,7 +15,17 @@
 	<form action="<c:url value='submitTicket'/>" method="POST">
 		<i>Name</i> <input type="text" name="name"><br> <i>Date</i>
 		<input type="text" name="date" value="${date}"><br> <i>Vehicle</i> 
-		<input type="text" name="vehicle"><br> <i>Subject</i> 
+		<input list="vehicles" name="vehicle" id= "vehicle">
+		<datalist id="vehicles">
+		<option value= "E1">
+		<option value= "E2">
+		<option value= "E4">
+		<option value= "E5">
+		<option value= "E6">
+		<option value= "L1">
+		<option value= "TL2">
+		</datalist><br>
+		 <i>Subject</i> 
 		<input type="text" name="subject"><br> <i>Content</i><br>
 		<textarea name="content" rows="5" cols="30"></textarea>
 		<input type="submit" value="Submit Ticket" name="submitTicket">
