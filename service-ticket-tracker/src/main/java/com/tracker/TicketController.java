@@ -40,7 +40,6 @@ public class TicketController {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
 		Date theDate = new Date(); //creates a date object
 		ModelAndView landingPage = new ModelAndView();
-		
 		landingPage.addObject("date", formatter.format(theDate));
 		landingPage.setViewName("index");
 		
@@ -67,7 +66,6 @@ public class TicketController {
         }
 		
 		ModelAndView model = new ModelAndView();
-		
 		model.addObject("date", ticket.getDate());
 		model.setViewName("redirect:/");
 		return model;
@@ -85,8 +83,7 @@ public class TicketController {
 		model.addObject("ticket", objectMapper.writeValueAsString(this.ticketData));
 		model.addObject("Tickets", this.ticketData);
 		model.setViewName("TicketList");
-		
-	 return model;
+		return model;
 	}
 	
 	//retrieves tickets in the map table for viewing
