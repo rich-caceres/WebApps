@@ -11,6 +11,11 @@
 <title>Login!</title>
 </head>
 <body>
-
+<form action="<c:url value='login'/>" method="POST">
+<h3>Username</h3>
+ <input type="text" name= "username">
+ <h3>Password</h3>
+ <input type= "password" name= "password">
+</form>
 </body>
 </html>
