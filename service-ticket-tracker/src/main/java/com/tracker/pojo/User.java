@@ -4,8 +4,9 @@ public class User {
 
 	private String firstName;
 	private String lastName;
-	private String badgeNum;
+	private int badgeNum;
 	private String jobFunction;
+	private String password;
 	
 	public String getFirstName() {
 		return firstName;
@@ -19,10 +20,10 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getBadgeNum() {
+	public int getBadgeNum() {
 		return badgeNum;
 	}
-	public void setBadgeNum(String badgeNum) {
+	public void setBadgeNum(int badgeNum) {
 		this.badgeNum = badgeNum;
 	}
 	public String getJobFunction() {
@@ -31,10 +32,17 @@ public class User {
 	public void setJobFunction(String jobFunction) {
 		this.jobFunction = jobFunction;
 	}
+	public void getPassword(String password) {
+		this.password = password;
+	}
+	public String getPassword() {	
+		return password;
+	}
 	public User() {
 		firstName="";
 		lastName="";
-		badgeNum="";
+		badgeNum=0;
 		jobFunction="";
+		password= "";
 	}
 }

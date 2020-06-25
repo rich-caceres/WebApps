@@ -46,6 +46,7 @@ public class TicketController {
 		return landingPage;
 		
 	}
+	
 	//Method to submit tickets
 	@RequestMapping(value= "/submitTicket")
 	public ModelAndView ticketSubmitted(@RequestParam String name, 
