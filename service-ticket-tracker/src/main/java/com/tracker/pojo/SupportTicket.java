@@ -62,6 +62,20 @@ public class SupportTicket {
 		subject="";
 		content="";
 		status= StatusEnum.Sent;
+		
+	}
+	
+	public SupportTicket(String name, String vehicle, String subject, String content) {
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
+		Date theDate = new Date(); //creates a date object
+		
+		this.name=name;
+		date=formatter.format(theDate);
+		this.vehicle=vehicle;
+		this.subject=subject;
+		this.content=content;
+		status= StatusEnum.Sent;
 	}
 	
 }

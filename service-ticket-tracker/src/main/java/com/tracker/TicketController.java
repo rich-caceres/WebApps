@@ -36,8 +36,6 @@ public class TicketController {
 	@RequestMapping(value= "/")
 	public ModelAndView landingPage() {
 		
-		currentUser.setJobFunction("User");
-		
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
 		Date theDate = new Date(); //creates a date object
 		ModelAndView landingPage = new ModelAndView();
@@ -55,6 +53,7 @@ public class TicketController {
 		currentUser = new User("Rich", "Caceres", 71, "fireFighter", "something");
 		userList.put(currentUser.getBadgeNum(), currentUser);
 		
+		
 		return model;
 		
 	}
@@ -64,13 +63,8 @@ public class TicketController {
 	public ModelAndView ticketSubmitted(@RequestParam String name, 
 		@RequestParam String vehicle, @RequestParam String subject, @RequestParam String content) {
 		
-		SupportTicket ticket = new SupportTicket();
-		
-		ticket.setName(name);
-		ticket.setVehicle(vehicle);
-		ticket.setSubject(subject);
-		ticket.setContent(content);	
-		
+		SupportTicket ticket = new SupportTicket(name, vehicle, subject, content);
+
 		int id;
         synchronized(this)
         {
@@ -115,11 +109,11 @@ public class TicketController {
 		model.addObject("content", ticket.getContent());
 		
 		//changes the status from sent to read when the Mechanic user clicks on the ticket
-		if (this.currentUser.getJobFunction().equals("Mechanic") && ticket.getStatus()!= StatusEnum.Complete) {
+		//if (this.currentUser.getJobFunction().equals("Mechanic") && ticket.getStatus()!= StatusEnum.Complete) {
 			
-			ticket.setStatus(StatusEnum.Read);
+			//ticket.setStatus(StatusEnum.Read);
 			
-		}
+		//}
 		
 		model.addObject("status", ticket.getStatus());
 		model.setViewName("TicketView");
