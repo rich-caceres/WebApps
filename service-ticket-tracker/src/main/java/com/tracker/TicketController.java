@@ -27,7 +27,8 @@ public class TicketController {
 	protected volatile int TICKET_ID_SEQ= 1;
 	protected Map<Integer, SupportTicket> ticketData= new LinkedHashMap<>();
 	//user created to test user functionality
-	protected User currentUser = new User();
+	protected User currentUser;
+	protected Map<Integer, User> userList = new LinkedHashMap<>();
 	//back button variable to redirect the page
 	protected String page = "";
 	
@@ -44,6 +45,17 @@ public class TicketController {
 		landingPage.setViewName("index");
 		
 		return landingPage;
+		
+	}
+	
+	@RequestMapping(value= "/newUser")
+	public ModelAndView createUser() {
+		
+		ModelAndView model = new ModelAndView();
+		currentUser = new User("Rich", "Caceres", 71, "fireFighter", "something");
+		userList.put(currentUser.getBadgeNum(), currentUser);
+		
+		return model;
 		
 	}
 	

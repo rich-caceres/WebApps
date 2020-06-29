@@ -38,11 +38,12 @@ public class User {
 	public String getPassword() {	
 		return password;
 	}
-	public User() {
-		firstName="";
-		lastName="";
-		badgeNum=0;
-		jobFunction="";
-		password= "";
+	public User(String firstName, String lastName, int badgeNum, 
+			String jobFunction, String password) {
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.badgeNum=badgeNum;
+		this.jobFunction=jobFunction;
+		this.password= password;
 	}
 }
