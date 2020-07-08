@@ -46,7 +46,7 @@ public class TicketController {
 		
 	}
 	
-	@RequestMapping(value= "/newUser")
+	@RequestMapping(value= "/createUser")
 	public ModelAndView createUser() {
 		
 		ModelAndView model = new ModelAndView();
