@@ -46,13 +46,27 @@ public class TicketController {
 		
 	}
 	
+	//login success method
+	@RequestMapping(value= "/loginSuccess")
+	public ModelAndView loggedIn() {
+
+		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
+		Date theDate = new Date(); //creates a date object
+		ModelAndView landingPage = new ModelAndView();
+		landingPage.addObject("date", formatter.format(theDate));
+		landingPage.setViewName("index");
+		
+		return landingPage;
+		
+	}
+	
+	//Create user method
 	@RequestMapping(value= "/createUser")
 	public ModelAndView createUser() {
 		
 		ModelAndView model = new ModelAndView();
-		currentUser = new User("Rich", "Caceres", 71, "fireFighter", "something");
+		currentUser = new User("Rich", "Caceres", 71, "Firefighter", "something");
 		userList.put(currentUser.getBadgeNum(), currentUser);
-		
 		
 		return model;
 		
@@ -117,7 +131,6 @@ public class TicketController {
 		
 		model.addObject("status", ticket.getStatus());
 		model.setViewName("TicketView");
-		
 		return model;
 	}
 	
