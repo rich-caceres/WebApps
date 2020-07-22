@@ -43,12 +43,13 @@ public class TicketController {
 	}
 	
 	//login success method
-	@RequestMapping(value= "/loginSuccess")
+	@RequestMapping(value= "/ticketCreator")
 	public ModelAndView loggedIn() {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
 		Date theDate = new Date(); //creates a date object
 		ModelAndView landingPage = new ModelAndView();
+		landingPage.addObject("name", currentUser.getFirstName() + " " + currentUser.getLastName());
 		landingPage.addObject("date", formatter.format(theDate));
 		landingPage.setViewName("index");
 		
@@ -66,11 +67,30 @@ public class TicketController {
 		
 	}
 	
-	@RequestMapping(value="/createUser*")
-	public ModelAndView createUserAction(){
+	@RequestMapping(value="/login")
+	public ModelAndView loginAction(@RequestParam String badgeNum, @RequestParam String password){
+		
 		
 		ModelAndView model = new ModelAndView();
-		currentUser = new User("Rich", "Caceres", 71, "Firefighter", "something");
+		currentUser = userList.get(Integer.parseInt(badgeNum));
+		
+		if(!password.equalsIgnoreCase(currentUser.getPassword())) {
+			
+			model.setViewName("redirect:/");
+		}else {
+		
+			model.setViewName("redirect:/ticketCreator");
+		}
+		return model;
+		
+	}
+	
+	@RequestMapping(value="/createUser*")
+	public ModelAndView createUserAction(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String badgeNum,
+			@RequestParam String jobFunc, @RequestParam String password){
+		
+		ModelAndView model = new ModelAndView();
+		currentUser = new User(firstName, lastName, Integer.parseInt(badgeNum), jobFunc, password);
 		userList.put(currentUser.getBadgeNum(), currentUser);
 		model.setViewName("redirect:/");
 		return model;
@@ -94,7 +114,7 @@ public class TicketController {
 		
 		ModelAndView model = new ModelAndView();
 		model.addObject("date", ticket.getDate());
-		model.setViewName("redirect:/");
+		model.setViewName("redirect:/ticketCreator");
 		return model;
 		
 	}
@@ -129,11 +149,11 @@ public class TicketController {
 		model.addObject("content", ticket.getContent());
 		
 		//changes the status from sent to read when the Mechanic user clicks on the ticket
-		//if (this.currentUser.getJobFunction().equals("Mechanic") && ticket.getStatus()!= StatusEnum.Complete) {
+		if (this.currentUser.getJobFunction().equals("Mechanic") && ticket.getStatus()!= StatusEnum.Complete) {
 			
-			//ticket.setStatus(StatusEnum.Read);
+			ticket.setStatus(StatusEnum.Read);
 			
-		//}
+		}
 		
 		model.addObject("status", ticket.getStatus());
 		model.setViewName("TicketView");

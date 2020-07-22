@@ -29,9 +29,9 @@
 	
 	<form action="<c:url value='login'/>" method="POST">
 		<div class="form-group row pl-2">
-			<label for="usernameInput" class="col-sm-1 col-form-label">Username</label>
+			<label for="usernameInput" class="col-sm-1 col-form-label">Badge Number</label>
 			<div class="col-sm-5">
- 				<input type="text" class="form-control" id="usernameInput" name= "username">
+ 				<input type="text" class="form-control" id="usernameInput" name= "badgeNum">
  			</div>
  		</div>
  		<div class="form-group row pl-2">

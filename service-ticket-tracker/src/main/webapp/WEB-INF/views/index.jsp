@@ -32,7 +32,7 @@
 		<div class="form-group row">
 			<label for="UserName" class="col-sm-1 col-form-label">Name</label>
 			<div class="col-sm-5"> 
-				<input type="text" class="form-control" id="UserName" name="name"><br> 
+				<input type="text" readonly class="form-control-plaintext" id="UserName" name="name" value="${name} }"> 
 			</div>
 		</div>
 		<div class="form-group row">
@@ -42,9 +42,9 @@
 			</div>
 		</div> 
 		<div class="form-group row">
-			<label for="vehicle" class="col-sm-1 col-form-label">Vehicle</label>
+			<label for="vehicles" class="col-sm-1 col-form-label">Vehicle</label>
 			<div class="col-sm-5"> 
-				<input class="form-control" list="vehicles" name="vehicle" id= "vehicle">
+				<input class="form-control" list="vehicles" name="vehicle" id= "vehicles">
 					<datalist id="vehicles">
 						<option value= "E1">
 						<option value= "E2">

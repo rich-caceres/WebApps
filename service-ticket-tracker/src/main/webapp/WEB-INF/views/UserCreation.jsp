@@ -51,7 +51,11 @@
  		<div class="form-group row pl-2">
  			<label for="jFuncInput" class="col-sm-1 col-form-label">Job Function</label>
  			<div class="col-sm-5">
- 				<input type="text" class="form-control" id="jFuncInput" name= "jobFunc">
+ 				<input type="text" list="jobFuncData" class="form-control" id="jFuncInput" name= "jobFunc">
+ 					<datalist id="jobFuncData">
+ 					<option value="Firefighter">
+ 					<option value="Mechanic">
+ 					</datalist>
  			</div>
  		</div>
  		<div class="form-group row pl-2">

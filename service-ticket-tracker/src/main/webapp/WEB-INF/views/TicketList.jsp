@@ -22,8 +22,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link text-light" href="<c:url value='/'/>">Home</a>
-                <a class="nav-item nav-link text-light active" href="">Ticket List</a>
+            <a class="nav-item nav-link text-light" href="<c:url value='/ticketCreator'/>">Home</a>
+                <a class="nav-item nav-link text-light active" href="/listOfTickets">Ticket List</a>
             </div>
         </div>
     </nav>
