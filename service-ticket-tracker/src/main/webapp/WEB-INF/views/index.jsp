@@ -29,30 +29,38 @@
 
 <div class= "container-fluid mt-1">
 	<form action="<c:url value='submitTicket'/>" method="POST">
-		<div class="form-group">
-			<label for="UserName">Name</label> 
-			<input type="text" class="form-control" id="UserName" name="name"><br> 
+		<div class="form-group row">
+			<label for="UserName" class="col-sm-1 col-form-label">Name</label>
+			<div class="col-sm-5"> 
+				<input type="text" class="form-control" id="UserName" name="name"><br> 
+			</div>
 		</div>
-		<div class="form-group">
-			<label>Date</label>
-			<input type="text" readonly class="form-control-plaintext" name="date" value="${date}">
+		<div class="form-group row">
+			<label for="todayDate" class="col-sm-1 col-form-label">Date</label>
+			<div class="col-sm-5">
+				<input type="text" readonly class="form-control-plaintext" id="todayDate" name="date" value="${date}">
+			</div>
 		</div> 
-		<div class="form-group">
-			<label for="vehicle">Vehicle</label> 
-			<input class="form-control" list="vehicles" name="vehicle" id= "vehicle">
-				<datalist id="vehicles">
-					<option value= "E1">
-					<option value= "E2">
-					<option value= "E4">
-					<option value= "E5">
-					<option value= "E6">
-					<option value= "L1">
-					<option value= "TL2">
-				</datalist>
+		<div class="form-group row">
+			<label for="vehicle" class="col-sm-1 col-form-label">Vehicle</label>
+			<div class="col-sm-5"> 
+				<input class="form-control" list="vehicles" name="vehicle" id= "vehicle">
+					<datalist id="vehicles">
+						<option value= "E1">
+						<option value= "E2">
+						<option value= "E4">
+						<option value= "E5">
+						<option value= "E6">
+						<option value= "L1">
+						<option value= "TL2">
+					</datalist>
+			</div>
 		</div>
-		<div class="form-group">
-			<label for="subjectInput">Subject</label> 
-			<input class="form-control" type="text" id="subjectInput" name="subject"><br>
+		<div class="form-group row">
+			<label for="subjectInput" class="col-sm-1 col-form-label">Subject</label>
+			<div class="col-sm-5"> 
+				<input class="form-control" type="text" id="subjectInput" name="subject"><br>
+			</div>
 		</div>
 		<div class="form-group"> 
 			<label for="contentInput">Content</label>
