@@ -30,7 +30,6 @@
     </nav>
 
 <div class= "container-fluid">
-<a href="<c:url value='/listOfTickets'/>">Ticket List</a>
 	<form action="<c:url value='submitTicket'/>" method="POST">
 		<i>Name</i> <input type="text" name="name"><br> <i>Date</i>
 		<input type="text" name="date" value="${date}"><br> <i>Vehicle</i> 
