@@ -26,22 +26,37 @@
     </nav>
 
 <div class= "container-fluid mt-1">
-<h1>Selected Ticket</h1>
-<i>Status: </i><strong>${status}</strong>
-<br>
-<i>Name: </i><strong>${name}</strong>
-<br>
-<br>
-<i>Subject: </i><strong>${subject}</strong>
-<br>
-<br>
-<i>Date: </i><strong>${date}</strong>
-<br>
-<br>
-<i>Vehicle: </i><strong>${vehicle}</strong>
-<br>
-<br>
-<i>Content: </i><p>${content}</p>
+	<h1>Selected Ticket</h1>
+	<div class="row">
+		<div class="col-sm">
+			<i class="col-sm-2">Status: </i><strong>${status}</strong>
+		</div>
+	</div>
+	<div class="row"> 
+		<div class="col-sm">
+			<i class="col-sm-2">Name: </i><strong>${name}</strong>
+		</div>
+	</div>
+	<div class="row"> 
+		<div class="col-sm">
+			<i class="col-sm-2">Subject: </i><strong>${subject}</strong>
+		</div>
+	</div>
+	<div class="row"> 
+		<div class="col-sm">
+			<i class="col-sm-2">Date: </i><strong>${date}</strong>
+		</div>
+	</div>
+	<div class="row"> 
+		<div class="col-sm">
+			<i class="col-sm-2">Vehicle: </i><strong>${vehicle}</strong>
+		</div>
+	</div>
+	<div class="row"> 
+		<div class="col-sm-2">
+			<i class="col-sm-2">Content: </i><p class="mt-1">${content}</p>
+		</div>
+	</div>
 </div>
 </body>
 </html>
