@@ -45,7 +45,7 @@ function createTable(table, content){
 			let cell4 = row.insertCell();
 			let cell5 = row.insertCell();
 			let ticketNum = document.createTextNode(key);
-			let a= document.createElement('a');
+			let a = document.createElement('a');
 			name = document.createTextNode(objectInfo.name);
 			vehicle = document.createTextNode(objectInfo.vehicle);
 			subject = document.createTextNode(objectInfo.subject);

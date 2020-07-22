@@ -14,6 +14,17 @@
 	<title>Login!</title>
 </head>
 <body>
+	 <nav class="navbar nav-pills navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#">Fleet Maintenance Support</a>
+        <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon bg-secondary"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            </div>
+        </div>
+    </nav>
+
 <div class="containter-fluid">
 	<form action="<c:url value='login'/>" method="POST">
 		<h3>Username</h3>
