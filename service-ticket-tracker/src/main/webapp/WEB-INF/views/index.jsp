@@ -35,7 +35,7 @@
 		</div>
 		<div class="form-group">
 			<label>Date</label>
-			<input type="text" name="date" value="${date}">
+			<input type="text" readonly class="form-control-plaintext" name="date" value="${date}">
 		</div> 
 		<div class="form-group">
 			<label for="vehicle">Vehicle</label> 
