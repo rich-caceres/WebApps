@@ -25,7 +25,7 @@
         </div>
     </nav>
 
-<div class= "container-fluid">
+<div class= "container-fluid mt-1">
 <h1>Selected Ticket</h1>
 <i>Status: </i><strong>${status}</strong>
 <br>
@@ -42,7 +42,6 @@
 <br>
 <br>
 <i>Content: </i><p>${content}</p>
-<a href=
 </div>
 </body>
 </html>
