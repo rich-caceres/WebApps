@@ -25,15 +25,24 @@
         </div>
     </nav>
 
-<div class="containter-fluid">
+<div class="containter-fluid mt-2">
 	<form action="<c:url value='login'/>" method="POST">
-		<h3>Username</h3>
- 		<input type="text" name= "username">
- 		<h3>Password</h3>
- 		<input type= "password" name= "password">
+		<div class="form-group row pl-2">
+			<label for="usernameInput" class="col-sm-1 col-form-label">Username</label>
+			<div class="col-sm-5">
+ 				<input type="text" class="form-control" id="usernameInput" name= "username">
+ 			</div>
+ 		</div>
+ 		<div class="form-group row pl-2">
+ 			<label for="passwordInput" class="col-sm-1 col-form-label">Password</label>
+ 			<div class="col-sm-5">
+ 				<input type="password" class="form-control" id="passwordInput" name= "password">
+ 			</div>
+ 		</div>
+ 		<input type="submit" class="btn btn-primary ml-2 mb-2" value="Login" name="submit">
 	</form>
 	<form method="GET" action="<c:url value='createUser'/>" >
-		<input type="submit" value="New User" name="submit">
+		<input type="submit" class="btn btn-primary ml-2" value="New User" name="submit">
 	</form>
 </div>
 </body>

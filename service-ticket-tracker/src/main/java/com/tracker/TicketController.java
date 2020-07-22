@@ -36,11 +36,10 @@ public class TicketController {
 	@RequestMapping(value= "/")
 	public ModelAndView landingPage() {
 		
-		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); //used to format the date
-		Date theDate = new Date(); //creates a date object
+	
 		ModelAndView landingPage = new ModelAndView();
-		landingPage.addObject("date", formatter.format(theDate));
-		landingPage.setViewName("index");
+	
+		landingPage.setViewName("LoginPage");
 		
 		return landingPage;
 		
