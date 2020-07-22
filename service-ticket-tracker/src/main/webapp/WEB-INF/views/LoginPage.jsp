@@ -5,6 +5,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
+	 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="<c:url value="/resources/js/main.js"/>" type="text/javascript"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -16,9 +17,6 @@
 <body>
 	 <nav class="navbar nav-pills navbar-expand-lg navbar-light bg-dark">
         <a class="navbar-brand" href="#">Fleet Maintenance Support</a>
-        <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon bg-secondary"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
             </div>
@@ -26,6 +24,9 @@
     </nav>
 
 <div class="containter-fluid mt-2">
+
+	<h3 class="text-center">Login</h3>
+	
 	<form action="<c:url value='login'/>" method="POST">
 		<div class="form-group row pl-2">
 			<label for="usernameInput" class="col-sm-1 col-form-label">Username</label>

@@ -60,9 +60,19 @@ public class TicketController {
 	public ModelAndView createUser() {
 		
 		ModelAndView model = new ModelAndView();
-		//currentUser = new User("Rich", "Caceres", 71, "Firefighter", "something");
-		//userList.put(currentUser.getBadgeNum(), currentUser);
+		
 		model.setViewName("UserCreation");
+		return model;
+		
+	}
+	
+	@RequestMapping(value="/createUser*")
+	public ModelAndView createUserAction(){
+		
+		ModelAndView model = new ModelAndView();
+		currentUser = new User("Rich", "Caceres", 71, "Firefighter", "something");
+		userList.put(currentUser.getBadgeNum(), currentUser);
+		model.setViewName("redirect:/");
 		return model;
 		
 	}

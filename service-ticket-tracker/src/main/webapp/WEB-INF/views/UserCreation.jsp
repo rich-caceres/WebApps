@@ -9,6 +9,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Create User</title>
 </head>
 <body>
@@ -23,5 +24,45 @@
             </div>
         </div>
     </nav>
+    
+    <div class="containter-fluid mt-2">
+    
+    <h3>Create Your Account</h3>
+    
+	<form action="<c:url value='createUser*'/>" method="POST">
+		<div class="form-group row pl-2">
+			<label for="fNameInput" class="col-sm-1 col-form-label">First Name</label>
+			<div class="col-sm-5">
+ 				<input type="text" class="form-control" id="fNameInput" name="firstName">
+ 			</div>
+ 		</div>
+ 		<div class="form-group row pl-2">
+ 			<label for="lNameInput" class="col-sm-1 col-form-label">Last Name</label>
+ 			<div class="col-sm-5">
+ 				<input type="text" class="form-control" id="lNameInput" name= "lastName">
+ 			</div>
+ 		</div>
+ 		<div class="form-group row pl-2">
+ 			<label for="badgeInput" class="col-sm-1 col-form-label">Badge Number</label>
+ 			<div class="col-sm-5">
+ 				<input type="text" class="form-control" id="badgeInput" name= "badgeNum">
+ 			</div>
+ 		</div>
+ 		<div class="form-group row pl-2">
+ 			<label for="jFuncInput" class="col-sm-1 col-form-label">Job Function</label>
+ 			<div class="col-sm-5">
+ 				<input type="text" class="form-control" id="jFuncInput" name= "jobFunc">
+ 			</div>
+ 		</div>
+ 		<div class="form-group row pl-2">
+ 			<label for="passInput" class="col-sm-1 col-form-label">Password</label>
+ 			<div class="col-sm-5">
+ 				<input type="text" class="form-control" id="passInput" name= "password">
+ 			</div>
+ 		</div>
+ 		<input type="submit" class="btn btn-primary ml-2 mb-2" value="Create Account" name="submit">
+	</form>
+	</div>
+    
 </body>
 </html>
