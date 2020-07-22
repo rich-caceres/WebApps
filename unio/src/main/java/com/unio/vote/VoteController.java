@@ -56,7 +56,7 @@ public class VoteController {
 		ArrayList<Voter> noms= new ArrayList();
 		noms =  (ArrayList<Voter>) voteeRepo.findAll();
 		
-		
+		//Set objects to be shown in the nominee area
 		model.addObject("users", noms);
 		model.setViewName("NomineeCreation");
 		
@@ -69,12 +69,13 @@ public class VoteController {
 		 this.previousPage = previousPage;
 	}
 	
+	//Return previous page
 	protected String pageReturn() {
 		
 		return previousPage;
 	}
 	
-	//this is a back button implementation because its just easier. This could change possibly.
+	//This is a back button implementation because its just easier. This could change possibly.
 	@RequestMapping(value="/back", method = RequestMethod.GET)
 	public String backToPreviousPage() {
 		
@@ -87,11 +88,10 @@ public class VoteController {
 	@RequestMapping(value="/CreateUser", method = RequestMethod.GET)
 	public String voterCreationPage() {
 		
-		
 		return "userCreation";
 	}
 	
-	//creates a user, disregard the name of the actual method. will be used by the user who is considered the voter
+	//Creates a user, disregard the name of the actual method. will be used by the user who is considered the voter
 	@RequestMapping(value="/CreateVoter*", method = RequestMethod.POST)
 	public ModelAndView createVoter(@RequestParam String name, @RequestParam String password) {
 		ModelAndView model = new ModelAndView();
@@ -129,7 +129,8 @@ public class VoteController {
 		
 		return model;
 	}
-	//TODO Will be used to return the vote/let the user vote, UNDER DEVELOPMENT STILL
+	
+	//TODO Will be used to return the vote/let the user vote, UNDER DEVELOPMENT
 	@RequestMapping(value= "/vote", method= RequestMethod.POST)
 	public ModelAndView getVote(@RequestParam String name) {
 		
