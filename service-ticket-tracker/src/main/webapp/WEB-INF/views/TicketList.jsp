@@ -35,7 +35,6 @@
 <table id="table"></table>
 
 <p id="JSONticks" hidden= "true">${ticket}</p>
-<a href="<c:url value='/back'/>">back</a>
 </div>
 </body>
 </html>
