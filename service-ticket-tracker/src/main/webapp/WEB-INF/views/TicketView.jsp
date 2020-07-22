@@ -29,32 +29,32 @@
 	<h1>Selected Ticket</h1>
 	<div class="row">
 		<div class="col-sm">
-			<i class="col-sm-2">Status: </i><strong>${status}</strong>
+			<i class="col-sm-2">Status:</i><strong>${status}</strong>
 		</div>
 	</div>
 	<div class="row"> 
 		<div class="col-sm">
-			<i class="col-sm-2">Name: </i><strong>${name}</strong>
+			<i class="col-sm-2">Name:</i><strong>${name}</strong>
 		</div>
 	</div>
 	<div class="row"> 
 		<div class="col-sm">
-			<i class="col-sm-2">Subject: </i><strong>${subject}</strong>
+			<i class="col-sm-2">Subject:</i><strong>${subject}</strong>
 		</div>
 	</div>
 	<div class="row"> 
 		<div class="col-sm">
-			<i class="col-sm-2">Date: </i><strong>${date}</strong>
+			<i class="col-sm-2">Date:</i><strong>${date}</strong>
 		</div>
 	</div>
 	<div class="row"> 
 		<div class="col-sm">
-			<i class="col-sm-2">Vehicle: </i><strong>${vehicle}</strong>
+			<i class="col-sm-2">Vehicle:</i><strong>${vehicle}</strong>
 		</div>
 	</div>
 	<div class="row"> 
 		<div class="col-sm-2">
-			<i class="col-sm-2">Content: </i><p class="mt-1">${content}</p>
+			<i class="col-sm-2">Content</i> <p class="mt-1">${content}</p>
 		</div>
 	</div>
 </div>
