@@ -36,11 +36,8 @@ public class TicketController {
 	@RequestMapping(value= "/")
 	public ModelAndView landingPage() {
 		
-	
 		ModelAndView landingPage = new ModelAndView();
-	
 		landingPage.setViewName("LoginPage");
-		
 		return landingPage;
 		
 	}
@@ -56,7 +53,6 @@ public class TicketController {
 		landingPage.setViewName("index");
 		
 		return landingPage;
-		
 	}
 	
 	//Create user method
@@ -64,12 +60,13 @@ public class TicketController {
 	public ModelAndView createUser() {
 		
 		ModelAndView model = new ModelAndView();
-		currentUser = new User("Rich", "Caceres", 71, "Firefighter", "something");
-		userList.put(currentUser.getBadgeNum(), currentUser);
-		
+		//currentUser = new User("Rich", "Caceres", 71, "Firefighter", "something");
+		//userList.put(currentUser.getBadgeNum(), currentUser);
+		model.setViewName("UserCreation");
 		return model;
 		
 	}
+	
 	
 	//Method to submit tickets
 	@RequestMapping(value= "/submitTicket")
