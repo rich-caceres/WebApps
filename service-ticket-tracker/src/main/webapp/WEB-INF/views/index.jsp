@@ -23,13 +23,11 @@
             <div class="navbar-nav">
             <a class="nav-item nav-link text-light active" href="#">Home</a>
                 <a class="nav-item nav-link text-light" href="<c:url value='/listOfTickets'/>">Ticket List</a>
-                <a class="nav-item nav-link text-light" href="BuyingPage.html">Products</a>
-                <a class="nav-item nav-link text-light" href="History.html">History</a>
             </div>
         </div>
     </nav>
 
-<div class= "container-fluid">
+<div class= "container-fluid mt-1">
 	<form action="<c:url value='submitTicket'/>" method="POST">
 		<i>Name</i> <input type="text" name="name"><br> <i>Date</i>
 		<input type="text" name="date" value="${date}"><br> <i>Vehicle</i> 

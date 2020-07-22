@@ -24,13 +24,11 @@
             <div class="navbar-nav">
             <a class="nav-item nav-link text-light" href="<c:url value='/'/>">Home</a>
                 <a class="nav-item nav-link text-light active" href="">Ticket List</a>
-                <a class="nav-item nav-link text-light" href="BuyingPage.html">Products</a>
-                <a class="nav-item nav-link text-light" href="History.html">History</a>
             </div>
         </div>
     </nav>
 
-<div class= "container-fluid">
+<div class= "container-fluid mt-1">
 <h1>Submitted Tickets</h1>
 <table id="table"></table>
 
