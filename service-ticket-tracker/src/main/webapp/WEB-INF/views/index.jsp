@@ -29,22 +29,36 @@
 
 <div class= "container-fluid mt-1">
 	<form action="<c:url value='submitTicket'/>" method="POST">
-		<i>Name</i> <input type="text" name="name"><br> <i>Date</i>
-		<input type="text" name="date" value="${date}"><br> <i>Vehicle</i> 
-		<input list="vehicles" name="vehicle" id= "vehicle">
-		<datalist id="vehicles">
-		<option value= "E1">
-		<option value= "E2">
-		<option value= "E4">
-		<option value= "E5">
-		<option value= "E6">
-		<option value= "L1">
-		<option value= "TL2">
-		</datalist><br>
-		 <i>Subject</i> 
-		<input type="text" name="subject"><br> <i>Content</i><br>
-		<textarea name="content" rows="5" cols="30"></textarea>
-		<input type="submit" value="Submit Ticket" name="submitTicket">
+		<div class="form-group">
+			<label for="UserName">Name</label> 
+			<input type="text" class="form-control" id="UserName" name="name"><br> 
+		</div>
+		<div class="form-group">
+			<label>Date</label>
+			<input type="text" name="date" value="${date}">
+		</div> 
+		<div class="form-group">
+			<label for="vehicle">Vehicle</label> 
+			<input class="form-control" list="vehicles" name="vehicle" id= "vehicle">
+				<datalist id="vehicles">
+					<option value= "E1">
+					<option value= "E2">
+					<option value= "E4">
+					<option value= "E5">
+					<option value= "E6">
+					<option value= "L1">
+					<option value= "TL2">
+				</datalist>
+		</div>
+		<div class="form-group">
+			<label for="subjectInput">Subject</label> 
+			<input class="form-control" type="text" id="subjectInput" name="subject"><br>
+		</div>
+		<div class="form-group"> 
+			<label for="contentInput">Content</label>
+			<textarea class="form-control" name="content" id="contentInput" rows="5" cols="30"></textarea>
+		</div>
+		<input class="btn btn-primary" type="submit" value="Submit Ticket" name="submitTicket">
 	</form>
 </div>
 </body>
