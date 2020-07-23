@@ -26,7 +26,7 @@
 <div class="containter-fluid mt-2">
 
 	<h3 class="text-center">Login</h3>
-	
+	<i>${errorMess}</i>
 	<form action="<c:url value='login'/>" method="POST">
 		<div class="form-group row pl-2">
 			<label for="usernameInput" class="col-sm-1 col-form-label">Badge Number</label>

@@ -83,6 +83,7 @@ public class SupportTicket {
 		this.vehicle=vehicle;
 		this.subject=subject;
 		this.content=content;
+		outcome="";
 		status= StatusEnum.Sent;
 	}
 	

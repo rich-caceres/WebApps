@@ -36,8 +36,7 @@ public class TicketController {
 		
 		ModelAndView landingPage = new ModelAndView();
 		landingPage.setViewName("LoginPage");
-		return landingPage;
-		
+		return landingPage;	
 	}
 	
 	//login success method
@@ -74,10 +73,11 @@ public class TicketController {
 		
 		if(!password.equalsIgnoreCase(currentUser.getPassword())) {
 			
-			model.setViewName("redirect:/");
+			model.addObject("errorMess", "Incorrect badge number and password combination. Try again.");
+			model.setViewName("LoginPage");
 		}else if (currentUser.getJobFunction().equalsIgnoreCase("Mechanic")){
 		
-			model.setViewName("redirect:/ticketCreator");	
+			model.setViewName("redirect:/listOfTickets");	
 		}else{
 			
 			model.setViewName("redirect:/ticketCreator");
