@@ -11,6 +11,7 @@ public class SupportTicket {
 	private String vehicle;
 	private String subject;
 	private String content;
+	private String outcome;
 	private StatusEnum status;
 	public enum StatusEnum {Read, Complete, Sent};
 	
@@ -19,6 +20,12 @@ public class SupportTicket {
 	}
 	public void setStatus(StatusEnum status) {
 		this.status = status;
+	}
+	public void setOutcome(String outcome) {
+		this.outcome=outcome;
+	}
+	public String outcome() {
+		return outcome;
 	}
 	public String getName() {
 		return name;
@@ -61,6 +68,7 @@ public class SupportTicket {
 		vehicle="";
 		subject="";
 		content="";
+		outcome="";
 		status= StatusEnum.Sent;
 		
 	}
