@@ -75,12 +75,15 @@ public class TicketController {
 		if(!password.equalsIgnoreCase(currentUser.getPassword())) {
 			
 			model.setViewName("redirect:/");
-		}else {
+		}else if (currentUser.getJobFunction().equalsIgnoreCase("Mechanic")){
 		
+			model.setViewName("redirect:/ticketCreator");	
+		}else{
+			
 			model.setViewName("redirect:/ticketCreator");
 		}
-		return model;
 		
+		return model;	
 	}
 	
 	@RequestMapping(value="/createUser*")
@@ -123,7 +126,6 @@ public class TicketController {
 	public ModelAndView ticketList() throws JsonProcessingException {
 		
 		ModelAndView model = new ModelAndView();
-		page = "redirect:/";
 		ObjectMapper objectMapper = new ObjectMapper();
 		model.addObject("ticket", objectMapper.writeValueAsString(this.ticketData));
 		model.addObject("Tickets", this.ticketData);
@@ -139,7 +141,6 @@ public class TicketController {
 		SupportTicket ticket = new SupportTicket();
 		
 		ticket = ticketData.get(ticketId);
-		page = "redirect:/listOfTickets";
 		model.addObject("name", ticket.getName());
 		model.addObject("date", ticket.getDate());
 		model.addObject("subject", ticket.getSubject());
