@@ -32,7 +32,7 @@
 		<div class="form-group row">
 			<label for="UserName" class="col-sm-1 col-form-label">Name</label>
 			<div class="col-sm-5"> 
-				<input type="text" readonly class="form-control-plaintext" id="UserName" name="name" value="${name} }"> 
+				<input type="text" readonly class="form-control-plaintext" id="UserName" name="name" value="${name}"> 
 			</div>
 		</div>
 		<div class="form-group row">

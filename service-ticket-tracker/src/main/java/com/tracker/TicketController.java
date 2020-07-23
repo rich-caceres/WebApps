@@ -29,8 +29,6 @@ public class TicketController {
 	//user created to test user functionality
 	protected User currentUser;
 	protected Map<Integer, User> userList = new LinkedHashMap<>();
-	//back button variable to redirect the page
-	protected String page = "";
 	
 	//Default method
 	@RequestMapping(value= "/")
@@ -157,14 +155,6 @@ public class TicketController {
 		
 		model.addObject("status", ticket.getStatus());
 		model.setViewName("TicketView");
-		return model;
-	}
-	
-	//Back button implementation
-	@RequestMapping(value="/back")
-	public ModelAndView backButton(){
-		ModelAndView model = new ModelAndView();
-		model.setViewName(page);
 		return model;
 	}
 	
