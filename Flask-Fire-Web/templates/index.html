@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<title>Salem Fire Home</title>
 	<link rel="stylesheet" href="css/normalize.css" />
-	<link rel="icon" href="img/SFDLogo.png">
+	<link rel="icon" href="{{url_for('static', filename='img/SFDLogo.png')}}">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -43,7 +43,7 @@
 				<div class="carousel-item">
 					<picture>
 						<source srcset="{{url_for('static', filename='img/SlideShow/ActionShot1.png')}}" type="image/png"/>
-						<img src="{{url_for('static', filename='img/SlideShow/ActionShot1.webp')}}" class="img-fluid d-block w-100" />
+						<img src="{{url_for('static', filename='img/SlideShow/ActionShot1.webp')}}" alt="Salem Working Fire" class="img-fluid d-block w-100" />
 					</picture>
 				</div>
 			</div>
@@ -73,7 +73,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg pt-3	ml-0 text-center">
-					<img src="img/SalLogo.png" alt="Salem Logo" class="img-fluid" /><br>
+					<img src="{{url_for('static', filename='img/SalLogo.png')}}" alt="Salem Logo" class="img-fluid" /><br>
 					<a class="stretched-link btn btn-halloween" href="BuyingPage.html"><strong>You can buy halloween shirts here!</strong></a>
 					<p id="date">The Salem Fire Holloween counter!</p>
 				</div>
@@ -188,8 +188,8 @@
 									<div class="collapse multi-collapse" id="Engine1">
 										<h3>2005 KME Predator</h3>
 										<picture>
-											<source srcset="img/E1/SalemE1JG.png" type="image/png"/>
-											<img src="img/E1/SalemE1JG.webp" alt="Engine1" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/E1/SalemE1JG.png')}}" type="image/png"/>
+											<img src="{{url_for('static', filename='img/E1/SalemE1JG.webp')}}" alt="Salem Engine1" class="img-fluid mb-1" />
 										</picture>									
 									</div>
 								</div>
@@ -198,8 +198,8 @@
 									<div class="collapse multi-collapse" id="Engine2">
 										<h3>2016 Ferrara Igniter</h3>
 										<picture>
-											<source srcset="img/E2/SalemE2new16MEB.png" type="image/png"/>
-											<img src="img/E2/SalemE2new16MEB.webp" alt="Engine2" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/E2/SalemE2new16MEB.webp')}}" type="image/png"/>
+											<img src="{{url_for('static', filename='img/E2/SalemE2new16MEB.webp')}}" alt="Engine2" class="img-fluid mb-1" />
 										</picture>
 									</div>
 								</div>
@@ -208,8 +208,8 @@
 									<div class="collapse multi-collapse" id="Engine4">
 										<h3>2008 KME</h3>
 										<picture>
-											<source srcset="img/E4/SalemE4new09.png" type="image/png"/>
-											<img src="img/E4/SalemE4new09.webp" alt="Engine4" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/E4/SalemE4new09.png')}}" type="image/png"/>
+											<img src="{{url_for('static', filename='img/E4/SalemE4new09.webp')}}" alt="Engine4" class="img-fluid mb-1" />
 										</picture>
 									</div>
 								</div>
@@ -219,8 +219,8 @@
 									<div class="collapse multi-collapse" id="Engine5">
 										<h3>2018 Ferrara Igniter</h3>
 										<picture>
-											<source srcset="img/E5/SalemE5new18.png" typeof="image/png"/>
-											<img src="img/E5/SalemE5new18.webp" alt="Engine5" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/E5/SalemE5new18.png')}}" typeof="image/png"/>
+											<img src="{{url_for('static', filename='img/E5/SalemE5new18.webp')}}" alt="Engine5" class="img-fluid mb-1" />
 										</picture>
 									</div>
 								</div>
@@ -229,8 +229,8 @@
 									<div class="collapse multi-collapse" id="Engine6">
 										<h3>1995 Pierce Saber</h3>
 										<picture>
-											<source srcset="img/E6/SalemE5Ernest.png" type="image/png"/>
-											<img src="img/E6/SalemE5Ernest.webp" alt="Engine6" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/E6/SalemE5Ernest.png')}}" type="image/png"/>
+											<img src="{{url_for('static', filename='img/E6/SalemE5Ernest.webp')}}" alt="Engine6" class="img-fluid mb-1" />
 										</picture>
 									</div>
 								</div>
@@ -239,8 +239,8 @@
 									<div class="collapse multi-collapse" id="Tower2">
 										<h3>2013 Pierce Arrow XT 95'</h3>
 										<picture>
-											<source srcset="img/TL2/SalemTL2JG.png" type="image/png"/>
-											<img src="img/TL2/SalemTL2JG.webp" alt="Ladder2" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/TL2/SalemTL2JG.webp')}}" type="image/png"/>
+											<img src="{{url_for('static', filename='img/TL2/SalemTL2JG.webp')}}" alt="Ladder2" class="img-fluid mb-1" />
 										</picture>
 									</div>
 								</div>
@@ -250,8 +250,8 @@
 									<div class="collapse multi-collapse" id="Ladder1">
 										<h3>2000 Pierce 105’ RMA</h3>
 										<picture>
-											<source srcset="img/L1/SalemL1.png" type="image/png"/>
-											<img src="img/L1/SalemL1.webp" alt="Ladder1" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/L1/SalemL1.png')}}" type="image/png"/>
+											<img src="{{url_for('static', filename='img/L1/SalemL1.webp')}}" alt="Ladder1" class="img-fluid mb-1" />
 										</picture>
 									</div>
 								</div>
@@ -260,8 +260,8 @@
 									<div class="collapse multi-collapse" id="M1">
 										<h3>2016 Chevy Silverado 2500HD 4x4</h3>
 										<picture>
-											<source srcset="img/M1/SalemM1new16.png" type="image/png"/>
-											<img src="img/M1/SalemM1new16.webp" alt="M1" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/M1/SalemM1new16.png')}}" type="image/png"/>
+											<img src="{{url_for('static', filename='img/M1/SalemM1new16.webp')}}" alt="M1" class="img-fluid mb-1" />
 										</picture>
 									</div>
 								</div>
@@ -270,8 +270,8 @@
 									<div class="collapse multi-collapse" id="Car2">
 										<h3>2015 Chevy Tahoe 4X4</h3>
 										<picture>
-											<source srcset="img/C2/SalemC2new15Toz.webp" type="image/png"/>
-											<img src="img/C2/SalemC2new15Toz.webp" alt="Car2" class="img-fluid mb-1" />
+											<source srcset="{{url_for('static', filename='img/C2/SalemC2new15Toz.png')}}" type="image/png"/>
+											<img src="{{url_for('static', filename='img/C2/SalemC2new15Toz.webp')}}" alt="Car2" class="img-fluid mb-1" />
 										</picture>
 									</div>
 								</div>
