@@ -1,0 +1,20 @@
+
+
+.faq-p {
+    text-indent: 30px;
+}
+
+.btn-halloween {
+    background-color: #ff9600;
+}
+
+    .btn-halloween:hover {
+        background-color: #ff6a00;
+    }
+
+#loadingContent {
+
+    z-index: 1;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}

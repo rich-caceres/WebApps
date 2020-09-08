@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Salem Fire Home</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="icon" href="img/SFDLogo.png">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css" />
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+	
+		<nav class="navbar nav-pills navbar-expand-lg navbar-light bg-dark">
+			<a class="navbar-brand" href="#"> <img src="/static/img/SFDLogo.png" width="80" height="80" alt="SFD Maltese" /></a>
+			<button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon bg-secondary"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link text-light active" href="index.html">Home</a>
+					<a class="nav-item nav-link text-light" href="BuyingPage.html">Products</a>
+					<a class="nav-item nav-link text-light" href="History.html">History</a>
+				</div>
+			</div>
+		</nav>
+
+		<div id="carouselControl" class="carousel slide" data-risde="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<picture>
+						<source srcset="{{url_for('static', filename='img/SlideShow/TL2.png')}}" type="image/png" />
+						<img src="{{url_for('static', filename='img/SlideShow/TL2.webp')}}" alt="Tower2" class="img-fluid d-block w-100" />
+					</picture>
+				</div>
+
+				<div class="carousel-item">
+					<picture>
+						<source srcset="{{url_for('static', filename='img/SlideShow/ActionShot1.png')}}" type="image/png"/>
+						<img src="{{url_for('static', filename='img/SlideShow/ActionShot1.webp')}}" class="img-fluid d-block w-100" />
+					</picture>
+				</div>
+			</div>
+
+			<a class="carousel-control-prev" href="#carouselControl" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			</a>
+
+			<a class="carousel-control-next" href="#carouselControl" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			</a>
+
+		</div>
+
+		<div class="container-fluid">
+			<div class="row pt-3">
+				<div class="col-lg pt-3 ml-0">
+					<h3 class="text-dark text-center h3">Salem Fire Department Mission Statement</h3>
+					<p class="text-dark text-justify pt-4 faq-p">The primary mission of the Salem Fire Department is to provide a range of programs designed to protect the lives and property of the citizens of the City of Salem from the adverse effects of fires, sudden medical emergencies, or exposure to dangerous conditions created by either man or nature</p>
+				</div>
+				<div class="col-lg pt-3 ml-0 mb-3" id="third-col">
+					<h3 class="text-dark text-center h3">Salem Firefighter Union Local 172 Mission Statement</h3>
+					<p class="text-dark text-justify pt-4 faq-p">The Salem Massachusetts Firefighters Local 172 is an organization of dedicated professionals who are committed to serving the community by protecting life, property, and the environment through prevention, education, emergency medical and fire services. </p>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg pt-3	ml-0 text-center">
+					<img src="img/SalLogo.png" alt="Salem Logo" class="img-fluid" /><br>
+					<a class="stretched-link btn btn-halloween" href="BuyingPage.html"><strong>You can buy halloween shirts here!</strong></a>
+					<p id="date">The Salem Fire Holloween counter!</p>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div id="accordion">
+				<!--Beginning of card 1-->
+				<div class="card">
+					<div class="card-header bg-dark" id="headingOne">
+						<h5 class="mb-0 text-center">
+							<button class="btn btn-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+								Station Contact and Location
+							</button>
+						</h5>
+					</div>
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<div class="row text-center">
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Station1" aria-expanded="false" aria-controls="Station1">Headquarters</button>
+									<div class="collapse multi-collapse" id="Station1">
+										<h3>Units at Station</h3>
+										<p>Engine 1<br> Tower Ladder 2<br> Marine 1 <br> Squad 1 <br> Incident Commander<br> Chief</p>
+										<h3>Contacts</h3>
+										<p>Chief John G. Giunta: (978) 744-6990 <br> Fire Alarm non-emergency line: (978) 744-1235 <br> Emergency Line: 911</p>
+										<h4>Address</h4>
+										<p>48 Lafayette St, Salem MA 01970</p>
+										<div class="col-sm pt-3 embed-responsive embed-responsive-21by9 mb-1">
+											<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2940.6670033479477!2d-70.89588958418719!3d42.51988403298541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e31464ea724c47%3A0x4f67841ec2235df3!2s48%20Lafayette%20St%2C%20Salem%2C%20MA%2001970!5e0!3m2!1sen!2sus!4v1594749749108!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="true" tabindex="0"></iframe>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#FirePrevent" aria-expanded="false" aria-controls="FirePrevent">Fire Prevention</button>
+									<div class="collapse multi-collapse" id="FirePrevent">
+										<h3>Units at Station</h3>
+										<p>Fire Marshall<br> Inspector<br></p>
+										<h3>Contacts</h3>
+										<p>Salem Fire Prevention Line: <br> 978-745-7777</p>
+										<h3>Office Hours</h3>
+										<p>Monday - Friday: 8am-9am and 2pm-4pm <br> Closed on Federal and State holidays</p>
+										<h3>Address</h3>
+										<p>29 Fort St, Salem MA 01970</p>
+										<div class="col-sm pt-3 embed-responsive embed-responsive-21by9 mb-1">
+											<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2940.333469965436!2d-70.88167698418698!3d42.52697053253651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3144112390605%3A0x444435bbb051bb4c!2s29%20Fort%20Ave%2C%20Salem%2C%20MA%2001970!5e0!3m2!1sen!2sus!4v1594772985479!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="true" tabindex="0"></iframe>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Station2" aria-expanded="false" aria-controls="Station2">Station 2</button>
+									<div class="collapse multi-collapse" id="Station2">
+										<h3>Units at Station</h3>
+										<p>Engine 2</p>
+										<h3>Contacts</h3>
+										<p>Fire Alarm non-emergency line: <br> (978) 744-1235 <br> Request for Station 2</p>
+										<h3>Address</h3>
+										<p>142 North St, Salem MA 01970</p>
+										<div class="col-sm pt-3 embed-responsive embed-responsive-21by9 mb-1">
+											<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2940.2679346526406!2d-70.9050625841869!3d42.528362832448266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e31476eb28bafd%3A0xc33e80c39e769e5f!2s142%20North%20St%2C%20Salem%2C%20MA%2001970!5e0!3m2!1sen!2sus!4v1594773683512!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="true" tabindex="0"></iframe>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Station4" aria-expanded="false" aria-controls="Station4">Station 4</button>
+									<div class="collapse multi-collapse" id="Station4">
+										<h3>Units at Station</h3>
+										<p>Engine 4 <br> Ladder 1</p>
+										<h3>Contacts</h3>
+										<p>Fire Alarm non-emergency line: <br> (978) 744-1235 <br> Request for Station 4</p>
+										<h3>Address</h3>
+										<p>415 Essex St, Salem MA 01970</p>
+										<div class="col-sm pt-3 embed-responsive embed-responsive-21by9 mb-1">
+											<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1236.4520193110702!2d-70.90579859521573!3d42.51716262092117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3147fbbb1c197%3A0xfd5b1749f0e133f9!2s415%20Essex%20St%2C%20Salem%2C%20MA%2001970!5e0!3m2!1sen!2sus!4v1594774004771!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="true" tabindex="0"></iframe>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Station5" aria-expanded="false" aria-controls="Station5">Station 5</button>
+									<div class="collapse multi-collapse" id="Station5">
+										<h3>Units at Station</h3>
+										<p>Engine 5 <br> Engine 6</p>
+										<h3>Contacts</h3>
+										<p>Fire Alarm non-emergency line: <br> (978) 744-1235 <br> Request for Station 5</p>
+										<h3>Address</h3>
+										<p>64 Loring Ave, Salem MA 01970</p>
+										<div class="col-sm pt-3 embed-responsive embed-responsive-21by9 mb-1">
+											<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2941.47568849425!2d-70.89628438418747!3d42.502698134073846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3149068c60059%3A0xf703dd31f1510aab!2s64%20Loring%20Ave%2C%20Salem%2C%20MA%2001970!5e0!3m2!1sen!2sus!4v1594772814605!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="true" tabindex="0"></iframe>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--Beginning of Card 2-->
+				<div class="card">
+					<div class="card-header bg-dark" id="headingTwo">
+						<h5 class="mb-0 text-center">
+							<button class="btn btn-dark collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Apparatus
+							</button>
+						</h5>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+						<div class="card-body text-center">
+							<a class="mb-1" href="http://www.firenews.org/listing.html" target="_blank"><h3>Apparatus pictures retrieved from FireNews.org</h3></a>
+							<div class="row text-center">
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Engine1" aria-expanded="false" aria-controls="Engine1">Engine 1</button>
+									<div class="collapse multi-collapse" id="Engine1">
+										<h3>2005 KME Predator</h3>
+										<picture>
+											<source srcset="img/E1/SalemE1JG.png" type="image/png"/>
+											<img src="img/E1/SalemE1JG.webp" alt="Engine1" class="img-fluid mb-1" />
+										</picture>									
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Engine2" aria-expanded="false" aria-controls="Engine2">Engine 2</button>
+									<div class="collapse multi-collapse" id="Engine2">
+										<h3>2016 Ferrara Igniter</h3>
+										<picture>
+											<source srcset="img/E2/SalemE2new16MEB.png" type="image/png"/>
+											<img src="img/E2/SalemE2new16MEB.webp" alt="Engine2" class="img-fluid mb-1" />
+										</picture>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Engine4" aria-expanded="false" aria-controls="Engine4">Engine 4</button>
+									<div class="collapse multi-collapse" id="Engine4">
+										<h3>2008 KME</h3>
+										<picture>
+											<source srcset="img/E4/SalemE4new09.png" type="image/png"/>
+											<img src="img/E4/SalemE4new09.webp" alt="Engine4" class="img-fluid mb-1" />
+										</picture>
+									</div>
+								</div>
+								<div class="w-100"></div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Engine5" aria-expanded="false" aria-controls="Engine5">Engine 5</button>
+									<div class="collapse multi-collapse" id="Engine5">
+										<h3>2018 Ferrara Igniter</h3>
+										<picture>
+											<source srcset="img/E5/SalemE5new18.png" typeof="image/png"/>
+											<img src="img/E5/SalemE5new18.webp" alt="Engine5" class="img-fluid mb-1" />
+										</picture>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Engine6" aria-expanded="false" aria-controls="Engine6">Engine 6</button>
+									<div class="collapse multi-collapse" id="Engine6">
+										<h3>1995 Pierce Saber</h3>
+										<picture>
+											<source srcset="img/E6/SalemE5Ernest.png" type="image/png"/>
+											<img src="img/E6/SalemE5Ernest.webp" alt="Engine6" class="img-fluid mb-1" />
+										</picture>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Tower2" aria-expanded="false" aria-controls="Tower2">Tower Ladder 2</button>
+									<div class="collapse multi-collapse" id="Tower2">
+										<h3>2013 Pierce Arrow XT 95'</h3>
+										<picture>
+											<source srcset="img/TL2/SalemTL2JG.png" type="image/png"/>
+											<img src="img/TL2/SalemTL2JG.webp" alt="Ladder2" class="img-fluid mb-1" />
+										</picture>
+									</div>
+								</div>
+								<div class="w-100"></div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Ladder1" aria-expanded="false" aria-controls="Ladder1">Ladder 1</button>
+									<div class="collapse multi-collapse" id="Ladder1">
+										<h3>2000 Pierce 105’ RMA</h3>
+										<picture>
+											<source srcset="img/L1/SalemL1.png" type="image/png"/>
+											<img src="img/L1/SalemL1.webp" alt="Ladder1" class="img-fluid mb-1" />
+										</picture>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#M1" aria-expanded="false" aria-controls="Mechanic1">Mechanic 1</button>
+									<div class="collapse multi-collapse" id="M1">
+										<h3>2016 Chevy Silverado 2500HD 4x4</h3>
+										<picture>
+											<source srcset="img/M1/SalemM1new16.png" type="image/png"/>
+											<img src="img/M1/SalemM1new16.webp" alt="M1" class="img-fluid mb-1" />
+										</picture>
+									</div>
+								</div>
+								<div class="col-sm">
+									<button class="btn btn-primary mb-1" type="button" data-toggle="collapse" data-target="#Car2" aria-expanded="false" aria-controls="Car2">Car 2</button>
+									<div class="collapse multi-collapse" id="Car2">
+										<h3>2015 Chevy Tahoe 4X4</h3>
+										<picture>
+											<source srcset="img/C2/SalemC2new15Toz.webp" type="image/png"/>
+											<img src="img/C2/SalemC2new15Toz.webp" alt="Car2" class="img-fluid mb-1" />
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Beginning of card 3-->
+					<div class="card">
+						<div class="card-header bg-dark" id="headingThree">
+							<h5 class="mb-0 text-center">
+								<button class="btn btn-dark collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+									Special Teams
+								</button>
+							</h5>
+						</div>
+
+						<div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+							<div class="card-body text-center">
+								<div class="row">
+									<div class="col-lg">
+										<a class="text-decoration-none h5" data-toggle="collapse" href="#SPECOP" aria-expanded="false" aria-controls="SPECOP"><h5>Special Operations</h5></a>
+										<div class="collapse multi-collapse" id="SPECOP">
+											<p class="text-left">
+												<!--TODO Info here-->
+												Under Development
+											</p>
+										</div>
+									</div>
+									<div class="col-lg">
+										<a class="text-decoration-none h5" data-toggle="collapse" href="#CPS" aria-expanded="false" aria-controls="CPS"><h5>Child Passenger Seat (CPS)</h5></a>
+										<div class="collapse multi-collapse" id="CPS">
+											<p>
+												The CPS division of the Salem Fire Department is committed to educating parents and ensuring child safety in a motor vehicle.
+												To request an appointment, please email <a href="mailto: sfdchildsafety@salem.com">SFDChildSafety@Salem.com</a>
+											</p>
+										</div>
+									</div>
+									<div class="w-100"></div>
+									<div class="col-lg">
+										<a class="text-decoration-none h5" data-toggle="collapse" href="#SFRA" aria-expanded="false" aria-controls="SFRA"><h5>Salem Firefighter Relief Association (SFRA)</h5></a>
+										<div class="collapse multi-collapse" id="SFRA">
+											<h6 style="text-decoration:underline">Mission Statement</h6>
+											<p>
+												The SFRA provides assistance to its members and their families during times of sickness, injury, or death by means of financial
+												assistance from money collected by donation and member dues. The SFRA also proudly maintains monutments located at SFD Headquarters and
+												Harmony Grove Cemetary to honor our fallen brothers and sisters.
+												<br>
+												<br>
+												It is our duty to maintain the spirit of its founding principals of supporting it's members and their families to the time honored traditions
+												of the SFD and a lasting sense of support for our community that we serve. <br> <strong>Founded October 25, 1878</strong>
+											</p>
+											<p> For donations and other requests please email: <a href="mailto: salemfiremensreliefassoc@gmail.com">SalemFiremensReliefAssoc@Gmail.com</a></p>
+										</div>
+									</div>
+
+									<div class="col-lg">
+										<a class="text-decoration-none h5" data-toggle="collapse" href="#HONOR" aria-expanded="false" aria-controls="HONOR"><h5>Salem Firefighter Honor Guard</h5></a>
+										<div class="collapse multi-collapse" id="HONOR">
+											<h6 style="text-decoration:underline">Mission Statement</h6>
+											<p>
+												The main mission of the Salem Firefighters Honor Guard is to provide funeral services to fallen firefighters. Those duties may include presentation of colors, service as pallbearers, or posting a watch alongside the fallen member.
+												<br>
+												<br>
+												In addition to providing funeral services, the Honor Guard attends the annual Memorial Day parade in North Salem as well as the Wreathes Across America ceremony at Greenlawn Cemetery in honor of our fallen service members.
+												<br>
+												<br>
+												Recently, the Honor Guard has had the distinct pleasure of presenting the colors during the pregame ceremonies at Fenway Park for the Boston Red Sox in 2017 and 2019, as well as the pregame ceremonies for the New England Revolution at Gillette Stadium in 2017.
+												<br>
+												<br>
+												To request the Honor Guard, please email:
+												<a href="mailto: SalemFireHonorGuard@gmail.com">SalemFireHonorGuard@gmail.com</a>*
+											</p>
+											<i>*not all requests can be filled, pending availability of members</i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header bg-dark" id="headingThree">
+								<h5 class="mb-0 text-center">
+									<button class="btn btn-dark collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										FAQ
+									</button>
+								</h5>
+							</div>
+							<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+								<div class="card-body text-left">
+									<div class="col-sm">
+										<a class="text-decoration-none h5" data-toggle="collapse" href="#Q1" aria-expanded="false" aria-controls="engine1">1. My fire alarm has been going off for a half hour and the Fire Department never showed up.</a>
+										<div class="collapse multi-collapse" id="Q1">
+											<p class="faq-p">
+												Not every smoke detector or fire alarm is wired directly to the fire department.
+												The only fire alarms connected or that report to the Fire Department come from commercial buildings,
+												public buildings or apartment buildings that have XX or more units.
+												If a smoke detector is activated at your house or apartment be sure to call 9-1-1 to report it. Never assume someone else has called
+											</p>
+
+										</div>
+									</div>
+									<div class="col-sm">
+										<a class="text-decoration-none h5" data-toggle="collapse" href="#Q2" aria-expanded="false" aria-controls="engine1">2. I'm selling my house how do I get a smoke alarm certificate?</a>
+										<div class="collapse multi-collapse" id="Q2">
+											<p class="faq-p">
+												You can visit <a href="https://www.salem.com/fire-department/pages/fire-prevention" target="_blank">Salem.com</a> for more information on getting a smoke alarm certification. You can also
+												contact Salem Fire Prevention at (978) 754-7777.
+											</p>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--end of accordion-->
+				</div>
+			</div>
+			<script type="text/javascript" src="js/script.js"></script>
+		</div>
+
+		<!--Footer-->
+		<div><footer class="text-center" id="footer"></footer></div>
+</body>
+</html>
