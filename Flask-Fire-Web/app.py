@@ -2,14 +2,14 @@ from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
-@app.route('/'), method=['GET','POST']
+@app.route('/')
 def index():
-     return render_template("index.html")
+     return render_template('index.html')
 
-@app.route('/product'), method=['GET', 'POST']
+@app.route('/product')
 def product():
-     return render_template("BuyingPage.html")
+     return render_template('BuyingPage.html')
 
-@app.route('/history'), method=['GET', 'POST']
+@app.route('/history')
 def history():
-     return render_template("History.html")
+     return render_template('History.html')
