@@ -11,17 +11,18 @@
     {% endblock %}
 
     {% block body %}
-        <div class="container">
-        <form class="pt-5">
-            <div class="form-group">
-                <label for="BadgeInput">Badge Number</label>
-                <input type="text" class="form-control" id="BadgeInput" aria-describedby="BadgeHelp"/>
-                <small id="BadgeHelp" class="form-text text-muted">Enter your badge number.</small>
-            </div>
-            <div class="form-group">
-                <label for="PasswordInput">Password</label>
-                  <input type="password" class="form-control" id="PasswordInput"/>
-            </div>
-        </form>
+        <div class="pt-5 container">
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="BadgeInput">Badge Number</label>
+                    <input type="text" class="form-control" id="BadgeInput" name="BadgeInput" aria-describedby="BadgeHelp"/>
+                    <small id="BadgeHelp" class="form-text text-muted">Enter your badge number.</small>
+                </div>
+                <div class="form-group">
+                    <label for="PasswordInput">Password</label>
+                    <input type="password" name="PasswordInput" class="form-control" id="PasswordInput" />
+                </div>
+                   <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
             </div>
     {% endblock %}

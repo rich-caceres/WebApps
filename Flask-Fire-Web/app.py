@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
@@ -27,3 +27,16 @@ def history():
 @app.route('/user_sign_in')
 def sign_in_page():
      return render_template('SignIn.html')
+
+@app.route('/login', methods=["POST", "GET"])
+def login():
+
+     if request.method == "POST":
+     #testing form retrieval
+          badge_number = request.form["BadgeInput"]
+          password = request.form["PasswordInput"]
+          print(f"Badge number input: [badge_Number] \n Password Input: [password]")
+          return redirect(request.url)
+     
+     return render_template('SignIn.html')
+
