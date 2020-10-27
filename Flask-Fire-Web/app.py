@@ -6,7 +6,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 app = Flask(__name__)
 
-engine = create_engine(os.getenv("DATABASE_URL"))
+engine = create_engine(os.getenv('DATABASE_URL'))
 db = scoped_session(sessionmaker(bind=engine))
 
 @app.route('/')
@@ -20,3 +20,7 @@ def product():
 @app.route('/history')
 def history():
      return render_template('History.html')
+
+@app.route('/user_sign_in')
+def sign_in_page():
+     return render_template('SignIn.html')
