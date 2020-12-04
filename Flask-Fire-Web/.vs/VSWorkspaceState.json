@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\static",
+    "\\static\\img",
     "\\templates"
   ],
-  "SelectedNode": "\\templates\\layout.html",
+  "SelectedNode": "\\static\\img\\T2.webp",
   "PreviewInSolutionExplorer": false
 }

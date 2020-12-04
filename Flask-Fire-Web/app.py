@@ -32,11 +32,21 @@ def sign_in_page():
 def login():
 
      if request.method == "POST":
-     #testing form retrieval
-          badge_number = request.form["BadgeInput"]
-          password = request.form["PasswordInput"]
-          print(f"Badge number input: [badge_Number] \n Password Input: [password]")
-          return redirect(request.url)
+          try:
+               badge_number = request.form["BadgeInput"]
+               password = request.form["PasswordInput"]
+          except:
+               return render_template('SignIn.html', message= "Error with credentials, please try again later.")
+          
+     if db.execute("SELECT * FROM fduser WHERE id = :id", {"id": badge_number}).rowcount == 0 or badge_number is None:
+          return render_template('SignIn.html', message = "No badge number found, try again.")
+
+     #The code below is not working, will need to create a user base to access data possibly.
+     userpass= db.execute("SELECT pass FROM fduser WHERE id = :id", {"id": badge_number}).fetchall()
+     print(userpass)
+     if userpass is not password or password is None:
+          return render_template('SignIn.html', message = "Password is incorrect, try again.")
+     
      
      return render_template('SignIn.html')
 
