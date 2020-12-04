@@ -1,4 +1,5 @@
 import os
+from userCreation import User, Union_User
 
 from flask import Flask, render_template, url_for, request, redirect
 from sqlalchemy import create_engine
@@ -11,6 +12,8 @@ app.config['TESTING'] = True
 
 engine = create_engine(os.getenv('DATABASE_URL'))
 db = scoped_session(sessionmaker(bind=engine))
+Session =sessionmaker(bind=engine)
+session = Session()
 
 @app.route('/')
 def index():
@@ -37,16 +40,18 @@ def login():
                password = request.form["PasswordInput"]
           except:
                return render_template('SignIn.html', message= "Error with credentials, please try again later.")
-          
-     if db.execute("SELECT * FROM fduser WHERE id = :id", {"id": badge_number}).rowcount == 0 or badge_number is None:
+
+          """db.execute("SELECT * FROM fduser WHERE id = :id", {"id": badge_number})"""
+     if session.query(User).filter_by(id = badge_number).first() is None or badge_number == '':
           return render_template('SignIn.html', message = "No badge number found, try again.")
 
      #The code below is not working, will need to create a user base to access data possibly.
-     userpass= db.execute("SELECT pass FROM fduser WHERE id = :id", {"id": badge_number}).fetchall()
-     print(userpass)
-     if userpass is not password or password is None:
+     user= session.query(User).filter_by(id = badge_number).first() #db.execute("SELECT password FROM fduser WHERE id = :id", {"id": badge_number}).fetchall()
+     print(user.password)
+     if user.password != password or password is None:
           return render_template('SignIn.html', message = "Password is incorrect, try again.")
-     
+     else:
+          return render_template('SignIn.html', message = "This was correct and you have signed in.")
      
      return render_template('SignIn.html')
 
