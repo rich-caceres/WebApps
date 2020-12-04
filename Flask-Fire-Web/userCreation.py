@@ -1,18 +1,19 @@
 import os
 
+###SQL Alchemy Imports###
 from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-
+###Creating the database connection###
 engine = create_engine(os.getenv('DATABASE_URL'))
 Base = declarative_base(engine) 
-#db = scoped_session(sessionmaker(bind=engine))
+#db = scoped_session(sessionmaker(bind=engine))for testing will remove
 Session = sessionmaker(bind=engine)
 session = Session()
 
-
+###Creates the user class object for signing in###
 class User(Base):
     
     __tablename__= 'fduser'
@@ -32,7 +33,7 @@ class User(Base):
          self.position = position
 
         
-
+###User Postiton within union###
 class Union_User(Base):
 
     __tablename__='unionuser'
@@ -40,7 +41,7 @@ class Union_User(Base):
     id = Column(Integer, primary_key=True)
     position = Column(String)
 
-
+###for testing this###
 if __name__ == "__main__":
 
     our_user = session.query(User).filter_by(id=71).first()
