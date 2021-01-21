@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+
+    {% block title %}dashboard{% endblock %}
+
+    {% block navLinks %}
+        <a class="nav-item nav-link text-light" href="{{url_for('index')}}">Home</a>
+        <a class="nav-item nav-link text-light" href="{{url_for('product')}}">Products</a>
+        <a class="nav-item nav-link text-light" href="{{url_for('history')}}">History</a>
+        <a class="nav-item nav-link text-light" href="{{url_for('sign_in_page')}}">Sign In</a>
+        <a class="nav-item nav-link text-light active" href="{{url_for('dashboard')}}">Dashboard</a>
+    {% endblock %}
+
+    {% block body %}
+        <div class="pt-5 container">
+            {% if message %}
+            <h3 class="text-success text-center">{{message}}</h3>
+            {% endif %}
+        </div>
+    {% endblock %}

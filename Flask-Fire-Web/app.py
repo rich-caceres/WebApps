@@ -31,6 +31,10 @@ def history():
 def sign_in_page():
      return render_template('SignIn.html')
 
+@app.route('/login_success')
+def login_success():
+     return render_template('dashboard.html')
+
 @app.route('/login', methods=["POST", "GET"])
 def login():
 
@@ -46,12 +50,17 @@ def login():
           return render_template('SignIn.html', message = "No badge number found, try again.")
 
      #Code is working, I'm dumb and used is over == to compare strings.
-     user= session.query(User).filter_by(id = badge_number).first() #db.execute("SELECT password FROM fduser WHERE id = :id", {"id": badge_number}).fetchall()
+     user = session.query(User).filter_by(id = badge_number).first() #db.execute("SELECT password FROM fduser WHERE id = :id", {"id": badge_number}).fetchall()
      print(user.password)
-     if user.password != password or password is None:
+     if user is None:
           return render_template('SignIn.html', message = "Password is incorrect, try again.")
      else:
-          return render_template('SignIn.html', message = "This was correct and you have signed in.")
+          return render_template('dashboard.html', message= "Successful login")
      
      return render_template('SignIn.html')
+
+     #TODO: Get to render the template dashboard
+     #TODO: need to create a flow that the user can use for seeing maintenance on vehicles
+     #TODO: Currently, the user can login but we get a 500 error, probably nothing serious, just need to review app.route configurations
+     #NOTE: test badge is 71, pass is the normal pass
 
