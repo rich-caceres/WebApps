@@ -31,8 +31,8 @@ def history():
 def sign_in_page():
      return render_template('SignIn.html')
 
-@app.route('/login_success')
-def login_success():
+@app.route('/dashboard')
+def dashboard():
      return render_template('dashboard.html')
 
 @app.route('/login', methods=["POST", "GET"])
