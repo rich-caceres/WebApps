@@ -60,6 +60,8 @@ def login():
      return render_template('SignIn.html')
 
      #TODO: Get to render the template dashboard
+     #TODO: Will use WTFforms for auto form creation
+     #TODO: Digest user grievance forms
      #TODO: need to create a flow that the user can use for seeing maintenance on vehicles
      #TODO: Currently, the user can login but we get a 500 error, probably nothing serious, just need to review app.route configurations
      #NOTE: test badge is 71, pass is the normal pass
