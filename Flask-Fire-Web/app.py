@@ -49,10 +49,10 @@ def login():
      if session.query(User).filter_by(id = badge_number).first() is None or badge_number == '':
           return render_template('SignIn.html', message = "No badge number found, try again.")
 
-     #Code is working, I'm dumb and used is over == to compare strings.
+     
      user = session.query(User).filter_by(id = badge_number).first() #db.execute("SELECT password FROM fduser WHERE id = :id", {"id": badge_number}).fetchall()
-     print(user.password)
-     if user is None:
+     #print(user.password)#for Testing
+     if user is None or user.password != password:
           return render_template('SignIn.html', message = "Password is incorrect, try again.")
      else:
           return render_template('dashboard.html', message= "Successful login")
