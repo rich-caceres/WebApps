@@ -59,6 +59,10 @@ def login():
      
      return render_template('SignIn.html')
 
+@app.errorhandeler(404)
+def page_not_found(e):
+    return render_template('404.html')
+
      #TODO: Get to render the template dashboard
      #TODO: Will use WTFforms for auto form creation
      #TODO: Digest user grievance forms
