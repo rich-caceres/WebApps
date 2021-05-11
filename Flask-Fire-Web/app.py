@@ -41,7 +41,19 @@ def sign_in_page():
               #badge_number = request.form["BadgeInput"]
               #password = request.form["PasswordInput"]
           except:
-               return render_template('SignIn.html', message= "Error with credentials, please try again later.")
+               return render_template('SignIn.html', form=form, message= "Error with credentials, please try again later.")
+
+    if session.query(User).filter_by(id = badge_number).first() is None or badge_number == '':
+        return render_template('SignIn.html', message = "No badge number found, try again.")
+    
+    #getting the user from database
+    user = session.query(User).filter_by(id = badge_number).first()
+
+    #checks if password is correct
+    if user is None or user.password != password:
+          return render_template('SignIn.html', message = "Password is incorrect, try again.")
+    else:
+          return render_template('dashboard.html', message= "Successful login")
 
          #TODO: Will need to import the rest of SQL code to grab and check if the user is validated
 
