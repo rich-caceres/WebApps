@@ -2,10 +2,6 @@ import os
 
 ###SQL Alchemy Imports###
 from flask_sqlalchemy import sqlalchemy
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -17,15 +13,15 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 #session = Session()
 
 ###Creates the user class object for signing in###
-class User(Base):
+class User(db.Model):
     
     __tablename__= 'fduser'
         
-    id = Column(Integer, primary_key=True)
-    password = Column(String)
-    fname = Column(String)
-    lname = Column(String)
-    position = Column(String)
+    id = Column(db.Integer, primary_key=True)
+    password = Column(db.String)
+    fname = Column(db.String)
+    lname = Column(db.String)
+    position = Column(db.String)
 
     def __init__(self, user_id, password, fname, lname, position):
 
@@ -37,12 +33,12 @@ class User(Base):
 
         
 ###User Postiton within union###
-class Union_User(Base):
+class Union_User(db.Model):
 
     __tablename__='unionuser'
 
-    id = Column(Integer, primary_key=True)
-    position = Column(String)
+    id = Column(db.Integer, primary_key=True)
+    position = Column(db.String)
 
 ###for testing this###
 if __name__ == "__main__":
