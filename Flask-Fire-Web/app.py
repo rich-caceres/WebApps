@@ -8,8 +8,9 @@ from flask_sqlalchemy import SQLAlchemy
 #from sqlalchemy import create_engine
 #from sqlalchemy.orm import scoped_session, sessionmaker
 
-app = Flask(__name__)
+app = Flask(__name__) #this will be moved to init.py
 app.config.from_object('config.DevelopmentConfig')#os.environ['APP_SETTINGS']
+#db = SQLAlchemy(app) this will be moved to init.py
 app.config['SQLALCHEMY_TRACK_MODIFATIONS'] = False
 #engine = create_engine(os.getenv('DATABASE_URL'))
 #db = scoped_session(sessionmaker(bind=engine))

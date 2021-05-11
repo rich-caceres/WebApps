@@ -21,7 +21,8 @@ class User(db.Model):
     password = Column(db.String)
     fname = Column(db.String)
     lname = Column(db.String)
-    position = Column(db.String)
+    position_id = Column(db.Integer, ForeignKey('unionuser.id'))
+    posotion = relationship("Union_User")
 
     def __init__(self, user_id, password, fname, lname, position):
 
