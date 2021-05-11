@@ -41,8 +41,11 @@ def login():
 
      if request.method == "POST":
           try:
-               badge_number = request.form["BadgeInput"]
-               password = request.form["PasswordInput"]
+              
+              badge_number = form.badge_number.data
+              password = form.password.data
+              #badge_number = request.form["BadgeInput"]
+              #password = request.form["PasswordInput"]
           except:
                return render_template('SignIn.html', message= "Error with credentials, please try again later.")
 

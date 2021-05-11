@@ -5,6 +5,6 @@ from wtforms.validators import DataRequired
 class LoginForm(FlaskForm):
     
     badge_number = StringField("Badge Number")
-    Password = StringField("Password")
+    password = StringField("Password")
     submit = SubmitField("Login")
   
