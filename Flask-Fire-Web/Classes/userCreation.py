@@ -1,6 +1,7 @@
 import os
 
 ###SQL Alchemy Imports###
+from flask_sqlalchemy import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String
