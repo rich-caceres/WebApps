@@ -7,11 +7,11 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 ###Creating the database connection###
-engine = create_engine(os.getenv('DATABASE_URL'))
-Base = declarative_base(engine) 
+#engine = create_engine(os.getenv('DATABASE_URL'))
+#Base = declarative_base(engine) 
 #db = scoped_session(sessionmaker(bind=engine))for testing will remove
-Session = sessionmaker(bind=engine)
-session = Session()
+#Session = sessionmaker(bind=engine)
+#session = Session()
 
 ###Creates the user class object for signing in###
 class User(Base):

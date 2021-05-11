@@ -1,20 +1,21 @@
 import os
-from userCreation import User, Union_User
-from Classes.forms import LoginForm
+#from userCreation import User, Union_User
+from Classes.forms.forms import LoginForm
 
 from flask import Flask, render_template, url_for, request, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'MY_SECRET_KEY'
 app.config['ENV'] = 'development'
 app.config['DEBUG'] = True
 app.config['TESTING'] = True
 
-engine = create_engine(os.getenv('DATABASE_URL'))
-db = scoped_session(sessionmaker(bind=engine))
-Session =sessionmaker(bind=engine)
-session = Session()
+#engine = create_engine(os.getenv('DATABASE_URL'))
+#db = scoped_session(sessionmaker(bind=engine))
+#Session =sessionmaker(bind=engine)
+#session = Session()
 
 @app.route('/')
 def index():
@@ -30,8 +31,8 @@ def history():
 
 @app.route('/user_sign_in')
 def sign_in_page():
-    #form = LoginForm() <-- need to add login form to the sign in page template
-    return render_template('SignIn.html')#<-- add form = form
+    form = LoginForm() #<-- need to add login form to the sign in page template
+    return render_template('SignIn.html', form = form)#<-- add form = form
 
 @app.route('/dashboard')
 def dashboard():
@@ -42,7 +43,6 @@ def login():
 
      if request.method == "POST":
           try:
-              
               badge_number = form.badge_number.data
               password = form.password.data
               #badge_number = request.form["BadgeInput"]
@@ -64,10 +64,13 @@ def login():
      
      return render_template('SignIn.html')
 
-@app.errorhandeler(404)
+@app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html')
+    return render_template('404.html',404)
 
+if __name__ == "__main__":
+
+    app.run(debug = True)
      #TODO: Get to render the template dashboard
      #TODO: Will use WTFforms for auto form creation
      #TODO: Digest user grievance forms
