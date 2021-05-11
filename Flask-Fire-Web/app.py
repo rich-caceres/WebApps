@@ -31,8 +31,8 @@ def history():
 
 @app.route('/user_sign_in')
 def sign_in_page():
-    form = LoginForm() #<-- need to add login form to the sign in page template
-    return render_template('SignIn.html', form = form)#<-- add form = form
+    form = LoginForm()
+    return render_template('SignIn.html', form = form)
 
 @app.route('/dashboard')
 def dashboard():
@@ -72,7 +72,6 @@ if __name__ == "__main__":
 
     app.run(debug = True)
      #TODO: Get to render the template dashboard
-     #TODO: Will use WTFforms for auto form creation
      #TODO: Digest user grievance forms
      #TODO: need to create a flow that the user can use for seeing maintenance on vehicles
      #TODO: Currently, the user can login but we get a 500 error, probably nothing serious, just need to review app.route configurations
