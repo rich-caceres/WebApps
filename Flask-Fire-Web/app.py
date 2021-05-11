@@ -29,9 +29,19 @@ def product():
 def history():
      return render_template('History.html')
 
-@app.route('/user_sign_in')
+@app.route('/user_sign_in', methods=['GET','POST'])
 def sign_in_page():
     form = LoginForm()
+    if request.method == "POST":
+          try:
+              badge_number = form.badge_number.data
+              password = form.password.data
+              print(badge_number)
+              print(password)
+              #badge_number = request.form["BadgeInput"]
+              #password = request.form["PasswordInput"]
+          except:
+               return render_template('SignIn.html', message= "Error with credentials, please try again later.")
     return render_template('SignIn.html', form = form)
 
 @app.route('/dashboard')
