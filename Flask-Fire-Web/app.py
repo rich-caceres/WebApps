@@ -61,32 +61,6 @@ def sign_in_page():
 def dashboard():
      return render_template('dashboard.html')
 
-@app.route('/login', methods=["POST", "GET"])
-def login():
-
-     if request.method == "POST":
-          try:
-              badge_number = form.badge_number.data
-              password = form.password.data
-              #badge_number = request.form["BadgeInput"]
-              #password = request.form["PasswordInput"]
-          except:
-               return render_template('SignIn.html', message= "Error with credentials, please try again later.")
-
-          """db.execute("SELECT * FROM fduser WHERE id = :id", {"id": badge_number})"""
-     if session.query(User).filter_by(id = badge_number).first() is None or badge_number == '':
-          return render_template('SignIn.html', message = "No badge number found, try again.")
-
-     
-     user = session.query(User).filter_by(id = badge_number).first() #db.execute("SELECT password FROM fduser WHERE id = :id", {"id": badge_number}).fetchall()
-     #print(user.password)#for Testing
-     if user is None or user.password != password:
-          return render_template('SignIn.html', message = "Password is incorrect, try again.")
-     else:
-          return render_template('dashboard.html', message= "Successful login")
-     
-     return render_template('SignIn.html')
-
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html',404)
