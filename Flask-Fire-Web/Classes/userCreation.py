@@ -6,6 +6,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 ###Creating the database connection###
 #engine = create_engine(os.getenv('DATABASE_URL'))
 #Base = declarative_base(engine) 
@@ -24,7 +26,7 @@ class User(Base):
     lname = Column(String)
     position = Column(String)
 
-    def __init__(self, user_id, password, fname, lnme, position):
+    def __init__(self, user_id, password, fname, lname, position):
 
          self.user_id = user_id
          self.password = password
