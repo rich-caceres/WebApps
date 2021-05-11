@@ -40,6 +40,15 @@ class Union_User(db.Model):
     id = Column(db.Integer, primary_key=True)
     position = Column(db.String)
 
+    def __init__(self, pos_id, pos_name):
+
+        self.id = pos_id
+        self.position = pos_name
+
+    def __repr__():
+
+        return f"The position at ID {self.id} is: {self.position}"
+
 ###for testing this###
 if __name__ == "__main__":
 
