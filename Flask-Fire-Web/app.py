@@ -30,7 +30,8 @@ def history():
 
 @app.route('/user_sign_in')
 def sign_in_page():
-     return render_template('SignIn.html')
+    #form = LoginForm() <-- need to add login form to the sign in page template
+    return render_template('SignIn.html')#<-- add form = form
 
 @app.route('/dashboard')
 def dashboard():
