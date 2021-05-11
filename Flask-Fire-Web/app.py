@@ -42,6 +42,9 @@ def sign_in_page():
               #password = request.form["PasswordInput"]
           except:
                return render_template('SignIn.html', message= "Error with credentials, please try again later.")
+
+         #TODO: Will need to import the rest of SQL code to grab and check if the user is validated
+
     return render_template('SignIn.html', form = form)
 
 @app.route('/dashboard')
