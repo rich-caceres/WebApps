@@ -1,5 +1,8 @@
 import os
 
+#set up db inside __init__.py
+from FireWeb import db
+
 ###SQL Alchemy Imports###
 from flask_sqlalchemy import sqlalchemy
 

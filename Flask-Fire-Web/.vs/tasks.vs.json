@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Flask-Fire-Web",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}

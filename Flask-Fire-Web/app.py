@@ -1,17 +1,19 @@
 import os
-from Classes.userCreation import User, Union_User
-from Classes.forms.forms import LoginForm
+#from FireWeb.userCreation import User, Union_User
+#from Classes.forms.forms import LoginForm
 #from Classes.config import DevelopmentConfig
+from FireWeb import app
 
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 #from sqlalchemy import create_engine
 #from sqlalchemy.orm import scoped_session, sessionmaker
 
-app = Flask(__name__) #this will be moved to init.py
-app.config.from_object('config.DevelopmentConfig')#os.environ['APP_SETTINGS']
-#db = SQLAlchemy(app) this will be moved to init.py
-app.config['SQLALCHEMY_TRACK_MODIFATIONS'] = False
+#app = Flask(__name__) #this will be moved to init.py
+#app.config.from_object('config.DevelopmentConfig')
+#db = SQLAlchemy(app)
+#app.config['SQLALCHEMY_TRACK_MODIFATIONS'] = False
+
 #engine = create_engine(os.getenv('DATABASE_URL'))
 #db = scoped_session(sessionmaker(bind=engine))
 #Session =sessionmaker(bind=engine)
