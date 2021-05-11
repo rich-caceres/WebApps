@@ -9,3 +9,7 @@ app.config['SQLALCHEMY_TRACK_MODIFATIONS'] = False
 
 db = SQLAlchemy(app)
 Migrate(app,db)
+
+from FireWeb.login.views import login_blueprint
+
+app.register_blueprint(login_blueprint, url_prefix='/signin')

@@ -1,12 +1,5 @@
-import os
-
 #set up db inside __init__.py
 from FireWeb import db
-
-###SQL Alchemy Imports###
-from flask_sqlalchemy import sqlalchemy
-
-basedir = os.path.abspath(os.path.dirname(__file__))
 
 ###Creating the database connection###
 #engine = create_engine(os.getenv('DATABASE_URL'))
@@ -20,12 +13,12 @@ class User(db.Model):
     
     __tablename__= 'fduser'
         
-    id = Column(db.Integer, primary_key=True)
-    password = Column(db.String)
-    fname = Column(db.String)
-    lname = Column(db.String)
-    position_id = Column(db.Integer, ForeignKey('unionuser.id'))
-    posotion = relationship("Union_User")
+    id = db.Column(db.Integer, primary_key=True)
+    password = db.Column(db.String)
+    fname = db.Column(db.String)
+    lname = db.Column(db.String)
+    position_id = db.Column(db.Integer, db.ForeignKey('unionuser.id'))
+    posotion = db.relationship("Union_User")
 
     def __init__(self, user_id, password, fname, lname, position):
 
@@ -41,8 +34,8 @@ class Union_User(db.Model):
 
     __tablename__='unionuser'
 
-    id = Column(db.Integer, primary_key=True)
-    position = Column(db.String)
+    id = db.Column(db.Integer, primary_key=True)
+    position = db.Column(db.String)
 
     def __init__(self, pos_id, pos_name):
 

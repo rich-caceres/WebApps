@@ -5,6 +5,7 @@ basedir= os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     DEBUG = False
     TESTING = False
+    EXPLAIN_TEMPLATE_LOADING= True
     CSRF_ENABLED = True
     SECRET_KEY = 'SECRET_KEY'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir,'data.sqlite')

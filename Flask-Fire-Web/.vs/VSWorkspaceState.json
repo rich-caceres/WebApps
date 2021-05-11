@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Classes",
-    "\\Classes\\forms"
+    "\\FireWeb",
+    "\\FireWeb\\login",
+    "\\FireWeb\\login\\templates",
+    "\\FireWeb\\login\\templates\\login",
+    "\\FireWeb\\static",
+    "\\FireWeb\\templates"
   ],
+  "SelectedNode": "\\FireWeb\\login\\forms.py",
   "PreviewInSolutionExplorer": false
 }

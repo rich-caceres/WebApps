@@ -30,7 +30,7 @@ def product():
 @app.route('/history')
 def history():
      return render_template('History.html')
-
+"""
 @app.route('/user_sign_in', methods=['GET','POST'])
 def sign_in_page():
     form = LoginForm()
@@ -59,6 +59,7 @@ def sign_in_page():
          #TODO: Will need to import the rest of SQL code to grab and check if the user is validated
 
     return render_template('SignIn.html', form = form)
+"""
 
 @app.route('/dashboard')
 def dashboard():
@@ -66,7 +67,7 @@ def dashboard():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html',404)
+    return render_template('404.html')
 
 if __name__ == "__main__":
 
