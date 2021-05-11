@@ -1,5 +1,6 @@
 import os
 from userCreation import User, Union_User
+from Classes.forms import LoginForm
 
 from flask import Flask, render_template, url_for, request, redirect
 from sqlalchemy import create_engine
