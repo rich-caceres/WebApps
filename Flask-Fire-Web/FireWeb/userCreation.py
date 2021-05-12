@@ -17,33 +17,32 @@ class User(db.Model):
     password = db.Column(db.String)
     fname = db.Column(db.String)
     lname = db.Column(db.String)
-    position_id = db.Column(db.Integer, db.ForeignKey('unionuser.id'))
-    posotion = db.relationship("Union_User")
+    posotion_id = db.Column(db.Integer, db.ForeignKey('unionpos.id'))
 
-    def __init__(self, user_id, password, fname, lname, position):
+    def __init__(self, user_id, password, fname, lname, position_id):
 
          self.user_id = user_id
          self.password = password
          self.fname = fname
-         slef.lname = lname
-         self.position = position
+         self.lname = lname
+         self.posotion_id = position_id
 
         
 ###User Postiton within union###
 class Union_User(db.Model):
 
-    __tablename__='unionuser'
+    __tablename__='unionpos'
 
     id = db.Column(db.Integer, primary_key=True)
     position = db.Column(db.String)
+    users = db.relationship('User', backref="userpos", lazy='dynamic')
 
     def __init__(self, pos_id, pos_name):
 
         self.id = pos_id
         self.position = pos_name
 
-    def __repr__():
-
+    def __repr__(self):
         return f"The position at ID {self.id} is: {self.position}"
 
 ###for testing this###

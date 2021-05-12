@@ -18,15 +18,15 @@ def login():
               #password = request.form["PasswordInput"]
           except:
                return render_template('SignIn.html', form=form, message= "Error with credentials, please try again later.")
-          if session.query(User).filter_by(id = badge_number).first() is None or badge_number == '':
-              return render_template('SignIn.html', message = "No badge number found, try again.")
+          if db.session.query(User).filter_by(id = badge_number).first() is None or badge_number == '':
+              return render_template('SignIn.html', form=form, message = "No badge number found, try again.")
           
           ###GETTING THE USER FROM SESSION### NOT IMPLEMENTED IN THIS VERSION YET
-          user = session.query(User).filter_by(id = badge_number).first()
+          user = db.session.query(User).filter_by(id = badge_number).first()
           
           ##CHECKING TO SEE IF THE PASSWORD IS CORRECT### NOT IMPLEMENTED IN THIS VERSION YET
           if user is None or user.password != password:
-              return render_template('SignIn.html', message = "Password is incorrect, try again.")
+              return render_template('SignIn.html', form = form, message = "Password is incorrect, try again.")
           else:
               return render_template('dashboard.html', message= "Successful login")
     return render_template('SignIn.html', form = form)

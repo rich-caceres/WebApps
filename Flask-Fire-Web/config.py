@@ -7,7 +7,7 @@ class Config(object):
     TESTING = False
     EXPLAIN_TEMPLATE_LOADING= False
     CSRF_ENABLED = True
-    SECRET_KEY = 'SECRET_KEY'
+    SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir,'data.sqlite')
 
 class ProductionConfig(Config):
