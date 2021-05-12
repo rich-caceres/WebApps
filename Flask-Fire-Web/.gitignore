@@ -1,2 +1,3 @@
-# ignore tableCreate.py
-# ignore data.sqlite
+# git ignore 
+tableCreate.py
+data.sqlite
