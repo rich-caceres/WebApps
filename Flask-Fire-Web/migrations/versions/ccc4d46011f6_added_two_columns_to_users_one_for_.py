@@ -1,8 +1,8 @@
-"""initial migration
+"""added two columns to users, one for badgenum and is active
 
-Revision ID: 575b7335b73b
+Revision ID: ccc4d46011f6
 Revises: 
-Create Date: 2021-05-12 09:16:51.194337
+Create Date: 2021-05-14 09:57:27.033335
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '575b7335b73b'
+revision = 'ccc4d46011f6'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -28,8 +28,9 @@ def upgrade():
     sa.Column('password', sa.String(), nullable=True),
     sa.Column('fname', sa.String(), nullable=True),
     sa.Column('lname', sa.String(), nullable=True),
-    sa.Column('posotion_id', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['posotion_id'], ['unionpos.id'], ),
+    sa.Column('position_id', sa.Integer(), nullable=True),
+    sa.Column('isActive', sa.Boolean(), nullable=True),
+    sa.ForeignKeyConstraint(['position_id'], ['unionpos.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

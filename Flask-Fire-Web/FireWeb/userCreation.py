@@ -17,15 +17,20 @@ class User(db.Model):
     password = db.Column(db.String)
     fname = db.Column(db.String)
     lname = db.Column(db.String)
-    posotion_id = db.Column(db.Integer, db.ForeignKey('unionpos.id'))
+    position_id = db.Column(db.Integer, db.ForeignKey('unionpos.id'))
+    isActive = db.Column(db.Boolean)
 
-    def __init__(self, user_id, password, fname, lname, position_id):
+    def __init__(self, user_id, password, fname, lname, position_id, isActive):
 
-         self.user_id = user_id
+         self.id = user_id
          self.password = password
          self.fname = fname
          self.lname = lname
-         self.posotion_id = position_id
+         self.position_id = position_id
+         self.isActive = isActive
+
+    def __repr__(self):
+        return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n position in union: {self.position_id}"
 
         
 ###User Postiton within union###
