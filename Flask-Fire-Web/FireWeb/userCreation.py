@@ -30,7 +30,7 @@ class User(db.Model):
          self.isActive = isActive
 
     def __repr__(self):
-        return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n position in union: {self.position_id}"
+        return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n {self.position_id}"
 
         
 ###User Postiton within union###
@@ -39,16 +39,20 @@ class Union_User(db.Model):
     __tablename__='unionpos'
 
     id = db.Column(db.Integer, primary_key=True)
-    position = db.Column(db.String)
+    positionName = db.Column(db.String)
     users = db.relationship('User', backref="userpos", lazy='dynamic')
 
-    def __init__(self, pos_id, pos_name):
 
-        self.id = pos_id
-        self.position = pos_name
+    def __init__(self, pos_name):
+ 
+        self.positionName = pos_name
 
     def __repr__(self):
-        return f"The position at ID {self.id} is: {self.position}"
+        return f"The position at ID {self.id} is: {self.positionName}"
+
+    def reportUsers(self):
+        for user in self.users:
+            return f"The user: {user.fname} holds the following position in the union: {self.positionName}"
 
 ###for testing this###
 if __name__ == "__main__":
