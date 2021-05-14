@@ -30,7 +30,6 @@ if __name__ == "__main__":
     app.run()
      #TODO: Get to render the template dashboard
      #TODO: Digest user grievance forms
-     #TODO: need to create a flow that the user can use for seeing maintenance on vehicles
-     #TODO: Currently, the user can login but we get a 500 error, probably nothing serious, just need to review app.route configurations
+     #TODO: need to create a flow that the user can use for seeing maintenance on vehicle
      #NOTE: test badge is 71, pass is the normal pass
 
