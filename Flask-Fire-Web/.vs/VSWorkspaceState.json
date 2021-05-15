@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\FireWeb",
-    "\\FireWeb\\login"
+    "\\FireWeb\\login",
+    "\\FireWeb\\login\\__pycache__",
+    "\\FireWeb\\__pycache__",
+    "\\migrations",
+    "\\migrations\\versions",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\app.py",
+  "SelectedNode": "\\FireWeb\\userCreation.py",
   "PreviewInSolutionExplorer": false
 }
