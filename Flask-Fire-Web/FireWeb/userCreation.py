@@ -33,6 +33,9 @@ class User(db.Model):
     def __repr__(self):
         return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n {self.position_id}"
 
+    def ReportPosts(self):
+        for p in post:
+            return f"{p.status} posted by {self.fname} {self.lname}"
         
 ###User Postiton within union###
 class Union_User(db.Model):
@@ -67,6 +70,7 @@ class New_News(db.Model):
 
         self.post=post
         self.user_id = user_id
+
 
 ###for testing this###
 if __name__ == "__main__":
