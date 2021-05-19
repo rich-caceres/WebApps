@@ -63,6 +63,11 @@ class New_News(db.Model):
     status = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('fduser.id'))
 
+    def __init__(self, post, user_id):
+
+        self.post=post
+        self.user_id = user_id
+
 ###for testing this###
 if __name__ == "__main__":
 
