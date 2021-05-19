@@ -19,7 +19,7 @@ class User(db.Model):
     lname = db.Column(db.String)
     position_id = db.Column(db.Integer, db.ForeignKey('unionpos.id'))
     isActive = db.Column(db.Boolean)
-    post = db.relationship('New_News', backref='userstatpost', lazy='dynamic')
+    post = db.relationship('New_News', backref='userstatpost', lazy=True)
 
     def __init__(self, user_id, password, fname, lname, position_id, isActive):
 
@@ -34,8 +34,8 @@ class User(db.Model):
         return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n {self.position_id}"
 
     def ReportPosts(self):
-        for p in post:
-            return f"{p.status} posted by {self.fname} {self.lname}"
+        for post in self.post:
+            return f'{post.status} posted by {self.fname} {self.lname}'
         
 ###User Postiton within union###
 class Union_User(db.Model):
@@ -44,7 +44,7 @@ class Union_User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     positionName = db.Column(db.String)
-    users = db.relationship('User', backref="userpos", lazy='dynamic')
+    users = db.relationship('User', backref="userpos", lazy=True)
 
 
     def __init__(self, pos_name):
@@ -63,14 +63,16 @@ class New_News(db.Model):
     __tablename__='newsstatus'
 
     id = db.Column(db.Integer, primary_key = True)
-    status = db.Column(db.String)
+    status = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey('fduser.id'))
 
     def __init__(self, post, user_id):
 
-        self.post=post
+        self.status = post
         self.user_id = user_id
 
+    def __repr__(self):
+        return f'post id: {self.id}\npost: {self.status}\nuser:{self.user_id}'
 
 ###for testing this###
 if __name__ == "__main__":
