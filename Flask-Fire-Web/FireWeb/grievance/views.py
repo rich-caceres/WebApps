@@ -4,8 +4,8 @@ from FireWeb.userCreation import User
 from FireWeb.grievance.forms import GrievanceForm
 
 
-login_blueprint = Blueprint('grievence',__name__,template_folder='templates\girevence')
+grievence_blueprint = Blueprint('grievence',__name__,template_folder='templates\grievence')
 
-@login_blueprint.route('/grievence', methods=["GET", "POST"])
+@grievence_blueprint.route('/grievence', methods=["GET", "POST"])
 def Grievences():
     pass
