@@ -19,6 +19,7 @@ class User(db.Model):
     lname = db.Column(db.String)
     position_id = db.Column(db.Integer, db.ForeignKey('unionpos.id'))
     isActive = db.Column(db.Boolean)
+    post = db.relationship('New_News', backref='userstatpost', lazy='dynamic')
 
     def __init__(self, user_id, password, fname, lname, position_id, isActive):
 
@@ -53,6 +54,14 @@ class Union_User(db.Model):
     def reportUsers(self):
         for user in self.users:
             return f"The user: {user.fname} holds the following position in the union: {self.positionName}"
+
+class New_News(db.Model):
+
+    __tablename__='newsstatus'
+
+    id = db.Column(db.Integer, primary_key = True)
+    status = db.Column(db.String)
+    user_id = db.Column(db.Integer, db.ForeignKey('fduser.id'))
 
 ###for testing this###
 if __name__ == "__main__":
