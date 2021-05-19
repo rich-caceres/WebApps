@@ -7,9 +7,8 @@
     "\\FireWeb\\grievance\\templates\\grievance",
     "\\FireWeb\\login",
     "\\FireWeb\\login\\templates",
-    "\\FireWeb\\login\\templates\\login",
-    "\\FireWeb\\templates"
+    "\\FireWeb\\login\\templates\\login"
   ],
-  "SelectedNode": "\\FireWeb\\templates\\dashboard.html",
+  "SelectedNode": "\\FireWeb\\userCreation.py",
   "PreviewInSolutionExplorer": false
 }

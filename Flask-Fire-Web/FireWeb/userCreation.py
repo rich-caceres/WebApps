@@ -35,7 +35,7 @@ class User(db.Model):
 
     def ReportPosts(self):
         for post in self.post:
-            return f'{post.status} posted by {self.fname} {self.lname}'
+            print(post.status)
         
 ###User Postiton within union###
 class Union_User(db.Model):
@@ -43,7 +43,7 @@ class Union_User(db.Model):
     __tablename__='unionpos'
 
     id = db.Column(db.Integer, primary_key=True)
-    positionName = db.Column(db.String)
+    positionName = db.Column(db.String, nullable=False)
     users = db.relationship('User', backref="userpos", lazy=True)
 
 
@@ -56,14 +56,14 @@ class Union_User(db.Model):
 
     def reportUsers(self):
         for user in self.users:
-            return f"The user: {user.fname} holds the following position in the union: {self.positionName}"
+            print(f"The user: {user.fname} holds the following position in the union: {self.positionName}")
 
 class New_News(db.Model):
 
     __tablename__='newsstatus'
 
     id = db.Column(db.Integer, primary_key = True)
-    status = db.Column(db.Text)
+    status = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('fduser.id'))
 
     def __init__(self, post, user_id):
