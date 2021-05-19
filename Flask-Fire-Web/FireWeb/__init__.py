@@ -11,5 +11,7 @@ db = SQLAlchemy(app)
 Migrate(app,db, render_as_batch= True)
 
 from FireWeb.login.views import login_blueprint
+from FireWeb.grievance.views import login_blueprint
 
 app.register_blueprint(login_blueprint, url_prefix='/signin')
+app.register_blueprint(login_blueprint, url_prefix='/grievance')

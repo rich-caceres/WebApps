@@ -2,13 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\FireWeb",
+    "\\FireWeb\\grievance",
+    "\\FireWeb\\grievance\\templates",
+    "\\FireWeb\\grievance\\templates\\grievance",
     "\\FireWeb\\login",
-    "\\FireWeb\\login\\__pycache__",
-    "\\FireWeb\\__pycache__",
-    "\\migrations",
-    "\\migrations\\versions",
-    "\\__pycache__"
+    "\\FireWeb\\login\\templates",
+    "\\FireWeb\\login\\templates\\login",
+    "\\FireWeb\\templates"
   ],
-  "SelectedNode": "\\FireWeb\\userCreation.py",
+  "SelectedNode": "\\FireWeb\\templates\\dashboard.html",
   "PreviewInSolutionExplorer": false
 }
