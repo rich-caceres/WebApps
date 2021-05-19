@@ -35,7 +35,7 @@ class User(db.Model):
 
     def ReportPosts(self):
         for post in self.post:
-            print(post.status)
+            print(f"{post.status} Posted by {self.fname} {self.lname}")
         
 ###User Postiton within union###
 class Union_User(db.Model):
@@ -56,7 +56,7 @@ class Union_User(db.Model):
 
     def reportUsers(self):
         for user in self.users:
-            print(f"The user: {user.fname} holds the following position in the union: {self.positionName}")
+            print(f"The user: {user.fname} {user.lname} holds the following position in the union: {self.positionName}")
 
 class New_News(db.Model):
 
