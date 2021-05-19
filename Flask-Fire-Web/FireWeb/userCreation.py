@@ -1,5 +1,6 @@
 #set up db inside __init__.py
 from FireWeb import db
+from werkzeug.security import generate_password_hash
 
 ###Creating the database connection###
 #engine = create_engine(os.getenv('DATABASE_URL'))
@@ -24,7 +25,7 @@ class User(db.Model):
     def __init__(self, user_id, password, fname, lname, position_id, isActive):
 
          self.id = user_id
-         self.password = password
+         self.password = generate_password_hash(password)
          self.fname = fname
          self.lname = lname
          self.position_id = position_id
