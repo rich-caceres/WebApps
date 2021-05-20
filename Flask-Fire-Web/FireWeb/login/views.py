@@ -24,7 +24,7 @@ def login():
           #Old syntax used below and above db.session.query(User).filter_by(id = badge_number).first()
           user = User.query.get(badge_number)
           ##CHECKING TO SEE IF THE PASSWORD IS CORRECT### NOT IMPLEMENTED IN THIS VERSION YET
-          if check_password_hash(user.password, password):
+          if user.check_password(password):
               return render_template('dashboard.html', message= "Successful login")
           else:
               return render_template('SignIn.html', form = form, message = "Password is incorrect, try again.")
