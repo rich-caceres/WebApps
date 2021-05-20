@@ -8,10 +8,13 @@ login_manager = LoginManager()
 
 app = Flask(__name__)
 app.config.from_object('config.DevelopmentConfig')
-app.config['SQLALCHEMY_TRACK_MODIFATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 Migrate(app,db, render_as_batch= True)
+
+login_manager.init_app(app)
+login_manager.login_view = 'dashboard'
 
 from FireWeb.login.views import login_blueprint
 from FireWeb.grievance.views import grievence_blueprint
