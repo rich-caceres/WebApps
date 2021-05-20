@@ -1,6 +1,7 @@
 #set up db inside __init__.py
-from FireWeb import db
+from FireWeb import db,login_manager
 from werkzeug.security import generate_password_hash
+from flask_login import UserMixin
 
 ###Creating the database connection###
 #engine = create_engine(os.getenv('DATABASE_URL'))
