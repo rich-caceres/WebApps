@@ -14,15 +14,14 @@ def login():
               password = form.password.data
               #print(badge_number)
               #print(password)
-              #badge_number = request.form["BadgeInput"]
-              #password = request.form["PasswordInput"]
           except:
                return render_template('SignIn.html', form=form, message= "Error with credentials, please try again later.")
           if User.query.get(badge_number) is None or badge_number == '':
               return render_template('SignIn.html', form=form, message = "No badge number found, try again.")
-          #Old syntax used below and above db.session.query(User).filter_by(id = badge_number).first()
+          
+          ###gets user from database###
           user = User.query.get(badge_number)
-          ##CHECKING TO SEE IF THE PASSWORD IS CORRECT### NOT IMPLEMENTED IN THIS VERSION YET
+          ##CHECKING TO SEE IF THE PASSWORD IS CORRECT###
           if user.check_password(password):
               return render_template('dashboard.html', message= "Successful login")
           else:
