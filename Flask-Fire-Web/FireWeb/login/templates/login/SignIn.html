@@ -33,8 +33,14 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
+                    
                     {{form.password.label}}
                     {{form.password(class="form-control", placeholder="password", type="password")}}
+                    {% if form.password.errors%}
+                        {% for error in form.password.errors %}
+                          {{error}}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 {{form.submit(class="btn btn-primary")}}
 
