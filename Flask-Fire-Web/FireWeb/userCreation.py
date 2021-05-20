@@ -11,7 +11,7 @@ from flask_login import UserMixin
 #session = Session()
 
 ###Creates the user class object for signing in###
-class User(db.Model):
+class User(db.Model, UserMixin):
     
     __tablename__= 'fduser'
         
