@@ -5,9 +5,9 @@ from wtforms.validators import DataRequired
 
 class GrievanceForm(FlaskForm):
 
-    dateOfIncident= DateField("Date of Incedent", validators[DataRequired(message = "Date Required")])
-    title = StringField("Grievance Title", validators[DataRequired(message = "Title Required")])
-    body = TextAreaField("Description", validators[DataRequired(message = "Description Required")])
+    dateOfIncident= DateField("Date of Incedent", [DataRequired()])
+    title = StringField("Grievance Title/Reason", [DataRequired()])
+    body = TextAreaField("Description", [DataRequired()])
     
     #TODO add fields for:
     #entering party

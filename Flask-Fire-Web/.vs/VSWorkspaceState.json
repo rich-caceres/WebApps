@@ -4,11 +4,11 @@
     "\\FireWeb",
     "\\FireWeb\\grievance",
     "\\FireWeb\\grievance\\templates",
-    "\\FireWeb\\grievance\\templates\\grievance",
+    "\\FireWeb\\grievance\\templates\\grievence",
     "\\FireWeb\\login",
     "\\FireWeb\\login\\templates",
     "\\FireWeb\\login\\templates\\login"
   ],
-  "SelectedNode": "\\FireWeb\\login\\views.py",
+  "SelectedNode": "\\FireWeb\\grievance\\forms.py",
   "PreviewInSolutionExplorer": false
 }
