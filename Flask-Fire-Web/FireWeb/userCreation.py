@@ -1,6 +1,6 @@
 #set up db inside __init__.py
 from FireWeb import db,login_manager
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
 ###Creating the database connection###
@@ -9,6 +9,10 @@ from flask_login import UserMixin
 #db = scoped_session(sessionmaker(bind=engine))for testing will remove
 #Session = sessionmaker(bind=engine)
 #session = Session()
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
 
 ###Creates the user class object for signing in###
 class User(db.Model, UserMixin):
@@ -34,6 +38,9 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n {self.position_id}"
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
 
     def ReportPosts(self):
         for post in self.post:
