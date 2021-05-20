@@ -2,7 +2,6 @@ from flask import Blueprint,render_template,redirect,url_for,request
 from FireWeb import db
 from FireWeb.userCreation import User
 from FireWeb.login.forms import LoginForm
-from werkzeug.security import check_password_hash
 
 login_blueprint = Blueprint('signin',__name__,template_folder='templates\login')
 
