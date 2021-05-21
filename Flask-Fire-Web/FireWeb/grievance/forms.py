@@ -9,8 +9,8 @@ class GrievanceForm(FlaskForm):
     title = StringField("Grievance Title/Reason", [DataRequired()])
     user = StringField("Reporting party", [DataRequired()])
     body = TextAreaField("Description", [DataRequired()])
-    
+    submitButton = SubmitField("Submit")
+
     #TODO add fields for:
     #status of grieve? this needs to be ironed out with stakeholder
-    #submit the form
     pass
