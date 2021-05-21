@@ -7,7 +7,7 @@ class GrievanceForm(FlaskForm):
 
     dateOfIncident= DateField("Date of Incedent", [DataRequired()])
     title = StringField("Grievance Title/Reason", [DataRequired()])
-    user = StringFirel("Reporting party", [DataRequired()])
+    user = StringField("Reporting party", [DataRequired()])
     body = TextAreaField("Description", [DataRequired()])
     
     #TODO add fields for:
