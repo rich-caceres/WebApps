@@ -1,15 +1,8 @@
-#set up db inside __init__.py
 from FireWeb import db,login_manager
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
-###Creating the database connection###
-#engine = create_engine(os.getenv('DATABASE_URL'))
-#Base = declarative_base(engine) 
-#db = scoped_session(sessionmaker(bind=engine))for testing will remove
-#Session = sessionmaker(bind=engine)
-#session = Session()
-
+###Login Manager being added###
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
