@@ -16,28 +16,30 @@
     {% endblock %}
 
     {% block body %}
+<div class="dropdown show pt-3">
+    <div class="dropdown-menu show pl-3">
+        {%if current_user.is_authenticated %}
+        {% if message %}
+        <h6 class="dropdown-header">{{message}}, {{current_user.fname}} {{current_user.lname}}</h6>
+        {% else %}
+        <h6 class="dropdown-header">Hello, {{current_user.fname}} {{current_user.lname}}</h6>
+        {% endif %}
+        {% endif %}
+        <a class="dropdown-item active" href="#">Recent Updates</a>
+        <a class="dropdown-item" href="#">Monthly Minutes</a>
+        <a class="dropdown-item" href="#">Active Membership Roster</a>
+        <a class="dropdown-item" href="#">Membership Apparel</a>
+        <a class="dropdown-item" href="#">Forms</a>
+    </div>
+</div>
 <div class="pt-5 container">
-   <!-- {%if current_user.is_authenticated %}
-    {% if message %}
-    <h3 class="text-success text-center">{{message}} {{current_user.fname}} {{current_user.lname}}</h3>
-    {% else %}
-    <h4 class="text-secondary text-left">Hello {{current_user.fname}} {{current_user.lname}}</h4>
-    {% endif %}
-    {% endif %}-->
-
-    <div class="dropdown show">
-        <div class="dropdown-menu show">
-            {%if current_user.is_authenticated %}
-            {% if message %}
-            <h6 class="dropdown-header">{{message}}, {{current_user.fname}} {{current_user.lname}}</h6>
-            {% else %}
-            <h6 class="dropdown-header">Hello, {{current_user.fname}} {{current_user.lname}}</h6>
-            {% endif %}
-            {% endif %}
-            <button class="dropdown-item" href="#">Recent Updates</button>
-            <button class="dropdown-item" href="#">Active link</button>
-            <button class="dropdown-item" href="#">Another link</button>
-        </div>
+    <!-- {%if current_user.is_authenticated %}
+     {% if message %}
+     <h3 class="text-success text-center">{{message}} {{current_user.fname}} {{current_user.lname}}</h3>
+     {% else %}
+     <h4 class="text-secondary text-left">Hello {{current_user.fname}} {{current_user.lname}}</h4>
+     {% endif %}
+     {% endif %}-->
     </div>
 
 </div>
