@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 Migrate(app,db, render_as_batch= True)
 
 login_manager.init_app(app)
-login_manager.login_view = 'dashboard'
+login_manager.login_view = 'signin.login'
 
 from FireWeb.login.views import login_blueprint
 from FireWeb.grievance.views import grievence_blueprint
