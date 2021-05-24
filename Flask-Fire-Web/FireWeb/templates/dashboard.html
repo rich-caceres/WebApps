@@ -16,24 +16,11 @@
     {% endblock %}
 
     {% block body %}
-<div class="dropdown show pt-3">
-    <div class="dropdown-menu show pl-3">
-        {%if current_user.is_authenticated %}
-        {% if message %}
-        <h6 class="dropdown-header">{{message}}, {{current_user.fname}} {{current_user.lname}}</h6>
-        {% else %}
-        <h6 class="dropdown-header">Hello, {{current_user.fname}} {{current_user.lname}}</h6>
-        {% endif %}
-        {% endif %}
-        <a class="dropdown-item active" href="#">Recent Updates</a>
-        <a class="dropdown-item" href="#">Monthly Minutes</a>
-        <a class="dropdown-item" href="#">Active Membership Roster</a>
-        <a class="dropdown-item" href="#">Membership Apparel</a>
-        <a class="dropdown-item" href="#">Forms</a>
-    </div>
-</div>
+    {%include "dashNav.html"%}
+
 <div class="pt-5 container">
 
 </div>
+
 
     {% endblock %}

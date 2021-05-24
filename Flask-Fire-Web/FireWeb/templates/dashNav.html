@@ -1,0 +1,41 @@
+<div class="dropdown show pt-3">
+    <div class="dropdown-menu show pl-3">
+        {%if current_user.is_authenticated %}
+        {% if message %}
+        <h6 class="dropdown-header">{{message}}, {{current_user.fname}} {{current_user.lname}}</h6>
+        {% else %}
+        <h6 class="dropdown-header">Hello, {{current_user.fname}} {{current_user.lname}}</h6>
+        {% endif %}
+        {% endif %}
+
+        {%if request.path == url_for('dashboard')%}
+        <a class="dropdown-item active" href="#">Recent Updates</a>
+        {% else %}
+        <a class="dropdown-item" href="#">Recent Updates</a>
+        {% endif %}
+
+        {%if request.path == url_for('dashboard')%}
+        <a class="dropdown-item active" href="#">Monthly Minutes</a>
+        {% else %}
+        <a class="dropdown-item" href="#">Monthly Minutes</a>
+        {% endif %}
+
+        {%if request.path == url_for('dashboard')%}
+        <a class="dropdown-item active" href="#">Active Roster</a>
+        {% else %}
+        <a class="dropdown-item" href="#">Active Roster</a>
+        {% endif %}
+
+        {%if request.path == url_for('dashboard')%}
+        <a class="dropdown-item active" href="#">Membership Apparel</a>
+        {% else %}
+        <a class="dropdown-item" href="#">Membership Apparel</a>
+        {% endif %}
+
+        {%if request.path == url_for('dashboard')%}
+        <a class="dropdown-item active" href="#">Forms</a>
+        {% else %}
+        <a class="dropdown-item" href="#">Forms</a>
+        {% endif %}  
+    </div>
+</div>
