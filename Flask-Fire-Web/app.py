@@ -33,7 +33,7 @@ def page_not_found(e):
 def logout():
     form = LoginForm()
     logout_user()
-    return render_template('Signin.html', form = form)
+    return redirect(url_for('signin.login'))
 
 if __name__ == "__main__":
 
