@@ -2,6 +2,7 @@ import os
 from FireWeb import app
 
 from flask import Flask, render_template, url_for, request, redirect
+from flask_login import login_user,login_required,logout_user
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -18,6 +19,7 @@ def history():
      return render_template('History.html')
 
 @app.route('/dashboard')
+@login_required
 def dashboard():
      return render_template('dashboard.html')
 
