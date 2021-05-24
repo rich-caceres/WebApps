@@ -13,8 +13,6 @@ def login():
           try:
               badge_number = form.badge_number.data
               password = form.password.data
-              #print(badge_number)
-              #print(password)
           except:
                return render_template('SignIn.html', form=form, message= "Error with credentials, please try again later.")
           if User.query.get(badge_number) is None or badge_number == '':
