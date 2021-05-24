@@ -9,6 +9,7 @@
             <a class="nav-item nav-link text-light active" href="{{url_for('history')}}">History</a>
              {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link text-light" href="{{url_for('dashboard')}}">Dashboard</a>
+                <a class="nav-item nav-link text-light" href="{{url_for('logout')}}">Log Out</a>
             {% else %}
                 <a class="nav-item nav-link text-light" href="{{url_for('signin.login')}}">Sign In</a>
             {% endif %}
