@@ -26,7 +26,7 @@ def login():
           ##CHECKING TO SEE IF THE PASSWORD IS CORRECT###
           if user.check_password(password):
               login_user(user)
-              return render_template('dashboard.html', message= "Successful login")
+              return render_template('dashboard.html', message= "Welcome")
           else:
               return render_template('SignIn.html', form = form, message = "Password is incorrect, try again.")
     return render_template('SignIn.html', form = form)
