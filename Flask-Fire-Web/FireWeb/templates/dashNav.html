@@ -8,34 +8,34 @@
         {% endif %}
         {% endif %}
 
-        {%if request.path == url_for('dashboard')%}
-        <a class="dropdown-item active" href="#">Recent Updates</a>
+        {%if request.path == url_for('rec_status')%}
+        <a class="dropdown-item active" href="{{url_for('rec_status')}}">Recent Updates</a>
         {% else %}
-        <a class="dropdown-item" href="#">Recent Updates</a>
+        <a class="dropdown-item" href="{{url_for('rec_status')}}">Recent Updates</a>
         {% endif %}
 
-        {%if request.path == url_for('dashboard')%}
-        <a class="dropdown-item active" href="#">Monthly Minutes</a>
+        {%if request.path == url_for('month_mins')%}
+        <a class="dropdown-item active" href="{{url_for('month_mins')}}">Monthly Minutes</a>
         {% else %}
-        <a class="dropdown-item" href="#">Monthly Minutes</a>
+        <a class="dropdown-item" href="{{url_for('month_mins')}}">Monthly Minutes</a>
         {% endif %}
 
-        {%if request.path == url_for('dashboard')%}
-        <a class="dropdown-item active" href="#">Active Roster</a>
+        {%if request.path == url_for('act_roster')%}
+        <a class="dropdown-item active" href="{{url_for('act_roster')}}">Active Roster</a>
         {% else %}
-        <a class="dropdown-item" href="#">Active Roster</a>
+        <a class="dropdown-item" href="{{url_for('act_roster')}}">Active Roster</a>
         {% endif %}
 
-        {%if request.path == url_for('dashboard')%}
-        <a class="dropdown-item active" href="#">Membership Apparel</a>
+        {%if request.path == url_for('member_apparel')%}
+        <a class="dropdown-item active" href="{{url_for('member_apparel')}}">Membership Apparel</a>
         {% else %}
-        <a class="dropdown-item" href="#">Membership Apparel</a>
+        <a class="dropdown-item" href="{{url_for('member_apparel')}}">Membership Apparel</a>
         {% endif %}
 
-        {%if request.path == url_for('dashboard')%}
-        <a class="dropdown-item active" href="#">Forms</a>
+        {%if request.path == url_for('union_forms')%}
+        <a class="dropdown-item active" href="{{url_for('union_forms')}}">Forms</a>
         {% else %}
-        <a class="dropdown-item" href="#">Forms</a>
+        <a class="dropdown-item" href="{{url_for('union_forms')}}">Forms</a>
         {% endif %}  
     </div>
 </div>

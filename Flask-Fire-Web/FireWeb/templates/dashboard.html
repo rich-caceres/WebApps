@@ -19,7 +19,7 @@
     {%include "dashNav.html"%}
 
 <div class="pt-5 container">
-    {% if request.path == url_for('dashboard')%}
+    {% if request.path == url_for('rec_status')%}
         {% include "recentUp.html" %}
     {% endif %}
 </div>

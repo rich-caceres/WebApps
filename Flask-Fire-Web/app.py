@@ -1,5 +1,5 @@
 import os
-from FireWeb import app
+from FireWeb import app, db
 from FireWeb.login.forms import LoginForm
 
 from flask import Flask, render_template, url_for, request, redirect
@@ -22,6 +22,31 @@ def history():
 @app.route('/dashboard')
 @login_required
 def dashboard():
+     return redirect(url_for('rec_status'))
+
+@app.route('/dashboard/statuses')
+@login_required
+def rec_status():
+     return render_template('dashboard.html')
+
+@app.route('/dashboard/minutes')
+@login_required
+def month_mins():
+     return render_template('dashboard.html')
+
+@app.route('/dashboard/roster')
+@login_required
+def act_roster():
+     return render_template('dashboard.html')
+
+@app.route('/dashboard/apparel')
+@login_required
+def member_apparel():
+     return render_template('dashboard.html')
+
+@app.route('/dashboard/forms')
+@login_required
+def union_forms():
      return render_template('dashboard.html')
 
 @app.errorhandler(404)
