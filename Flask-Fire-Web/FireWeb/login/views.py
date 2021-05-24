@@ -1,4 +1,5 @@
 from flask import Blueprint,render_template,redirect,url_for,request
+from flask_login import login_user,login_required,logout_user
 from FireWeb import db
 from FireWeb.userCreation import User
 from FireWeb.login.forms import LoginForm
@@ -21,8 +22,10 @@ def login():
           
           ###gets user from database###
           user = User.query.get(badge_number)
+
           ##CHECKING TO SEE IF THE PASSWORD IS CORRECT###
           if user.check_password(password):
+              login_user(user)
               return render_template('dashboard.html', message= "Successful login")
           else:
               return render_template('SignIn.html', form = form, message = "Password is incorrect, try again.")
