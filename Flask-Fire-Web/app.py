@@ -1,5 +1,6 @@
 import os
 from FireWeb import app
+from FireWeb.login.forms import LoginForm
 
 from flask import Flask, render_template, url_for, request, redirect
 from flask_login import login_user,login_required,logout_user
@@ -26,6 +27,13 @@ def dashboard():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    form = LoginForm()
+    logout_user()
+    return render_template('Signin.html', form = form)
 
 if __name__ == "__main__":
 
