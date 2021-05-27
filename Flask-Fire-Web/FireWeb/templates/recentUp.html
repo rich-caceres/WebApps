@@ -1,1 +1,7 @@
+{% for pos_id in range(4) %}
+    {% if current_user.position_id == pos_id %}
+    <h1>user is authorized to post statuses</h1>
+    {% endif %}
+{% endfor %}
+
 <h6>under development</h6>

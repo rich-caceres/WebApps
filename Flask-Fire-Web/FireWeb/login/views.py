@@ -20,11 +20,11 @@ def login():
           
           ###gets user from database###
           user = User.query.get(badge_number)
-
+          print(user.position_id)
           ##CHECKING TO SEE IF THE PASSWORD IS CORRECT###
           if user.check_password(password):
               login_user(user)
-              return render_template('dashboard.html', message= "Welcome")
+              return render_template('dashboard.html', message = "Welcome")
           else:
               return render_template('SignIn.html', form = form, message = "Password is incorrect, try again.")
     return render_template('SignIn.html', form = form)
