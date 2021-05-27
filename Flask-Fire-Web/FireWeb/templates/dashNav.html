@@ -1,41 +1,48 @@
-<div class="dropdown show pt-3">
-    <div class="dropdown-menu show pl-3">
-        {%if current_user.is_authenticated %}
-        {% if message %}
-        <h6 class="dropdown-header">{{message}}, {{current_user.fname}} {{current_user.lname}}</h6>
-        {% else %}
-        <h6 class="dropdown-header">Hello, {{current_user.fname}} {{current_user.lname}}</h6>
-        {% endif %}
-        {% endif %}
+<div class="row justify-content-center">
+    {%if current_user.is_authenticated %}
+    {% if message %}
 
-        {%if request.path == url_for('rec_status')%}
-        <a class="dropdown-item active" href="{{url_for('rec_status')}}">Recent Updates</a>
-        {% else %}
-        <a class="dropdown-item" href="{{url_for('rec_status')}}">Recent Updates</a>
-        {% endif %}
-
-        {%if request.path == url_for('month_mins')%}
-        <a class="dropdown-item active" href="{{url_for('month_mins')}}">Monthly Minutes</a>
-        {% else %}
-        <a class="dropdown-item" href="{{url_for('month_mins')}}">Monthly Minutes</a>
-        {% endif %}
-
-        {%if request.path == url_for('act_roster')%}
-        <a class="dropdown-item active" href="{{url_for('act_roster')}}">Active Roster</a>
-        {% else %}
-        <a class="dropdown-item" href="{{url_for('act_roster')}}">Active Roster</a>
-        {% endif %}
-
-        {%if request.path == url_for('member_apparel')%}
-        <a class="dropdown-item active" href="{{url_for('member_apparel')}}">Membership Apparel</a>
-        {% else %}
-        <a class="dropdown-item" href="{{url_for('member_apparel')}}">Membership Apparel</a>
-        {% endif %}
-
-        {%if request.path == url_for('union_forms')%}
-        <a class="dropdown-item active" href="{{url_for('union_forms')}}">Forms</a>
-        {% else %}
-        <a class="dropdown-item" href="{{url_for('union_forms')}}">Forms</a>
-        {% endif %}  
-    </div>
+    <h6 class="dropdown-header">{{message}}, {{current_user.fname}} {{current_user.lname}}</h6>
+    {% else %}
+    <h6 class="dropdown-header">Hello, {{current_user.fname}} {{current_user.lname}}</h6>
+    {% endif %}
+    {% endif %}
 </div>
+<ul class="nav nav-pills justify-content-center">
+    <li class="nav-item">
+        {%if request.path == url_for('rec_status')%}
+        <a class="nav-link active" href="{{url_for('rec_status')}}">Recent Updates</a>
+        {% else %}
+        <a class="nav-link" href="{{url_for('rec_status')}}">Recent Updates</a>
+        {% endif %}
+    </li>
+    <li class="nav-item">
+        {%if request.path == url_for('month_mins')%}
+        <a class="nav-link active" href="{{url_for('month_mins')}}">Monthly Minutes</a>
+        {% else %}
+        <a class="nav-link" href="{{url_for('month_mins')}}">Monthly Minutes</a>
+        {% endif %}
+    </li>
+
+    <li class="nav-item">
+        {%if request.path == url_for('act_roster')%}
+        <a class="nav-link active" href="{{url_for('act_roster')}}">Active Roster</a>
+        {% else %}
+        <a class="nav-link" href="{{url_for('act_roster')}}">Active Roster</a>
+        {% endif %}
+    </li>
+    <li class="nav-item">
+        {%if request.path == url_for('member_apparel')%}
+        <a class="nav-link active" href="{{url_for('member_apparel')}}">Membership Apparel</a>
+        {% else %}
+        <a class="nav-link" href="{{url_for('member_apparel')}}">Membership Apparel</a>
+        {% endif %}
+    </li>
+    <li class="nav-item">
+        {%if request.path == url_for('union_forms')%}
+        <a class="nav-link active" href="{{url_for('union_forms')}}">Forms</a>
+        {% else %}
+        <a class="nav-link" href="{{url_for('union_forms')}}">Forms</a>
+        {% endif %}
+     </li>
+</ul>
