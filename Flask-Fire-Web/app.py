@@ -29,7 +29,7 @@ def dashboard():
 @app.route('/dashboard/post', methods=["POST"])
 @login_required
 def post_status():
-
+    form = StatusForm()
     status = New_News()
     pass
 
