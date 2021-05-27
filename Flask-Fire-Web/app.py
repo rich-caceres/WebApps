@@ -5,7 +5,7 @@ from FireWeb.status.forms import StatusForm
 from FireWeb.userCreation import New_News
 
 from flask import Flask, render_template, url_for, request, redirect
-from flask_login import login_user,login_required,logout_user
+from flask_login import login_user,login_required,logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -26,17 +26,21 @@ def history():
 def dashboard():
      return redirect(url_for('rec_status'))
 
-@app.route('/dashboard/post', methods=["POST"])
+@app.route('/dashboard/post')
 @login_required
 def post_status():
     form = StatusForm()
-    status = New_News()
-    pass
+    status = New_News(form.status.data, current_user.id)
+    print(status)
+    return redirect(url_for('rec_status'))
 
-@app.route('/dashboard/statuses')
+@app.route('/dashboard/statuses', methods=["GET","POST"])
 @login_required
 def rec_status():
      form = StatusForm()
+     if request.method == "POST":
+        status = New_News(form.status.data, current_user.id)
+        print(status)
      return render_template('dashboard.html', form=form)
 
 @app.route('/dashboard/minutes')
