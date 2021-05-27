@@ -26,14 +26,6 @@ def history():
 def dashboard():
      return redirect(url_for('rec_status'))
 
-@app.route('/dashboard/post')
-@login_required
-def post_status():
-    form = StatusForm()
-    status = New_News(form.status.data, current_user.id)
-    print(status)
-    return redirect(url_for('rec_status'))
-
 @app.route('/dashboard/statuses', methods=["GET","POST"])
 @login_required
 def rec_status():
