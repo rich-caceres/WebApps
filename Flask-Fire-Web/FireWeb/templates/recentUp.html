@@ -1,7 +1,12 @@
 {% for pos_id in range(4) %}
     {% if current_user.position_id == pos_id %}
-    <h1>user is authorized to post statuses</h1>
+<div class="container">
+        {% include "status.html" %}
+</div>
     {% endif %}
 {% endfor %}
-
-<h6>under development</h6>
+<div class="row">
+<div class="col text-center">
+    <h6>under development</h6>
+</div>
+</div>

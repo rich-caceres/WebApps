@@ -1,0 +1,16 @@
+<form method="POST">
+    <div class="form-row pb-4">
+
+        {{form.hidden_tag()}}
+        <div class="col-sm">
+            {{form.status(class="form-control pr-2", placeholder="Enter Union communication here.")}}
+            {% if form.status.errors %}
+            {% for error in form.status.errors %}
+            <strong>{{error}}</strong>
+            {% endfor %}
+            {% endif %}
+        </div>
+        {{form.submit(class="btn btn-primary")}}
+    </div>
+    
+</form>

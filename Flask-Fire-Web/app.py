@@ -1,6 +1,8 @@
 import os
 from FireWeb import app, db
 from FireWeb.login.forms import LoginForm
+from FireWeb.status.forms import StatusForm
+from FireWeb.userCreation import New_News
 
 from flask import Flask, render_template, url_for, request, redirect
 from flask_login import login_user,login_required,logout_user
@@ -24,10 +26,18 @@ def history():
 def dashboard():
      return redirect(url_for('rec_status'))
 
+@app.route('/dashboard/post', methods=["POST"])
+@login_required
+def post_status():
+
+    status = New_News()
+    pass
+
 @app.route('/dashboard/statuses')
 @login_required
 def rec_status():
-     return render_template('dashboard.html')
+     form = StatusForm()
+     return render_template('dashboard.html', form=form)
 
 @app.route('/dashboard/minutes')
 @login_required
@@ -56,7 +66,6 @@ def page_not_found(e):
 @app.route('/logout')
 @login_required
 def logout():
-    form = LoginForm()
     logout_user()
     return redirect(url_for('signin.login'))
 

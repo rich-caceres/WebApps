@@ -23,13 +23,9 @@
             {%include "dashNav.html"%}
         </div>
     </div>
-    <div class="row">
-        <div class="col-md text-center">
             {% if request.path == url_for('rec_status')%}
                 {% include "recentUp.html" %}
             {% endif %}
-        </div>
-    </div>
 </div>
 
     <!--TODO add the rest of the code that will generate other elements such as staus-->
