@@ -38,10 +38,10 @@ def rec_status():
      allStatuses = New_News.query.all()
      rows = len(allStatuses)
      if rows > 10:
-        for row in range(rows-10, rows):
+        for row in range(rows, rows-10, -1):
             last_ten_statuses[row]= New_News.query.get(row)
      else:
-         for row in range(1, rows+1):
+         for row in range(rows, 0, -1):
              last_ten_statuses[row]= New_News.query.get(row)
      print(last_ten_statuses)
      return render_template('dashboard.html', form=form, last_ten_items = last_ten_statuses)
