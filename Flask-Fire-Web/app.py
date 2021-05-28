@@ -29,20 +29,22 @@ def dashboard():
 @app.route('/dashboard/statuses', methods=["GET","POST"])
 @login_required
 def rec_status():
-     Last_ten_statuses = {}
+     last_ten_statuses = {}
      form = StatusForm()
      if request.method == "POST":
         status = New_News(form.status.data, current_user.id)
         db.session.add(status)
         db.session.commit()
-     rows = session.query(New_News).count()
+     allStatuses = New_News.query.all()
+     rows = len(allStatuses)
      if rows > 10:
         for row in range(rows-10, rows):
-            last_ten_statuses.add(New_News.query.get(row))
+            last_ten_statuses[row]= New_News.query.get(row)
      else:
-         for row in range(rows):
-             Last_ten_statuses.add(New_news.query.get(row))
-     return render_template('dashboard.html', form=form, last_ten_items = last_ten_items)
+         for row in range(1, rows+1):
+             last_ten_statuses[row]= New_News.query.get(row)
+     print(last_ten_statuses)
+     return render_template('dashboard.html', form=form, last_ten_items = last_ten_statuses)
 
 @app.route('/dashboard/minutes')
 @login_required

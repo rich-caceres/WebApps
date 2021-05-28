@@ -74,7 +74,8 @@ class New_News(db.Model):
         self.user_id = user_id
 
     def __repr__(self):
-        return f'post id: {self.id}\npost: {self.status} \nuser: {self.user_id}'
+        user = User.query.get(self.user_id)
+        return f'{self.status}  ({user.fname} {user.lname})'
 
 ###for testing this###
 if __name__ == "__main__":
