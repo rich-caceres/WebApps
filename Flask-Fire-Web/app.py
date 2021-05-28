@@ -33,6 +33,9 @@ def rec_status():
      if request.method == "POST":
         status = New_News(form.status.data, current_user.id)
         print(status)
+        db.session.add(status)
+        db.session.commit()
+     rows = session.query(New_News).count()
      return render_template('dashboard.html', form=form)
 
 @app.route('/dashboard/minutes')
