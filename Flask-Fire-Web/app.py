@@ -32,7 +32,6 @@ def rec_status():
      form = StatusForm()
      if request.method == "POST":
         status = New_News(form.status.data, current_user.id)
-        print(status)
         db.session.add(status)
         db.session.commit()
      rows = session.query(New_News).count()
