@@ -2,3 +2,5 @@
 tableCreate.py
 data.sqlite
 .vs
+Creator.py
+/migrations

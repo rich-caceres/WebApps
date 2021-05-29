@@ -7,21 +7,27 @@
 {% endfor %}
 <div class="row justify-content-center">
     <div class="col">
-    <table class="table table-borderless">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col" class="text-center">Post</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for key,post in last_ten_items.items() %}
-            <tr>
-                <th scope="row" class="text-right">{{key}}</th>
-                <td class="text-center">{{post}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        {% if last_ten_items %}
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col" class="text-center">Post</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for key,post in last_ten_items.items() %}
+                <tr>
+                    <th scope="row" class="text-right">{{key}}</th>
+                    <td class="text-center">{{post}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        {% else %}
+            <h6 class="text-center">No new updates available.</h6>
+        {% endif %}
     </div>
 </div>

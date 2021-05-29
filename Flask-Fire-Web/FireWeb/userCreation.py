@@ -1,6 +1,7 @@
 from FireWeb import db,login_manager
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+import datetime
 
 ###Login Manager being added###
 @login_manager.user_loader
@@ -67,15 +68,18 @@ class New_News(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     status = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('fduser.id'))
+    date = db.Column(db.Date)
 
     def __init__(self, post, user_id):
 
         self.status = post
         self.user_id = user_id
+        self.date = datetime.datetime.now()
 
     def __repr__(self):
         user = User.query.get(self.user_id)
-        return f'{self.status}  ({user.fname} {user.lname})'
+        dates = self.date.strftime('%x') 
+        return f'{self.status}  ({user.fname} {user.lname} on {dates})'
 
 ###for testing this###
 if __name__ == "__main__":

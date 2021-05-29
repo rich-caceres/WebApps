@@ -35,16 +35,20 @@ def rec_status():
         status = New_News(form.status.data, current_user.id)
         db.session.add(status)
         db.session.commit()
-     allStatuses = New_News.query.all()
-     rows = len(allStatuses)
-     if rows > 10:
-        for row in range(rows, rows-10, -1):
-            last_ten_statuses[row]= New_News.query.get(row)
-     else:
-         for row in range(rows, 0, -1):
-             last_ten_statuses[row]= New_News.query.get(row)
-     print(last_ten_statuses)
-     return render_template('dashboard.html', form=form, last_ten_items = last_ten_statuses)
+     try:
+        allStatuses = New_News.query.all()
+        rows = len(allStatuses)
+        if rows > 10:
+            for row in range(rows, rows-10, -1):
+                last_ten_statuses[row]= New_News.query.get(row)
+            return render_template('dashboard.html', form=form, last_ten_items = last_ten_statuses)
+        else:
+            for row in range(rows, 0, -1):
+                last_ten_statuses[row]= New_News.query.get(row)
+            return render_template('dashboard.html', form=form, last_ten_items = last_ten_statuses)
+     except:
+        print(last_ten_statuses)
+        return render_template('dashboard.html', form=form)
 
 @app.route('/dashboard/minutes')
 @login_required
