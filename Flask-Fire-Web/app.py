@@ -80,14 +80,14 @@ def logout():
     logout_user()
     return redirect(url_for('signin.login'))
 
-###TODO: need to create front end for the admin user, will use openpyxl to create user accounts. Will need to revisit how users sign in (email instead of badge)
+###TODO: need to create front end for the admin user, will use openpyxl to create user accounts. Will need to revisit how users sign in (email instead of badge)###
 @app.route('/admin')
 @login_required
 def admin_page_dash():
     if current_user.isAdmin:
         return render_template('dashboard.html')
     else:
-        return redner_template('admin.html')
+        return render_template('admin.html')
     pass
 
 if __name__ == "__main__":
