@@ -20,8 +20,9 @@ class User(db.Model, UserMixin):
     position_id = db.Column(db.Integer, db.ForeignKey('unionpos.id'))
     isActive = db.Column(db.Boolean)
     post = db.relationship('New_News', backref='userstatpost', lazy=True)
+    isAdmin = db.Column(db.Boolean)
 
-    def __init__(self, user_id, password, fname, lname, position_id, isActive):
+    def __init__(self, user_id, password, fname, lname, position_id, isActive, isAdmin):
 
          self.id = user_id
          self.password = generate_password_hash(password)
@@ -29,6 +30,7 @@ class User(db.Model, UserMixin):
          self.lname = lname
          self.position_id = position_id
          self.isActive = isActive
+         self.isAdmin = isAdmin
 
     def __repr__(self):
         return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n {self.position_id}"
