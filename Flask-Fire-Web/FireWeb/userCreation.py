@@ -38,6 +38,9 @@ class User(db.Model, UserMixin):
     def setActive(self, booleanVal):
         self.isActive = booleanVal
 
+    def setPosition(self, posId):
+        self.position_id = posId
+
     def __repr__(self):
         return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n {self.position_id}"
 
