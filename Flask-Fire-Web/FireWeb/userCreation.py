@@ -32,6 +32,12 @@ class User(db.Model, UserMixin):
          self.isActive = isActive
          self.isAdmin = isAdmin
 
+    def setAdmin(self, booleanVal):
+        self.isAdmin = booleanVal
+
+    def setActive(self, booleanVal):
+        self.isActive = booleanVal
+
     def __repr__(self):
         return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n {self.position_id}"
 
@@ -41,6 +47,7 @@ class User(db.Model, UserMixin):
     def ReportPosts(self):
         for post in self.post:
             print(f"{post.status} Posted by {self.fname} {self.lname}")
+
         
 ###User Postiton within union###
 class Union_User(db.Model):
