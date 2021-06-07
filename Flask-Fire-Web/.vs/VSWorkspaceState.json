@@ -10,6 +10,6 @@
     "\\FireWeb\\status",
     "\\FireWeb\\templates"
   ],
-  "SelectedNode": "\\FireWeb\\userCreation.py",
+  "SelectedNode": "\\FireWeb\\login\\views.py",
   "PreviewInSolutionExplorer": false
 }

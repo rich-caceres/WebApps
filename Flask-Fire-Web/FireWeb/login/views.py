@@ -11,15 +11,15 @@ def login():
     form = LoginForm()
     if request.method == "POST":
           try:
-              badge_number = form.badge_number.data
+              email_data = form.email.data
               password = form.password.data
           except:
                return render_template('SignIn.html', form=form, message= "Error with credentials, please try again later.")
-          if User.query.get(badge_number) is None or badge_number == '':
-              return render_template('SignIn.html', form=form, message = "No badge number found, try again.")
+          if User.query.filter_by(email = email_data).first() is None or email_data == '':
+              return render_template('SignIn.html', form=form, message = "No email was found, try again.")
           
           ###gets user from database###
-          user = User.query.get(badge_number)
+          user = User.query.filter_by(email = email_data).first()
           print(user.position_id)
           ##CHECKING TO SEE IF THE PASSWORD IS CORRECT###
           if user.check_password(password):

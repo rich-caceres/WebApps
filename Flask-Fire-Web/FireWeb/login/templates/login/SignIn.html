@@ -31,8 +31,8 @@
                 <div class="form-group">
                     {{form.email.label}}
                     {{form.email(class="form-control")}}
-                    {% if form.badge_number.errors %}
-                        {% for error in form.badge_number.errors %}
+                    {% if form.email.errors %}
+                        {% for error in form.email.errors %}
                         <strong>{{error}}</strong>
                     {% endfor %}
                     {% endif %}
