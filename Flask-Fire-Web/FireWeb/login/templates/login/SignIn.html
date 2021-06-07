@@ -29,8 +29,8 @@
             <form method="POST">
                 {{form.hidden_tag()}}
                 <div class="form-group">
-                    {{form.badge_number.label}}
-                    {{form.badge_number(class="form-control")}}
+                    {{form.email.label}}
+                    {{form.email(class="form-control")}}
                     {% if form.badge_number.errors %}
                         {% for error in form.badge_number.errors %}
                         <strong>{{error}}</strong>
