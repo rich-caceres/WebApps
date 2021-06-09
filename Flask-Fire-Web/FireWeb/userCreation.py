@@ -22,10 +22,11 @@ class User(db.Model, UserMixin):
     isActive = db.Column(db.Boolean)
     post = db.relationship('New_News', backref='userstatpost', lazy=True)
     isAdmin = db.Column(db.Boolean)
+    badge_number = db.Column(db.String)
 
-    def __init__(self, user_id, password, fname, lname, position_id, isActive, isAdmin):
+    def __init__(self, badge_number, password, fname, lname, position_id, isActive, isAdmin):
 
-         self.id = user_id
+         self.badge_number = badge_number
          self.password = generate_password_hash(password)
          self.fname = fname
          self.lname = lname
