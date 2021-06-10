@@ -23,16 +23,17 @@ class User(db.Model, UserMixin):
     post = db.relationship('New_News', backref='userstatpost', lazy=True)
     isAdmin = db.Column(db.Boolean)
     badge_number = db.Column(db.String)
+    
+    def __init__(self, email, password, fname, lname, position_id, isActive, isAdmin, badge_number):
 
-    def __init__(self, badge_number, password, fname, lname, position_id, isActive, isAdmin):
-
-         self.badge_number = badge_number
+         self.email = email
          self.password = generate_password_hash(password)
          self.fname = fname
          self.lname = lname
          self.position_id = position_id
          self.isActive = isActive
          self.isAdmin = isAdmin
+         self.badge_number = badge_number
 
     def setAdmin(self, booleanVal):
         self.isAdmin = booleanVal

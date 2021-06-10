@@ -80,7 +80,7 @@ def logout():
     logout_user()
     return redirect(url_for('signin.login'))
 
-###TODO: need to create front end for the admin user, will use openpyxl to create user accounts. Will need to revisit how users sign in (email instead of badge)###
+###TODO: need to create front end for the admin user, will use openpyxl to create user accounts.###
 @app.route('/admin')
 @login_required
 def admin_page_dash():
