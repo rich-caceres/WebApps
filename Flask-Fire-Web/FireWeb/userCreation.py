@@ -103,6 +103,11 @@ class Grievance(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.Text, nullable = False)
 
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        pass
     pass
 ###for testing this###
 if __name__ == "__main__":
