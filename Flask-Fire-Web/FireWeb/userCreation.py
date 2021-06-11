@@ -98,6 +98,10 @@ class New_News(db.Model):
         return f'{self.status}  ({user.fname} {user.lname} on {dates})'
 
 class Grievance(db.Model):
+    __tablename__ = 'grievance'
+
+    id = db.Column(db.Integer, primary_key = True)
+
     pass
 ###for testing this###
 if __name__ == "__main__":
