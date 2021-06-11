@@ -102,6 +102,8 @@ class Grievance(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.Text, nullable = False)
+    reason = db.Column(bd.Text, nullable = False)
+
 
     def __init__(self):
         pass
