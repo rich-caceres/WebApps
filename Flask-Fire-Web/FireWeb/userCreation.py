@@ -97,6 +97,8 @@ class New_News(db.Model):
         dates = self.date.strftime('%x') 
         return f'{self.status}  ({user.fname} {user.lname} on {dates})'
 
+class Grievance(db.Model):
+    pass
 ###for testing this###
 if __name__ == "__main__":
 
