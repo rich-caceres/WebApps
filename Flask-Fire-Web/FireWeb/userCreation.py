@@ -106,10 +106,10 @@ class Grievance(db.Model):
     dateOfGrievance = db.Column(db.Date)
 
 
-    def __init__(self, name, reason, dateOfGrievance):
+    def __init__(self, name, reason):
         self.name = name
         self.reason = reason
-        self.dateOfGrievance = dateOfGrievance
+        self.dateOfGrievance = datetime.datetime.now()
         pass
 
     def __repr__(self):
