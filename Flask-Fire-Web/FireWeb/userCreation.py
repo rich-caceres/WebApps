@@ -103,7 +103,7 @@ class Grievance(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.Text, nullable = False)
     reason = db.Column(bd.Text, nullable = False)
-
+    dateOfGrievance = db.Column(db.Date)
 
     def __init__(self):
         pass
