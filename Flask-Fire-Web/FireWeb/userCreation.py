@@ -105,7 +105,6 @@ class Grievance(db.Model):
     reason = db.Column(db.Text, nullable = False)
     dateOfGrievance = db.Column(db.Date)
 
-
     def __init__(self, name, reason):
         self.name = name
         self.reason = reason
