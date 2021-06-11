@@ -95,7 +95,7 @@ class New_News(db.Model):
     def __repr__(self):
         user = User.query.get(self.user_id)
         dates = self.date.strftime('%x') 
-        return f'{self.status}  ({user.fname} {user.lname} on {dates})'
+        return f'{self.status} ({user.fname} {user.lname} on {dates})'
 
 class Grievance(db.Model):
     __tablename__ = 'grievance'
