@@ -107,6 +107,9 @@ class Grievance(db.Model):
 
 
     def __init__(self, name, reason, datOfGrievance):
+        self.name = name
+        self.reason = reason
+        self.dateOfGrievance = dateOfGrievance
         pass
 
     def __repr__(self):
