@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField, DateField
+from wtforms import StringField, SubmitField, TextAreaField, DateField, RadioField
 from wtforms.widgets import TextArea
 from wtforms.validators import DataRequired
 
@@ -11,6 +11,7 @@ class GrievanceForm(FlaskForm):
     whatHappened = TextAreaField("Description", [DataRequired()])
     locationOfIncident = StringField("Where did it happen?", [DataRequired()])
     whenItHappened = DateField("When did it happen?", [DataRequired])
+    radioField = RadioField("What type of Grievance?",choices= [('unfair_treament','Unfair Treament'),('past_practice', 'Past Practice'),('other', 'Other')])
     whyGrievence = TextAreaField("Why is this a Grievance?")
     pastPractice = TextAreaField("Past Practice (Describe Fully)")
     unfairTreatment = TextAreaField("Unfair Treatment:")
