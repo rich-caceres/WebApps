@@ -7,7 +7,7 @@ class GrievanceForm(FlaskForm):
 
     dateOfIncident= DateField("Date of Grievance", [DataRequired()])
     title = StringField("Grievance subject", [DataRequired()])
-    user = StringField("Who is filling the Grievance? (If filling on behalf of someone or department)")
+    user = StringField("Who is filling the Grievance? (If filling on behalf of someone or department)", [DataRequired()])
     whatHappened = TextAreaField("Description", [DataRequired()])
     locationOfIncident = StringField("Where did it happen?", [DataRequired()])
     whenItHappened = DateField("When did it happen?", [DataRequired])
