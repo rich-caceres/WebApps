@@ -13,6 +13,8 @@ class GrievanceForm(FlaskForm):
     whenItHappened = DateField("When did it happen?", [DataRequired])
     radioField = RadioField("What type of Grievance?",choices= [('unfair_treament','Unfair Treament'),('past_practice', 'Past Practice'),('other', 'Other')])
     whyGrievence = TextAreaField("Why is this a Grievance?")
+    artice = StringField("Article and Section in Contract")
+    section = StringField("Section in Article")
     pastPractice = TextAreaField("Past Practice (Describe Fully)")
     unfairTreatment = TextAreaField("Unfair Treatment:")
     submitButton = SubmitField("Submit")
