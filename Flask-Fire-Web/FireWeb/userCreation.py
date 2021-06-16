@@ -104,6 +104,10 @@ class Grievance(db.Model):
     name = db.Column(db.Text, nullable = False)
     reason = db.Column(db.Text, nullable = False)
     dateOfGrievance = db.Column(db.Date)
+    dateOfIncident = db.Column(db.Date) #check to make sure this works with the html date format (it should)
+    locationOfIncident = db.Column(db.Text)
+    articleAndSection = db.Column(db.Text)
+
 
     def __init__(self, name, reason):
         self.name = name
