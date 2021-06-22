@@ -1,8 +1,5 @@
 ﻿
-
     Shopify();
-
-
 
 function Shopify() {
     var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
@@ -36,8 +33,8 @@ function Shopify() {
                     "product": {
                         "styles": {
                             "product": {
-                                "@media (min-width: 601px)": {
-                                    "max-width": "calc(25% - 20px)",
+                                "@media (min-width: 700px)": {
+                                    "max-width": "calc(95% - 20px)",
                                     "margin-left": "20px",
                                     "margin-bottom": "50px",
                                     "width": "calc(25% - 20px)"

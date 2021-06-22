@@ -12,9 +12,229 @@
         background-color: #ff6a00;
     }
 
-#loadingContent {
 
-    z-index: 1;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+ .question:hover{
+     text-decoration:underline;
+ }
+
+.colorHeader {
+    color: #a11518;
+}
+
+@media (max-width: 400px) {
+    .salemString {
+        display: none;
+    }
+}
+
+.swiper-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-container,
+.swiper-wrapper {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    cursor: grab;
+}
+
+.special-op{
+    width:80%;
+    height:80%
+}
+
+.swiper-slide picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* plugin pagination */
+
+#specOpsPage {
+    display: inline-block;
+    text-align:center;
+    position: absolute;
+    top: 50%;
+    right: 2.2rem;
+    width: 0.5rem;
+    transform: translateY(-50%);
+}
+
+.specOp__item {
+    display:inline-block;
+    text-align: center;
+    float: none;
+    margin: auto;
+    width: 100%;
+    padding-top: 100%;
+    height: 0;
+    border-radius: 50% !important;
+    border: none;
+    background: #808080;
+    transition: background ease 0.2s;
+    cursor: pointer;
+}
+
+.swiper-plugin-pagination {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 2.2rem;
+    width: 0.5rem;
+    transform: translateY(-50%);
+}    
+.swiper-plugin-pagination__item{
+    display: block;
+    margin: 100% 0;
+    width: 100%;
+    padding-top: 100%;
+    height: 0;
+    border-radius: 50% !important;
+    border: none;
+    background: #808080;
+    transition: background ease 0.2s;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1400px) {
+    .imgpreset {
+        width: 100%;
+        height: 1000px;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+@media only screen and (max-width: 1399px) {
+    .imgpreset {
+        width: 100%;
+        height: 900px;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .imgpreset {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+@media only screen and (max-width: 1299px) {
+    .imgpreset {
+        width: 100%;
+        height: 700px;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .imgpreset {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: top;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .imgpreset {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+@media only screen and (max-width: 500px){
+        .imgpreset {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+
+.is-active {
+    background: #333 !important;
+}
+
+/* image lazyload */
+.swiper-lazy {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all ease 300ms;
+}
+
+.swiper-lazy-preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-lazy-loaded {
+    opacity: 1;
+}
+
+.swiper-lazy-preloader::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.88);
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    transform-origin: 50%;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate3d(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}
+
+@media (max-width: 500px) {
+    #specOpsPage {
+        display: none;
+    }
+}
+
+@media (max-width: 980px){
+    .swiper-plugin-pagination {
+        display: none;
+    }
 }
