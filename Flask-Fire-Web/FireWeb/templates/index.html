@@ -19,40 +19,46 @@
 <!--beginning of Carousel for slide show-->
 	<div id="carouselSwiper" class="swiper-container">
 		<div class="swiper-wrapper carouselWrapper" id="slideImageShow">
-			<div class="swiper-slide img">
+			<div class="swiper-slide imgpreset">
 				<picture>
-					<source srcset="{{url_for('static', filename='img/SlideShow/TL2.png')}}" />
-					<img src="{{url_for('static', filename='img/SlideShow/TL2.webp')}}" alt="Tower2" class="img-fluid d-block w-100 imgpreset" />
+					<source data-srcset="{{url_for('static', filename='img/SlideShow/TL2.png')}}" />
+					<img data-src="{{url_for('static', filename='img/SlideShow/TL2.webp')}}" alt="Tower2" class="swiper-lazy img-fluid d-block w-100 imgpreset" />
+					<div class="swiper-lazy-preloader"></div>
 				</picture>
 			</div>
-			<div class="swiper-slide img">
+			<div class="swiper-slide imgpreset">
 				<picture>
-					<source srcset="{{url_for('static', filename='img/SlideShow/fflu.png')}}" type="image/png" />
-					<img src="{{url_for('static', filename='img/SlideShow/fflu.webp')}}" alt="Memorial Sunday Lineup" class="img-fluid d-block w-100 imgpreset" />
+					<source data-srcset="{{url_for('static', filename='img/SlideShow/fflu.png')}}" type="image/png" />
+					<img data-src="{{url_for('static', filename='img/SlideShow/fflu.webp')}}" alt="Memorial Sunday Lineup" class="swiper-lazy img-fluid d-block w-100 imgpreset" />
+					<div class="swiper-lazy-preloader"></div>
 				</picture>
 			</div>
-			<div class="swiper-slide img">
+			<div class="swiper-slide imgpreset">
 				<picture>
-					<source srcset="{{url_for('static', filename='img/SlideShow/ActionShot1.png')}}" type="image/png" />
-					<img src="{{url_for('static', filename='img/SlideShow/ActionShot1.webp')}}" class="img-fluid d-block w-100 imgpreset" />
+					<source data-srcset="{{url_for('static', filename='img/SlideShow/ActionShot1.png')}}" type="image/png" />
+					<img data-src="{{url_for('static', filename='img/SlideShow/ActionShot1.webp')}}" class="swiper-lazy img-fluid d-block w-100 imgpreset" />
+					<div class="swiper-lazy-preloader"></div>
 				</picture>
 			</div>
-			<div class="swiper-slide img">
+			<div class="swiper-slide imgpreset">
 				<picture>
-					<source srcset="{{url_for('static', filename='img/SlideShow/tmpm.png')}}" type="image/png" />
-					<img src="{{url_for('static', filename='img/SlideShow/tmpm.webp')}}" alt="Marfongelli/Koen Rich History" class="img-fluid d-block w-100 imgpreset" />
+					<source data-srcset="{{url_for('static', filename='img/SlideShow/tmpm.png')}}" type="image/png" />
+					<img data-src="{{url_for('static', filename='img/SlideShow/tmpm.webp')}}" alt="Marfongelli/Koen Rich History" class="swiper-lazy img-fluid d-block w-100 imgpreset" />
+					<div class="swiper-lazy-preloader"></div>
 				</picture>
 			</div>
-			<div class="swiper-slide img">
+			<div class="swiper-slide imgpreset">
 				<picture>
-					<source srcset="{{url_for('static', filename='img/SlideShow/HonorGuardcrop.png')}}" type="image/png" />
-					<img src="{{url_for('static', filename='img/SlideShow/HonorGuardcrop.webp')}}" class="img-fluid d-block w-100 imgpreset" />
+					<source data-srcset="{{url_for('static', filename='img/SlideShow/HonorGuardcrop.png')}}" type="image/png" />
+					<img data-src="{{url_for('static', filename='img/SlideShow/HonorGuardcrop.webp')}}" class="swiper-lazy img-fluid d-block w-100 imgpreset" />
+					<div class="swiper-lazy-preloader"></div>
 				</picture>
 				</div>
-			<div class="swiper-slide img">
+			<div class="swiper-slide imgpreset">
 				<picture>
-					<source srcset="{{url_for('static', filename='img/SlideShow/ffms.png')}}" type="image/png" />
-					<img src="{{url_for('static', filename='img/SlideShow/ffms.webp')}}" alt="Memorial Sunday" class="img-fluid d-block w-100 imgpreset" />
+					<source data-srcset="{{url_for('static', filename='img/SlideShow/ffms.png')}}" type="image/png" />
+					<img data-src="{{url_for('static', filename='img/SlideShow/ffms.webp')}}" alt="Memorial Sunday" class="swiper-lazy img-fluid d-block w-100 imgpreset" />
+					<div class="swiper-lazy-preloader"></div>
 				</picture>
 			</div>
 		</div>
@@ -402,6 +408,7 @@
 		<script src="https://unpkg.com/tiny-swiper@latest"></script>
 		<script src="https://unpkg.com/tiny-swiper@latest/lib/modules/pagination.min.js"></script>
 		<script src="https://unpkg.com/tiny-swiper@latest/lib/modules/autoPlay.min.js"></script>
+		<script src="https://unpkg.com/tiny-swiper@latest/lib/modules/lazyload.min.js"></script>
 		<script src="{{url_for('static', filename='css-element-queries-1.2.1/src/ResizeSensor.js')}}"></script>
 		<script src="{{url_for('static', filename='css-element-queries-1.2.1/src/ElementQueries.js')}}"></script>
 		<script type="text/javascript" src="{{url_for('static', filename='js/swiperInitFile.js')}}"></script>
