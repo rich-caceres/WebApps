@@ -1,8 +1,5 @@
 import os
 from FireWeb import app, db
-from FireWeb.login.forms import LoginForm
-from FireWeb.status.forms import StatusForm
-from FireWeb.userCreation import New_News
 
 from flask import Flask, render_template, url_for, request, redirect
 from flask_login import login_user,login_required,logout_user, current_user
