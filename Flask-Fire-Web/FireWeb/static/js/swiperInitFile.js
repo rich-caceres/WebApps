@@ -4,13 +4,13 @@
 var swiper3 = new Swiper('#carouselSwiper', {
     lazyload: {
         loadPrevNext: true,
-        loadPrevNextAmount: 1,
+        loadPrevNextAmount: 5,
         loadOnTransitionStart: true,
         elementClass: 'swiper-lazy',
         loadingClass: 'swiper-lazy-loading',
         loadedClass: 'swiper-lazy-loaded',
         preloaderClass: 'swiper-lazy-preloader'
-    }, loop: true, speed: 2000, autoplay: { delay: 2500 }, plugins: [SwiperPluginAutoPlay, SwiperPluginLazyload] });
+    }, loop: false, speed: 2000, autoplay: { delay: 2500 }, plugins: [SwiperPluginAutoPlay, SwiperPluginLazyload] });
 var swiper2 = new Swiper("#swiper2", { autoplay: { delay: 3500 }, pagination: { el: "#specOpsPage", clickable: true, bulletClass: "specOp__item", bulletActiveClass: "is-active" }, plugins: [SwiperPluginPagination, SwiperPluginAutoPlay] });
 var swiper1 = new Swiper("#apparatusSwiper", { autoplay: { delay: 3500 }, pagination: { el: ".swiper-plugin-pagination", clickable: true, bulletClass: "swiper-plugin-pagination__item", bulletActiveClass: "is-active" }, plugins: [SwiperPluginPagination, SwiperPluginAutoPlay] });
 window.addEventListener('resize', function () { swiper3.update(), swiper3.updateSize() }); new ResizeSensor(jQuery('#SPECOP'), () => { swiper2.update(), swiper2.updateSize() }); new ResizeSensor(jQuery('#collapseTwo'), () => { swiper1.update(), swiper1.updateSize() });
