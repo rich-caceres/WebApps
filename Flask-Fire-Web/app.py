@@ -72,7 +72,7 @@ def union_forms():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html')
+    return render_template('404.html'), 404
 
 @app.route('/logout')
 @login_required
