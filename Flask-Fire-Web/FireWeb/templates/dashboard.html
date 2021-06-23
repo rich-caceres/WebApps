@@ -22,7 +22,7 @@
             {%include "dashNav.html"%}
         </div>
     </div>
-            {% if request.path == url_for('rec_status')%}
+            {% if request.path == url_for('status.rec_status')%}
                 {% include "recentUp.html" %}
             {% endif %}
 </div>
