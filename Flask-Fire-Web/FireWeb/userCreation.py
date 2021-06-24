@@ -64,7 +64,6 @@ class Union_User(db.Model):
     positionName = db.Column(db.String, nullable=False)
     users = db.relationship('User', backref="userpos", lazy=True)
 
-
     def __init__(self, pos_name):
  
         self.positionName = pos_name
@@ -107,14 +106,21 @@ class Grievance(db.Model):
     dateOfIncident = db.Column(db.Date) #check to make sure this works with the html date format (it should)
     locationOfIncident = db.Column(db.Text)
     articleAndSection = db.Column(db.Text)
+    pastPractice = db.Column(db.Text)
+    unfairTreatment = db.Column(db.Text)
+    other = db.Column(db.Text)
 
-    def __init__(self, name, reason, dateOfIncident, locationOfIncident, articleAndSection):
+    def __init__(self, name, reason, dateOfIncident, locationOfIncident, articleAndSection,
+                 pastPractice, unfairTreatment, other):
         self.name = name
         self.reason = reason
         self.dateOfGrievance = datetime.datetime.now()
         self.dateOfIncident = dateOfIncident
         self.locationOfIncident = locationOfIncident
         self.articleAndSection = articleAndSection
+        self.pastPractice = pastPractice
+        self.unfairTreatment = unfairTreatment
+        self.other = other
         pass
 
     def __repr__(self):
