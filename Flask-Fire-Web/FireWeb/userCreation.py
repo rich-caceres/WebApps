@@ -54,7 +54,6 @@ class User(db.Model, UserMixin):
         for post in self.post:
             print(f"{post.status} Posted by {self.fname} {self.lname}")
 
-        
 ###User Postiton within union###
 class Union_User(db.Model):
 
@@ -112,6 +111,7 @@ class Grievance(db.Model):
 
     def __init__(self, name, reason, dateOfIncident, locationOfIncident, articleAndSection,
                  pastPractice, unfairTreatment, other):
+        
         self.name = name
         self.reason = reason
         self.dateOfGrievance = datetime.datetime.now()
@@ -124,10 +124,9 @@ class Grievance(db.Model):
 
     def __repr__(self):
         pass
-    pass
+
 ###for testing this###
 if __name__ == "__main__":
 
     our_user = session.query(User).filter_by(id=71).first()
-
     print(our_user.fname + " " + our_user.lname)
