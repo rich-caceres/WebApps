@@ -1,0 +1,60 @@
+<form method="POST">
+    <div class="form-row pb-4">
+        {{form.hidden_tag()}}
+        <div class="col-sm">
+            {{form.dateOfIncident.label}}
+            {{form.dateOfIndident}}
+         
+            {{form.title.label}}
+            {{form.title}}
+
+            {{form.user.label}}
+            {{form.user}}
+        </div>
+    </div>
+    <div class="form-row pb-4">
+        <div class="col-sm">
+            {{form.whatHappened.label}}
+            {{form.whatHappened}}
+
+            {{form.locationOfIncident.label}}
+            {{form.locationOfIncident}}
+
+            {{form.whenItHappened.label}}
+            {{form.whenItHappened}}
+        </div>
+    </div>
+    <div class="form-row pb-4">
+        <div class="col-sm">
+            {{form.radioField.label}}
+            {{form.radioField}}
+            {% for choice in form.radioFields %}
+                {{choice.label}}
+                {{choice}}
+            {% endfor %}
+
+            {% if choice == 'unfair_treatment' %}
+                {{form.article.label}}
+                {{form.article}}
+
+                {{form.section.label}}
+                {{form.section}}
+
+                {{form.unfairTreatment.label}}
+                {{form.unfairTreatment}}
+            {% elif choice == 'past_practice' %}
+                {{form.article.label}}
+                {{form.article}}
+
+                {{form.section.label}}
+                {{form.section}}
+
+                {{form.pastPractice.label}}
+                {{form.pastPractice}}
+            {% else %}
+                {{form.}}
+            {% endif %}
+        </div>
+     </div>
+        {{form.submit(class="btn btn-primary")}}
+</form>

@@ -3,9 +3,8 @@ from FireWeb import db
 from FireWeb.userCreation import User
 from FireWeb.grievance.forms import GrievanceForm
 
+grievence_blueprint = Blueprint('grievence',__name__)
 
-grievence_blueprint = Blueprint('grievence',__name__,template_folder='templates\grievence')
-
-@grievence_blueprint.route('/grievence', methods=["GET", "POST"])
+@grievence_blueprint.route('dashborad/forms/grievence', methods=["GET", "POST"])
 def Grievences():
     pass

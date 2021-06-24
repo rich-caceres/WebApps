@@ -12,10 +12,11 @@ class GrievanceForm(FlaskForm):
     locationOfIncident = StringField("Where did it happen?", [DataRequired()])
     whenItHappened = DateField("When did it happen?", [DataRequired])
     radioField = RadioField("What type of Grievance?",choices= [('unfair_treament','Unfair Treament'),('past_practice', 'Past Practice'),('other', 'Other')])
-    artice = StringField("Article and Section in Contract")
+    article = StringField("Article and Section in Contract")
     section = StringField("Section in Article")
     pastPractice = TextAreaField("Past Practice:")
     unfairTreatment = TextAreaField("Unfair Treatment:")
+    other = TextAreaField("Other:")
     submitButton = SubmitField("Submit")
 
     #TODO add fields for:
