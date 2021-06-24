@@ -7,4 +7,5 @@ grievence_blueprint = Blueprint('grievence',__name__)
 
 @grievence_blueprint.route('dashborad/forms/grievence', methods=["GET", "POST"])
 def Grievences():
+
     pass

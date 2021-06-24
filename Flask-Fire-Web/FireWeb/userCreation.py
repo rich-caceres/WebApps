@@ -108,11 +108,13 @@ class Grievance(db.Model):
     locationOfIncident = db.Column(db.Text)
     articleAndSection = db.Column(db.Text)
 
-
-    def __init__(self, name, reason):
+    def __init__(self, name, reason, dateOfIncident, locationOfIncident, articleAndSection):
         self.name = name
         self.reason = reason
         self.dateOfGrievance = datetime.datetime.now()
+        self.dateOfIncident = dateOfIncident
+        self.locationOfIncident = locationOfIncident
+        self.articleAndSection = articleAndSection
         pass
 
     def __repr__(self):
