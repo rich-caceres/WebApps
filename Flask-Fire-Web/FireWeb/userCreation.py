@@ -121,7 +121,6 @@ class Grievance(db.Model):
         self.pastPractice = pastPractice
         self.unfairTreatment = unfairTreatment
         self.other = other
-        pass
 
     def __repr__(self):
         pass
