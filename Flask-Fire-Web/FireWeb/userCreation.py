@@ -23,6 +23,7 @@ class User(db.Model, UserMixin):
     post = db.relationship('New_News', backref='userstatpost', lazy=True)
     isAdmin = db.Column(db.Boolean)
     badge_number = db.Column(db.String)
+    committee_id = db.Column(db.Integer, db.ForeignKey('unioncommittees.id'))
     
     def __init__(self, email, password, fname, lname, position_id, isActive, isAdmin, badge_number):
 
@@ -73,6 +74,14 @@ class Union_User(db.Model):
     def reportUsers(self):
         for user in self.users:
             print(f"The user: {user.fname} {user.lname} holds the following position in the union: {self.positionName}")
+
+class Union_Committee(db.Model):
+
+    __tablename_ = 'unioncommittees'
+
+    id= db.Column(db.Integer, primary_key=True)
+    committee = db.Column(db.String(64), nullable=False)
+    users = db.relationship('User', backref= 'unioncommittees', lazy=True)
 
 ###Recent news data model###
 class New_News(db.Model):
