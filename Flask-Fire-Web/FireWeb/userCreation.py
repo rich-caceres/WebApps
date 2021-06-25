@@ -44,6 +44,9 @@ class User(db.Model, UserMixin):
 
     def setPosition(self, posId):
         self.position_id = posId
+    
+    def setCommittee(self, committee_id):
+        self.committee_id = committee_id
 
     def __repr__(self):
         return f"User badge number: {self.id}\nuser's full name: {self.fname} {self.lname}\n {self.position_id}"
