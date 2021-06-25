@@ -83,6 +83,10 @@ class Union_Committee(db.Model):
     committee = db.Column(db.String(64), nullable=False)
     users = db.relationship('User', backref= 'unioncommittees', lazy=True)
 
+    def __init__(self, committee):
+
+        self.committee = committee
+
 ###Recent news data model###
 class New_News(db.Model):
 
