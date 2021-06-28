@@ -15,6 +15,7 @@ def rec_status():
         status = New_News(form.status.data, current_user.id)
         db.session.add(status)
         db.session.commit()
+        return redirect(url_for('status.rec_status'))
      try:
         allStatuses = New_News.query.order_by(New_News.date.desc()).all()
         rows = len(allStatuses)
