@@ -80,11 +80,11 @@ class Union_User(db.Model):
 
 class Union_Committee(db.Model):
 
-    __tablename_ = 'unioncommittees'
+    __tablename__ = 'unioncommittees'
 
-    id= db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     committee = db.Column(db.String(64), nullable=False)
-    users = db.relationship('User', backref= 'unioncommittees', lazy=True)
+    users = db.relationship('User', backref= 'usercommittee', lazy=True)
 
     def __init__(self, committee):
 
