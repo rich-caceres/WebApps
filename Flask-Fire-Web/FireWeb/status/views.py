@@ -16,7 +16,7 @@ def rec_status():
         db.session.add(status)
         db.session.commit()
      try:
-        allStatuses = New_News.query.all()
+        allStatuses = New_News.query.order_by(New_News.date.desc()).all()
         rows = len(allStatuses)
         if rows > 10:
             for row in range(rows, rows-10, -1):
