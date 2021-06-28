@@ -3,7 +3,6 @@ from FireWeb import app, db
 
 from flask import Flask, render_template, url_for, request, redirect
 from flask_login import login_user,login_required,logout_user, current_user
-from flask_sqlalchemy import SQLAlchemy
 
 @app.route('/')
 def index():
