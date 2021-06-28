@@ -2,35 +2,28 @@
     <div class="form-row pb-4">
         {{form.hidden_tag()}}
         <div class="col-sm">
-            {{form.dateOfIncident.label}}
-            {{form.dateOfIndident}}
+            {{form.dateOfIncident.label}}{{form.dateOfIndident}}
          
-            {{form.title.label}}
-            {{form.title}}
+            {{form.title.label}}{{form.title}}
 
-            {{form.user.label}}
-            {{form.user}}
+            {{form.user.label}}{{form.user}}
         </div>
     </div>
     <div class="form-row pb-4">
         <div class="col-sm">
-            {{form.whatHappened.label}}
-            {{form.whatHappened}}
+            {{form.whatHappened.label}}{{form.whatHappened}}
 
-            {{form.locationOfIncident.label}}
-            {{form.locationOfIncident}}
+            {{form.locationOfIncident.label}}{{form.locationOfIncident}}
 
-            {{form.whenItHappened.label}}
-            {{form.whenItHappened}}
+            {{form.whenItHappened.label}}{{form.whenItHappened}}
         </div>
     </div>
     <div class="form-row pb-4">
         <div class="col-sm">
-            {{form.radioField.label}}
-            {{form.radioField}}
+            {{form.radioField.label}}{{form.radioField}}
+
             {% for choice in form.radioFields %}
-                {{choice.label}}
-                {{choice}}
+                {{choice.label}}{{choice}}
             {% endfor %}
 
             {% if choice == 'unfair_treatment' %}
