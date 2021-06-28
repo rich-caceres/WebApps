@@ -27,26 +27,19 @@
             {% endfor %}
 
             {% if choice == 'unfair_treatment' %}
-                {{form.article.label}}
-                {{form.article}}
+                {{form.article.label}}{{form.article}}
 
-                {{form.section.label}}
-                {{form.section}}
+                {{form.section.label}}{{form.section}}
 
-                {{form.unfairTreatment.label}}
-                {{form.unfairTreatment}}
+                {{form.unfairTreatment.label}}{{form.unfairTreatment}}
             {% elif choice == 'past_practice' %}
-                {{form.article.label}}
-                {{form.article}}
+                {{form.article.label}}{{form.article}}
 
-                {{form.section.label}}
-                {{form.section}}
+                {{form.section.label}}{{form.section}}
 
-                {{form.pastPractice.label}}
-                {{form.pastPractice}}
+                {{form.pastPractice.label}}{{form.pastPractice}}
             {% else %}
-                {{form.other.label}}
-                {{form.other}}
+                {{form.other.label}}{{form.other}}
             {% endif %}
         </div>
      </div>
