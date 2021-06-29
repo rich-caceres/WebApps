@@ -7,7 +7,7 @@ from FireWeb.grievance.forms import GrievanceForm
 
 grievance_blueprint = Blueprint('grievance',__name__)
 
-@grievance_blueprint.route('dashborad/forms/grievance', methods=["GET", "POST"])
+@grievance_blueprint.route('dashboard/forms/grievance', methods=["GET", "POST"])
 def Grievences():
     form = GrievanceForm()
     if request.method == "POST":

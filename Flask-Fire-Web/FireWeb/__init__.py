@@ -21,5 +21,5 @@ from FireWeb.grievance.views import grievance_blueprint
 from FireWeb.status.views import status_blueprint
 
 app.register_blueprint(login_blueprint, url_prefix='/signin')
-app.register_blueprint(grievance_blueprint, url_prefix='/grievance')
+app.register_blueprint(grievance_blueprint, url_prefix='/dashboard/forms/grievance')
 app.register_blueprint(status_blueprint,url_prefix='/dashboard/statuses')

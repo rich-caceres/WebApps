@@ -10,7 +10,7 @@ class GrievanceForm(FlaskForm):
     user = StringField("Who is filling the Grievance? (If filling on behalf of someone or department)")
     whatHappened = TextAreaField("Description", [DataRequired()])
     locationOfIncident = StringField("Where did it happen?", [DataRequired()])
-    whenItHappened = DateField("When did it happen?", [DataRequired])
+    whenItHappened = DateField("When did it happen?", [DataRequired()])
     radioField = RadioField("What type of Grievance?",choices= [('unfair_treament','Unfair Treament'),('past_practice', 'Past Practice'),('other', 'Other')])
     article = StringField("Article and Section in Contract")
     section = StringField("Section in Article")
