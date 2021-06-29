@@ -45,27 +45,19 @@
     </div>
     <div class="form-row pb-4">
         <div class="col-sm">
-            {{form.radioField.label}}{{form.radioField}}
-
-            {% for choice in form.radioFields %}
-                {{choice.label}}{{choice}}
-            {% endfor %}
-
-            {% if choice == 'unfair_treatment' %}
                 {{form.article.label}}{{form.article}}
 
                 {{form.section.label}}{{form.section}}
 
                 {{form.unfairTreatment.label}}{{form.unfairTreatment}}
-            {% elif choice == 'past_practice' %}
+          
                 {{form.article.label}}{{form.article}}
 
                 {{form.section.label}}{{form.section}}
 
                 {{form.pastPractice.label}}{{form.pastPractice}}
-            {% else %}
-                {{form.other.label}}{{form.other}}
-            {% endif %}
+            
+                {{form.other.label}}{{form.other}}         
         </div>
      </div>
         {{form.submit(class="btn btn-primary")}}
