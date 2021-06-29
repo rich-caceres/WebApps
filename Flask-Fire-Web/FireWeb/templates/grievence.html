@@ -10,6 +10,11 @@
             {% endif %}
 
             {{form.title.label}}{{form.title}}
+            {% if form.title.errors %}
+                {% for error in form.title.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+            {% endif %}
 
             {{form.user.label}}{{form.user}}
         </div>
@@ -17,10 +22,25 @@
     <div class="form-row pb-4">
         <div class="col-sm">
             {{form.whatHappened.label}}{{form.whatHappened}}
+            {% if form.whatHappened.errors %}
+                {% for error in form.whatHappened.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+            {% endif %}
 
             {{form.locationOfIncident.label}}{{form.locationOfIncident}}
+            {% if form.locationOfIncident.errors %}
+                {% for error in form.locationOfIncident.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+            {% endif %}
 
             {{form.whenItHappened.label}}{{form.whenItHappened}}
+            {% if form.whenItHappened.errors %}
+                {% for error in form.whenItHappened.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
     <div class="form-row pb-4">
