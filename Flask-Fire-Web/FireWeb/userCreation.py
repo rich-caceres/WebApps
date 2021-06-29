@@ -112,6 +112,7 @@ class New_News(db.Model):
         dates = self.date.strftime('%x') 
         return f'{self.status} ({user.fname} {user.lname} on {dates})'
 
+###Grievance form model###
 class Grievance(db.Model):
     __tablename__ = 'grievance'
 
