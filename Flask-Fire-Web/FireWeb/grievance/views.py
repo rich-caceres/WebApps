@@ -5,9 +5,9 @@ from FireWeb import db
 from FireWeb.userCreation import User, Grievance
 from FireWeb.grievance.forms import GrievanceForm
 
-grievence_blueprint = Blueprint('grievence',__name__)
+grievance_blueprint = Blueprint('grievance',__name__)
 
-@grievence_blueprint.route('dashborad/forms/grievence', methods=["GET", "POST"])
+@grievance_blueprint.route('dashborad/forms/grievance', methods=["GET", "POST"])
 def Grievences():
     if request.method == "POST":
         grievance = Grievance(current_user.fname + " " + current_user.lname, form.title.data, form.whenItHappened.data, 
