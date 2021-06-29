@@ -78,6 +78,7 @@ class Union_User(db.Model):
         for user in self.users:
             print(f"The user: {user.fname} {user.lname} holds the following position in the union: {self.positionName}")
 
+###Creates Committees for the union, this can be linked to users in the union###
 class Union_Committee(db.Model):
 
     __tablename__ = 'unioncommittees'
