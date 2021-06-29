@@ -13,7 +13,6 @@ def Grievences():
         grievance = Grievance(current_user.fname + " " + current_user.lname, form.title.data, form.whenItHappened.data, 
                               form.locationOfIncident.data, form.article.data + " " + form.section.data, 
                               form.pastPractice.data, form.unfairTreatment.data, form.other.data)
-        #finish adding the rest of the grievance
         db.session.add(grievance)
         db.session.commit()
     if current_user.position_id == range(3):
