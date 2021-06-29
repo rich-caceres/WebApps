@@ -14,25 +14,26 @@
                 {% endif %}
          {% endblock %}
 {% block body%}
+<div class="container">
 <form method="POST">
     <div class="form-row pb-4">
         {{form.hidden_tag()}}
-        <div class="col-sm">
-            {{form.dateOfIncident.label}}{{form.dateOfIncident}}
+        <div class="col-sm pt-4">
+            {{form.dateOfIncident.label}}{{form.dateOfIncident(class="form-control")}}
             {% if form.dateOfIncident.errors %}
             {% for error in form.dateOfIncident.errors %}
             <strong>{{error}}</strong>
             {% endfor %}
             {% endif %}
-
-            {{form.title.label}}{{form.title}}
+            <br>
+            {{form.title.label}}{{form.title(class="form-control")}}
             {% if form.title.errors %}
             {% for error in form.title.errors %}
             <strong>{{error}}</strong>
             {% endfor %}
             {% endif %}
-
-            {{form.user.label}}{{form.user}}
+            <br>
+            {{form.user.label}}{{form.user(class="form-control")}}
         </div>
     </div>
     <div class="form-row pb-4">
@@ -78,4 +79,5 @@
     </div>
     {{form.submit(class="btn btn-primary")}}
 </form>
+    </div>
 {% endblock %}
