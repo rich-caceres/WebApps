@@ -1,12 +1,7 @@
 
-<div class="container">
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#grieveCollapse" aria-expanded="false" aria-controls="grieveCollapse">
-        Grievance Form
-    </button>
 
-    <div class="collapse" id="grieveCollapse">
-        <div class="card card-body">
-            {% include 'grievence.html' %}
-        </div>
-    </div>
-</div>
+<a class="btn btn-primary" data-toggle="collapse" href="{{url_for('grievance.Grievences')}}" role="button">
+    Link with href
+</a>
+            
+   
