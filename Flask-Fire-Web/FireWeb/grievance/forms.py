@@ -11,7 +11,7 @@ class GrievanceForm(FlaskForm):
     whatHappened = TextAreaField("Description", [DataRequired()])
     locationOfIncident = StringField("Where did it happen?", [DataRequired()])
     whenItHappened = DateField("When did it happen?", [DataRequired()])
-    article = StringField("Article and Section in Contract")
+    article = StringField("Article in Contract")
     section = StringField("Section in Article")
     pastPractice = TextAreaField("Past Practice:")
     unfairTreatment = TextAreaField("Unfair Treatment:")
