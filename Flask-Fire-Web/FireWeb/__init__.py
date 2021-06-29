@@ -17,9 +17,9 @@ login_manager.init_app(app)
 login_manager.login_view = 'signin.login'
 
 from FireWeb.login.views import login_blueprint
-from FireWeb.grievance.views import grievence_blueprint
+from FireWeb.grievance.views import grievance_blueprint
 from FireWeb.status.views import status_blueprint
 
 app.register_blueprint(login_blueprint, url_prefix='/signin')
-app.register_blueprint(grievence_blueprint, url_prefix='/grievence')
+app.register_blueprint(grievance_blueprint, url_prefix='/grievance')
 app.register_blueprint(status_blueprint,url_prefix='/dashboard/statuses')
