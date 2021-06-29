@@ -38,21 +38,21 @@
     </div>
     <div class="form-row pb-4">
         <div class="col-sm">
-            {{form.whatHappened.label}}{{form.whatHappened}}
+            {{form.whatHappened.label}}{{form.whatHappened(class="form-control")}}
             {% if form.whatHappened.errors %}
             {% for error in form.whatHappened.errors %}
             <strong>{{error}}</strong>
             {% endfor %}
             {% endif %}
-
-            {{form.locationOfIncident.label}}{{form.locationOfIncident}}
+            <br>
+            {{form.locationOfIncident.label}}{{form.locationOfIncident(class="form-control")}}
             {% if form.locationOfIncident.errors %}
             {% for error in form.locationOfIncident.errors %}
             <strong>{{error}}</strong>
             {% endfor %}
             {% endif %}
-
-            {{form.whenItHappened.label}}{{form.whenItHappened}}
+            <br>
+            {{form.whenItHappened.label}}{{form.whenItHappened(class="form-control", type="date")}}
             {% if form.whenItHappened.errors %}
             {% for error in form.whenItHappened.errors %}
             <strong>{{error}}</strong>
@@ -62,12 +62,12 @@
     </div>
     <div class="form-row pb-4">
         <div class="col-sm">
-            {{form.article.label}}{{form.article}}
-
-            {{form.section.label}}{{form.section}}
-
-            {{form.unfairTreatment.label}}{{form.unfairTreatment}}
-
+            {{form.article.label}}{{form.article(class="form-control")}}
+            <br>
+            {{form.section.label}}{{form.section(class="form-control")}}
+            <br>
+            {{form.unfairTreatment.label}}{{form.unfairTreatment(class="form-control")}}
+            <br>
             {{form.article.label}}{{form.article}}
 
             {{form.section.label}}{{form.section}}
