@@ -5,7 +5,6 @@ from wtforms.validators import DataRequired
 
 class GrievanceForm(FlaskForm):
 
-    dateOfIncident= DateField("Date of Grievance", [DataRequired()])
     title = StringField("Grievance subject", [DataRequired()])
     user = StringField("Who is filling the Grievance? (If filling on behalf of someone or department)")
     whatHappened = TextAreaField("Description", [DataRequired()])
