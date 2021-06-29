@@ -19,13 +19,6 @@
     <div class="form-row pb-4">
         {{form.hidden_tag()}}
         <div class="col-sm pt-4">
-            {{form.dateOfIncident.label}}{{form.dateOfIncident(class="form-control")}}
-            {% if form.dateOfIncident.errors %}
-            {% for error in form.dateOfIncident.errors %}
-            <strong>{{error}}</strong>
-            {% endfor %}
-            {% endif %}
-            <br>
             {{form.title.label}}{{form.title(class="form-control")}}
             {% if form.title.errors %}
             {% for error in form.title.errors %}
@@ -38,7 +31,7 @@
     </div>
     <div class="form-row pb-4">
         <div class="col-sm">
-            {{form.whatHappened.label}}{{form.whatHappened(class="form-control")}}
+            {{form.whatHappened.label}}{{form.whatHappened(class="form-control", rows=4)}}
             {% if form.whatHappened.errors %}
             {% for error in form.whatHappened.errors %}
             <strong>{{error}}</strong>
@@ -68,12 +61,15 @@
             <br>
             {{form.unfairTreatment.label}}{{form.unfairTreatment(class="form-control")}}
             <br>
-            {{form.pastPractice.label}}{{form.pastPractice}}
+            {{form.pastPractice.label}}{{form.pastPractice(class="form-control")}}
 
-            {{form.other.label}}{{form.other}}
+            {{form.other.label}}{{form.other(class="form-control")}}
+            <br>
+            {{form.submit(class="btn btn-primary text-align-right")}}
         </div>
+        
     </div>
-    {{form.submit(class="btn btn-primary")}}
+    
 </form>
     </div>
 {% endblock %}
