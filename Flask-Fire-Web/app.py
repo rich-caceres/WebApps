@@ -66,5 +66,5 @@ if __name__ == "__main__":
     app.run()
      #TODO: Digest user grievance forms
      #TODO: need to create a flow that the user can use for seeing maintenance on vehicle
-     #NOTE: test badge is 71, pass is the normal pass
+     #NOTE: test email check at user creation, pass is the normal pass
 
