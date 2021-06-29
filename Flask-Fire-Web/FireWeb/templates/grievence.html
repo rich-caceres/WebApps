@@ -2,8 +2,13 @@
     <div class="form-row pb-4">
         {{form.hidden_tag()}}
         <div class="col-sm">
-            {{form.dateOfIncident.label}}{{form.dateOfIndident}}
-            
+            {{form.dateOfIncident.label}}{{form.dateOfIncident}}
+            {% if form.dateOfIncident.errors %}
+                {% for error in form.dateOfIncident.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+            {% endif %}
+
             {{form.title.label}}{{form.title}}
 
             {{form.user.label}}{{form.user}}
