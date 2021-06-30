@@ -15,65 +15,66 @@
          {% endblock %}
 {% block body%}
 <div class="container">
-<form method="POST">
-    <div class="form-row pb-4">
-        {{form.hidden_tag()}}
-        <div class="col-sm pt-4">
-            {{form.title.label}}{{form.title(class="form-control")}}
-            {% if form.title.errors %}
-            {% for error in form.title.errors %}
-            <strong>{{error}}</strong>
-            {% endfor %}
-            {% endif %}
-            <br>
-            {{form.user.label}}{{form.user(class="form-control")}}
-        </div>
-    </div>
-    <div class="form-row pb-4">
-        <div class="col-sm">
-            {{form.whatHappened.label}}{{form.whatHappened(class="form-control", rows=4)}}
-            {% if form.whatHappened.errors %}
-            {% for error in form.whatHappened.errors %}
-            <strong>{{error}}</strong>
-            {% endfor %}
-            {% endif %}
-            <br>
-            {{form.locationOfIncident.label}}{{form.locationOfIncident(class="form-control")}}
-            {% if form.locationOfIncident.errors %}
-            {% for error in form.locationOfIncident.errors %}
-            <strong>{{error}}</strong>
-            {% endfor %}
-            {% endif %}
-            <br>
-            {{form.whenItHappened.label}}{{form.whenItHappened(class="form-control", type="date")}}
-            {% if form.whenItHappened.errors %}
-            {% for error in form.whenItHappened.errors %}
-            <strong>{{error}}</strong>
-            {% endfor %}
-            {% endif %}
-        </div>
-    </div>
-    <div class="form-row pb-4">
-        <div class="col-sm">
-            <div class="form-group row">
-            {{form.article.label(class="col-sm-2")}}{{form.article(class="form-control col-sm-10")}}
+    <h1 class="text-center pt-3">Grievance Information Form</h1>
+    <form method="POST">
+        <div class="form-row pb-4">
+            {{form.hidden_tag()}}
+            <div class="col-sm pt-4">
+                {{form.title.label}}{{form.title(class="form-control")}}
+                {% if form.title.errors %}
+                {% for error in form.title.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+                {% endif %}
+                <br>
+                {{form.user.label}}{{form.user(class="form-control")}}
             </div>
-            <div class="form-group row">
-            {{form.section.label(class="col-sm-2")}}{{form.section(class="form-control col-sm-10")}}
-            </div>
-            <br>
-
-            {{form.unfairTreatment.label}}{{form.unfairTreatment(class="form-control")}}
-            <br>
-            {{form.pastPractice.label}}{{form.pastPractice(class="form-control")}}
-
-            {{form.other.label}}{{form.other(class="form-control")}}
-            <br>
-            {{form.submit(class="btn btn-primary text-align-right")}}
         </div>
-        
-    </div>
-    
-</form>
-    </div>
+        <div class="form-row pb-4">
+            <div class="col-sm">
+                {{form.whatHappened.label}}{{form.whatHappened(class="form-control", rows=4)}}
+                {% if form.whatHappened.errors %}
+                {% for error in form.whatHappened.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+                {% endif %}
+                <br>
+                {{form.locationOfIncident.label}}{{form.locationOfIncident(class="form-control")}}
+                {% if form.locationOfIncident.errors %}
+                {% for error in form.locationOfIncident.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+                {% endif %}
+                <br>
+                {{form.whenItHappened.label}}{{form.whenItHappened(class="form-control", type="date")}}
+                {% if form.whenItHappened.errors %}
+                {% for error in form.whenItHappened.errors %}
+                <strong>{{error}}</strong>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row pb-4">
+            <div class="col-sm">
+                <div class="form-group row">
+                    {{form.article.label(class="col-sm-2")}}{{form.article(class="form-control col-sm-10")}}
+                </div>
+                <div class="form-group row">
+                    {{form.section.label(class="col-sm-2")}}{{form.section(class="form-control col-sm-10")}}
+                </div>
+                <br>
+
+                {{form.unfairTreatment.label}}{{form.unfairTreatment(class="form-control")}}
+                <br>
+                {{form.pastPractice.label}}{{form.pastPractice(class="form-control")}}
+
+                {{form.other.label}}{{form.other(class="form-control")}}
+                <br>
+                {{form.submit(class="btn btn-primary text-align-right")}}
+            </div>
+
+        </div>
+
+    </form>
+</div>
 {% endblock %}
