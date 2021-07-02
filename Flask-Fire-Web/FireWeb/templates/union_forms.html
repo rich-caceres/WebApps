@@ -1,11 +1,13 @@
 
 
-<a class="btn btn-primary"  href="{{url_for('grievance.Grievences')}}">
+<a class="btn btn-primary" href="{{url_for('grievance.Grievences')}}">
     Grievance Form
 </a>
-{% if current_user.committee_id == range(3) %}
+
+{% for id in range(3) %}
+{% if current_user.position_id == id %}
 <a class="btn btn-primary" href="{{url_for('grievance.Grievences')}}">
     List of Grievances
 </a>
 {% endif %}    
-   
+{% endfor %}

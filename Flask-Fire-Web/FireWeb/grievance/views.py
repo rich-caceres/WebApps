@@ -6,6 +6,7 @@ from FireWeb.userCreation import User, Grievance
 from FireWeb.grievance.forms import GrievanceForm
 
 grievance_blueprint = Blueprint('grievance',__name__)
+grieveList_blueprint = Blueprint('grieveList', __name__)
 
 @grievance_blueprint.route('dashboard/forms/grievance', methods=["GET", "POST"])
 def Grievences():
@@ -23,3 +24,8 @@ def Grievences():
         #TODO: need to create committees so that the users can send directly to grievance committees.
         #must get current user name entering the grievance
     return render_template('grievence.html', form = form)
+
+@grieveList_blueprint.route('dashboard/grieveList')
+def GrievanceList():
+    grieveList = Grievance.query.all()
+    return render_template('listOfGrieve.html', grieveList = grieveList)
