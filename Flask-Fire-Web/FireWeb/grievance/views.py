@@ -16,6 +16,7 @@ def Grievences():
                               form.pastPractice.data, form.unfairTreatment.data, form.other.data)
         db.session.add(grievance)
         db.session.commit()
+        return redirect(url_for('union_forms'))
     if current_user.position_id == range(3):
         all_grievances = Grievance.query.all()
         #TODO: add all grievances to the view for viewing to president, vice-president, and  secretary of treasure.
