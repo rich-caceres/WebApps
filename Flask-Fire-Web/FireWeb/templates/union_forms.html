@@ -3,5 +3,9 @@
 <a class="btn btn-primary"  href="{{url_for('grievance.Grievences')}}">
     Grievance Form
 </a>
-            
+{% if current_user.committee_id == range(3) %}
+<a class="btn btn-primary" href="{{url_for('grievance.Grievences')}}">
+    List of Grievances
+</a>
+{% endif %}    
    
