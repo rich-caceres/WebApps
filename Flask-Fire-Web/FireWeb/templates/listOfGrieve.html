@@ -14,7 +14,14 @@
                 {% endif %}
          {% endblock %}
 {% block body%}
-    {% for grieve in grieveList %}
-        {{grieve}}
+<table class="table table-borderless">
+    <thead>
+        <tr>List of Grievances</tr>
+    </thead>
+    <tbody>
+    {% for key, grieve in grieveList.items() %}
+        <tr>{{grieve.id}}</tr>
     {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
