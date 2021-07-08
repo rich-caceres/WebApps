@@ -17,11 +17,6 @@ def Grievences():
         db.session.add(grievance)
         db.session.commit()
         return redirect(url_for('union_forms'))
-    if current_user.position_id == range(3):
-        all_grievances = Grievance.query.all()
-        #TODO: add all grievances to the view for viewing to president, vice-president, and  secretary of treasure.
-        #TODO: need to create committees so that the users can send directly to grievance committees.
-        #must get current user name entering the grievance
     return render_template('grievence.html', form = form)
 
 @grievance_blueprint.route('/grieveList')
