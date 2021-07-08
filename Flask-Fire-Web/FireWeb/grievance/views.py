@@ -24,7 +24,7 @@ def Grievences():
         #must get current user name entering the grievance
     return render_template('grievence.html', form = form)
 
-@grievance_blueprint.route('dashboard/grieveList')
+@grievance_blueprint.route('/grieveList')
 def GrievanceList():
     grieveList = Grievance.query.all()
     return render_template('listOfGrieve.html', grieveList = grieveList)

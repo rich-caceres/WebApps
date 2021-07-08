@@ -22,4 +22,4 @@ from FireWeb.status.views import status_blueprint
 
 app.register_blueprint(login_blueprint, url_prefix='/')
 app.register_blueprint(grievance_blueprint, url_prefix='/dashboard')
-app.register_blueprint(status_blueprint,url_prefix='/')
+app.register_blueprint(status_blueprint,url_prefix='/dashboard')

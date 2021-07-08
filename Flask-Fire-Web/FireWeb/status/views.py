@@ -6,7 +6,7 @@ from FireWeb.status.forms import StatusForm
 
 status_blueprint = Blueprint('status',__name__)
 
-@status_blueprint.route('/dashboard/statuses', methods=["GET","POST"])
+@status_blueprint.route('/statuses', methods=["GET","POST"])
 @login_required
 def rec_status():
      last_ten_statuses = {}
