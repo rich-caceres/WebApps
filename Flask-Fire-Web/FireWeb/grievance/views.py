@@ -24,7 +24,7 @@ def GrievanceList():
     grieveList = Grievance.query.all()
     return render_template('listOfGrieve.html', grieveList = grieveList)
 
-@grievance_blueprint.route('/<grieveid>')
+@grievance_blueprint.route('/<int:grieveid>')
 def SelectedGrievance(grieveid):
     grievance  = Grievance.query.get(grieveid)
     return render_template('grievanceSelected.html', grievance = grievance)
